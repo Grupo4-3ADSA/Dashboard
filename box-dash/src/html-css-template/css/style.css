@@ -21,7 +21,6 @@
 }
 
 body {
-    background-color: var(--dark-color);
     font-family: var(--font-defaut);
 }
 
@@ -58,7 +57,6 @@ body {
 nav {
     height: 80px;
     width: 100%;
-    background-color: var(--pure-black);
 }
 
 .avatar {
