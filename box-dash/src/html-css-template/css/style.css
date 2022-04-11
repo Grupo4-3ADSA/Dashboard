@@ -125,7 +125,7 @@ nav {
 }
 
 .index-img {
-    width: 50%;
+    width: 60%;
     margin: auto;
 }
 
@@ -148,7 +148,7 @@ nav {
 }
 
 .card-music {
-    background-image: url(../imagens/cover-pink.png);
+    background-image: url(../imagens/fundo-login.png);
     background-size: cover;
     height: 371px;
     width: 31.3%;
@@ -216,11 +216,7 @@ nav {
     width: inherit;
 }
 
-.img-music {
-    background-color: var(--light-color-2);
-    background-size: cover;
-    height: 290px;
-}
+
 
 .music-data {
     background-color: var(--dark-color);

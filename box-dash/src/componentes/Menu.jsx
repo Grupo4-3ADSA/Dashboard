@@ -1,6 +1,5 @@
 import React from "react";
-import logoVerde from '../html-css-template/imagens/logo-verde.png'
-import avatar from '../html-css-template/imagens/avatar.png'
+import logoVerde from '../html-css-template/imagens/fundo-login.png'
 
 function Menu() {
     return (
@@ -8,7 +7,6 @@ function Menu() {
             <nav>
                 <div class="container">
                     <img src={logoVerde} alt="Logo" class="logo" />
-                    <img src={avatar} alt="Avatar" class="avatar" />
                 </div>
             </nav>
         </>
