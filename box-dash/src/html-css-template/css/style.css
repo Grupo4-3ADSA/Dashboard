@@ -28,20 +28,20 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-    height: 40px;
+    height: 30px;
     padding: 0 50px;
-    color: var(--pure-black);
-    background-color: var(--cyan);
+    color: var(--off-white);
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     /* or 114% */
-    text-transform: lowercase;
     letter-spacing: 0.02em;
     font-size: 14px;
     line-height: 16px;
     font-family: var(--font-defaut);
     font-weight: 500;
-    cursor: pointer
+    cursor: pointer;
+    background: rgb(13, 40, 59);
+    background: linear-gradient(94deg, rgba(13, 40, 59, 1) 0%, rgba(167, 188, 201, 1) 100%);
 }
 
 .right {
@@ -63,7 +63,8 @@ nav {
     float: right;
 }
 
-.logo, .avatar {
+.logo,
+.avatar {
     margin-top: 15px;
     height: 50px;
 }
@@ -73,6 +74,7 @@ nav {
 .index-content {
     display: flex;
     min-height: 700px;
+    align-items: center;
 }
 
 /* .info-index {
@@ -121,7 +123,7 @@ nav {
 }
 
 .box-text-index {
-    width: 50%;
+    width: 100%;
 }
 
 .index-img {
@@ -175,7 +177,7 @@ nav {
     justify-content: flex-end;
 }
 
-.icons img{
+.icons img {
     margin-left: 2px;
     cursor: pointer
 }
@@ -222,7 +224,10 @@ nav {
     background-color: var(--dark-color);
 }
 
-.name, .genre, .release, .icons {
+.name,
+.genre,
+.release,
+.icons {
     padding: 10px;
     text-align: left;
 }
@@ -243,8 +248,12 @@ nav {
 
 .add-music {
     display: flex;
-width: 100%;
-min-height: 750px;
+    width: 100%;
+    min-height: 450px;
+    align-items: center;
+    position: relative;
+    margin-left: 5px;
+
 }
 
 .add-music img {
@@ -252,26 +261,22 @@ min-height: 750px;
     height: 50%; */
     margin-top: 150px;
 }
+
 /* .add-music img {
     width: 50%;
 } */
 
 .formulario {
-    width: 50%;
+    width: 100%;
 }
 
 .formulario label {
     padding-bottom: 15px;
 }
 
-.img-lateral {
-    width: 50%;
-}
-
 form {
     width: 100%;
     font-family: var(--font-defaut);
-    color: var(--off-white);
     text-transform: lowercase;
     margin-top: 50px;
 }
@@ -295,19 +300,14 @@ form label {
 }
 
 .add-music h1 {
-    margin: 50px 0;
+    margin: 0px 0 50px 0;
     font-family: Roboto Mono;
     font-style: normal;
     font-weight: bold;
-    font-size: 64px;
-    line-height: 84px;
-    display: flex;
-    align-items: center;
-    color: var(--off-white)
+    font-size: 24px;
 }
 
-
-.input-music-disabled{
+.input-music-disabled {
     background-color: #333333;
     border: none;
     color: #fff;
@@ -317,7 +317,7 @@ form label {
 }
 
 
-.input-music-enable{
+.input-music-enable {
     background-color: #333333;
     color: #fff;
     padding: 5px;
@@ -325,11 +325,11 @@ form label {
     border-radius: 5px;
 }
 
-.card-title{
+.card-title {
     width: 35%;
 }
 
-.btn-salvar-enable{
+.btn-salvar-enable {
     float: right;
     background-color: green;
     color: #fff;
@@ -339,7 +339,7 @@ form label {
     transition: 0.5s;
 }
 
-.btn-salvar-disabled{
+.btn-salvar-disabled {
     float: right;
     background-color: green;
     color: #fff;
