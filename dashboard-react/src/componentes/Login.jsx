@@ -13,17 +13,27 @@ function Login(props) {
             </nav>
 
             <div class="container login">
-
                 <div class="login-content">
                     <img src={fundoLogin} alt="" class="login-img" />
-
                     <div class="formulario">
                         <h2>LOGIN</h2><br />
-                        <form class="subtitle">
-                            <label>Usário: <br /><input type="text" /></label>
-                            <br />
-                            <label>Senha: <br /><input type="text" /></label>
-                            <br />
+                        <form >
+                            <div class="formAcess">
+                                <label for="name" class="input-fild">
+                                    <input type="text" id="nomeEmpresa" name="nomeEmpresa"
+                                        placeholder="Usuário" required minlength="4"
+                                        autofocus="autofocus" />
+                                    <div class="underline"></div>
+                                </label>
+                            </div>
+                            <div class="formAcess">
+                                <label for="name" class="input-fild senha">
+                                    <input type="text" id="nomeEmpresa" name="nomeEmpresa"
+                                        placeholder="Senha:" required minlength="4" />
+                                    <div class="underline"></div>
+                                </label>
+                            </div>
+
                             <h4>Esqueceu sua senha?</h4>
                             {/* onClick={window.location.href= "http://localhost:3000/componentes/DashGenerico"}  */}
                             <button class="btn">Entrar</button>

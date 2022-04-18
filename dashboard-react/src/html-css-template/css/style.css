@@ -1,18 +1,15 @@
 :root {
+    --blue: #20577D;
     --blue-dark: #0d283b;
     --blue-dark2: #071b29;
     --off-white: #F2F2F2;
     --pure-black: #000000;
-    --pure-black-transparent: #000000b2;
-    --dark-color: #333333;
-    --font-defaut: 'Roboto Mono', monospace;
-    --font-dark-color: #383838;
-    --purple: #5662B7;
+    --font-defaut: 'Readex Pro', normal;
     --light-color: #f2f2f2;
-    --light-color2: #dbdada;
     --light-color-2: #8f8f8f;
     --cinza-primary: #757575;
-    --color-graditent: rgb(32,87,125), linear-gradient(86deg, rgba(32,87,125,1) 0%, rgba(93,155,197,1) 100%);
+    --cinza-dark: #2c2c2c;
+    --color-graditent: rgb(32, 87, 125), linear-gradient(86deg, rgba(32, 87, 125, 1) 0%, rgba(93, 155, 197, 1) 100%);
 }
 
 .container {
@@ -81,44 +78,94 @@ nav {
 /* Formulario Login */
 .formulario {
     width: 100%;
+    /* Animação */
+    animation-name: slideDown;
+    -webkit-animation-name: slideDown;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+    visibility: visible !important;
 }
 
 form {
     width: 100%;
-    font-family: var(--font-defaut);
+    font-family: 'Readex Pro';
 }
 
-form div {
-    margin-left: 0;
+/* Estilização de INPUT */
+.input-fild {
+    position: relative;
 }
 
-form input {
+.input-fild input {
     width: 90%;
-    height: 20px;
-    border: solid --font-dark-color 1px;
-    margin-bottom: 25px;
+    height: 15px;
+    background: none;
+    margin: 20px 0 10px 0;
     font-family: var(--font-defaut);
     font-size: 0.9rem;
-    color: rgba(0, 0, 0, 0.7);
-
+    color: var(--cinza-dark);
+    outline: 0;
     border: solid var(--blue-dark) 0px;
-    border-bottom: solid var(--cinza-primary) 3px;  
 }
 
+.input-fild input::placeholder {
+    color: rgba(138, 138, 138, 0.733);
+}
+
+.input-fild .underline::before {
+    content: "";
+    position: absolute;
+    height: 0.5px;
+    width: 100%;
+    left: 0;
+    background-color: rgb(92, 91, 91);
+    border-radius: 10px;
+}
+
+.input-fild .underline::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    background: linear-gradient(86deg, rgba(32, 87, 125, 1) 0%, rgba(93, 155, 197, 1) 100%);
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.input-fild input:focus~.underline::after {
+    transform: scaleX(1);
+}
+
+::-webkit-input-placeholder {
+    color: rgba(83, 83, 83, 0.822);
+    font-weight: bold;
+}
+
+.senha {
+    background: rgba(255, 255, 255, 0) url(../imagens/ver.png) no-repeat 100% center;
+}
+
+/* Estilização de INPUT acaba aqui */
+
 h2 {
-    font-weight: 600;
-    font-family: var(--font-roboto-titulo);
+    font-weight: 300;
+    font-family: var(--font-defaut);
+    font-style: normal;
     margin: 0 0 1rem 0;
     position: relative;
     align-items: center;
 }
 
+/* Este before serve para colocar uma linear gradient sublinhando o texto */
 h2::before {
     content: '';
-    font-family: var(--font-roboto-titulo);
+    font-family: 'Readex Pro';
     position: absolute;
     height: 4px;
-    width: 19%;
+    width: 22%;
     bottom: 1px;
     border-radius: 8px;
     background: linear-gradient(90deg, var(--blue-dark) 50%,
@@ -126,8 +173,64 @@ h2::before {
 }
 
 h4 {
+    font-weight: 400;
     margin: 0 0 1rem 0;
-    color: var(--blue-dark)
+    color: var(--blue);
+    font-family: var(--font-defaut);
+    margin: 25px 0 25px 0;
+}
+
+/* Kay Frame para surgir formulário */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    50% {
+        transform: translateY(8%);
+    }
+
+    65% {
+        transform: translateY(-4%);
+    }
+
+    80% {
+        transform: translateY(4%);
+    }
+
+    95% {
+        transform: translateY(-2%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@-webkit-keyframes slideDown {
+    0% {
+        -webkit-transform: translateY(-100%);
+    }
+
+    50% {
+        -webkit-transform: translateY(8%);
+    }
+
+    65% {
+        -webkit-transform: translateY(-4%);
+    }
+
+    80% {
+        -webkit-transform: translateY(4%);
+    }
+
+    95% {
+        -webkit-transform: translateY(-2%);
+    }
+
+    100% {
+        -webkit-transform: translateY(0%);
+    }
 }
 
 
@@ -148,6 +251,8 @@ h4 {
 /* Essa class serve para colocar todas navbar superiores lado a lado */
 .superior {
     display: flex;
+    box-shadow: 0px 5px 15px var(--cinza-primary);
+
 }
 
 /* Navbar que contém o ícone Oncln */
@@ -160,10 +265,11 @@ h4 {
     background-color: var(--blue-dark);
     justify-content: center;
     box-shadow: 0px 5px 10px var(--blue-dark2);
+    z-index: 1000;
 }
 
 /* Navbar central */
-.nav-superior {
+.nav-superior-central {
     height: 8vh;
     width: 62%;
     align-items: center;
@@ -173,15 +279,15 @@ h4 {
     background: linear-gradient(86deg, rgba(17, 45, 65, 1) 0%, rgba(58, 100, 130, 1) 100%);
 }
 
-.nav-superior input {
+/* Estilizar input pesquisar */
+.nav-superior-central input {
     margin: 0 0 0 20px;
     width: 25%;
     height: 20px;
     padding: 2px 0 0 35px;
-    color: var(--light-color2);
+    color: var(--light-color);
 
-    font-family: 'Readex Pro';
-    font-style: normal;
+    font-family: var(--font-defaut);
     font-size: 0.9rem;
 
     box-shadow: none;
@@ -189,7 +295,10 @@ h4 {
     border: solid var(--blue-dark) 0px;
     border-bottom: solid var(--cinza-primary) 1px;
     background: rgba(255, 255, 255, 0) url(../imagens/lupa.png) no-repeat 2% center;
+}
 
+input::placeholder {
+    color: var(--cinza-primary);
 }
 
 /* Navbar superior esquerdo que contém os dados do usuário junto ao icones confi e sino */
@@ -218,6 +327,12 @@ h4 {
     margin: 0 0 0 10px;
 }
 
+/* colocando lado a lado conteudo com a navbar esquerda */
+
+.container-dash {
+    display: flex;
+}
+
 /* Navbar que contém a lista para acesso as outras páginas, exemplo: home, cadastro... */
 .nav-esquerda {
     height: 89vh;
@@ -229,6 +344,7 @@ h4 {
     border-radius: 0 0 0 10px;
     align-items: center;
     box-shadow: 0px 5px 10px var(--blue-dark2);
+    z-index: 1000;
 }
 
 /* Lista navbar */
@@ -244,4 +360,45 @@ li {
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
+}
+
+/* Parte onde ficará os conteúdos de cada etapa da dash, exemplo: Home Dash */
+.conteudo {
+    width: 80%;
+
+    border-radius: 0 0 10px 0;
+    box-shadow: 0px 5px 20px var(--blue-dark2);
+}
+
+/* Estilizando componentes que ficaram dentro de conteúdo na dash*/
+
+/* Home Dash */
+.box-conteudo-home {
+    margin-top: 15px;
+    /* background-color: #d25454; */
+    align-items: center;
+    text-align: center;
+}
+
+.btns-direcionar {
+    display: flex;
+    width: 80%;
+   /*  background-color: #20577D; */
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.direcionar-conteudo{
+    margin-top: 45px;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 20vh;
+
+}
+
+.direcionar-conteudo img {
+    height: 50%;
+    margin: 0 auto;
 }
