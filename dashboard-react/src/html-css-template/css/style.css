@@ -1,0 +1,247 @@
+:root {
+    --blue-dark: #0d283b;
+    --blue-dark2: #071b29;
+    --off-white: #F2F2F2;
+    --pure-black: #000000;
+    --pure-black-transparent: #000000b2;
+    --dark-color: #333333;
+    --font-defaut: 'Roboto Mono', monospace;
+    --font-dark-color: #383838;
+    --purple: #5662B7;
+    --light-color: #f2f2f2;
+    --light-color2: #dbdada;
+    --light-color-2: #8f8f8f;
+    --cinza-primary: #757575;
+    --color-graditent: rgb(32,87,125), linear-gradient(86deg, rgba(32,87,125,1) 0%, rgba(93,155,197,1) 100%);
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    /* background-color: tomato; */
+}
+
+body {
+    font-family: var(--font-defaut);
+}
+
+.btn {
+    align-items: center;
+    text-align: center;
+    height: 35px;
+    width: 60%;
+    color: var(--off-white);
+    background: rgb(13, 40, 59);
+    background: linear-gradient(94deg, rgba(13, 40, 59, 1) 0%, rgba(167, 188, 201, 1) 100%);
+    border: none;
+    border-radius: 50px;
+
+    letter-spacing: 0.02em;
+    font-size: 14px;
+    font-family: var(--font-defaut);
+    font-weight: 500;
+    cursor: pointer;
+    margin: auto;
+}
+
+.right {
+    float: right;
+}
+
+.body {
+    color: #383838;
+}
+
+/* Navbar do login*/
+
+nav {
+    height: 80px;
+    width: 100%;
+}
+
+.logo {
+    margin-top: 15px;
+    height: 50px;
+}
+
+/* Login */
+
+.login-content {
+    display: flex;
+    min-height: 450px;
+    align-items: center;
+    text-align: center;
+}
+
+.login-img {
+    width: 60%;
+    margin: 0 30px 0 0;
+}
+
+/* Formulario Login */
+.formulario {
+    width: 100%;
+}
+
+form {
+    width: 100%;
+    font-family: var(--font-defaut);
+}
+
+form div {
+    margin-left: 0;
+}
+
+form input {
+    width: 90%;
+    height: 20px;
+    border: solid --font-dark-color 1px;
+    margin-bottom: 25px;
+    font-family: var(--font-defaut);
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.7);
+
+    border: solid var(--blue-dark) 0px;
+    border-bottom: solid var(--cinza-primary) 3px;  
+}
+
+h2 {
+    font-weight: 600;
+    font-family: var(--font-roboto-titulo);
+    margin: 0 0 1rem 0;
+    position: relative;
+    align-items: center;
+}
+
+h2::before {
+    content: '';
+    font-family: var(--font-roboto-titulo);
+    position: absolute;
+    height: 4px;
+    width: 19%;
+    bottom: 1px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--blue-dark) 50%,
+            rgba(172, 184, 191, 0) 97.71%);
+}
+
+h4 {
+    margin: 0 0 1rem 0;
+    color: var(--blue-dark)
+}
+
+
+/* Estilo Dash genérico */
+
+
+.box-dashboard {
+    height: 97vh;
+    width: 100%;
+}
+
+.box-dashboard img {
+    height: 20px;
+}
+
+/* Criei 4 navbar, isso para dividir os conteúdos */
+
+/* Essa class serve para colocar todas navbar superiores lado a lado */
+.superior {
+    display: flex;
+}
+
+/* Navbar que contém o ícone Oncln */
+.nav-superior-esquerda {
+    height: 8vh;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px 0 0 0;
+    background-color: var(--blue-dark);
+    justify-content: center;
+    box-shadow: 0px 5px 10px var(--blue-dark2);
+}
+
+/* Navbar central */
+.nav-superior {
+    height: 8vh;
+    width: 62%;
+    align-items: center;
+    display: flex;
+
+    background: rgb(17, 45, 65);
+    background: linear-gradient(86deg, rgba(17, 45, 65, 1) 0%, rgba(58, 100, 130, 1) 100%);
+}
+
+.nav-superior input {
+    margin: 0 0 0 20px;
+    width: 25%;
+    height: 20px;
+    padding: 2px 0 0 35px;
+    color: var(--light-color2);
+
+    font-family: 'Readex Pro';
+    font-style: normal;
+    font-size: 0.9rem;
+
+    box-shadow: none;
+    outline: 0;
+    border: solid var(--blue-dark) 0px;
+    border-bottom: solid var(--cinza-primary) 1px;
+    background: rgba(255, 255, 255, 0) url(../imagens/lupa.png) no-repeat 2% center;
+
+}
+
+/* Navbar superior esquerdo que contém os dados do usuário junto ao icones confi e sino */
+.nav-info {
+    height: 8vh;
+    width: 18%;
+    border-radius: 0 10px 0 0;
+    align-items: center;
+    display: flex;
+    border-left: solid var(--light-color) 1px;
+    background: rgba(58, 100, 130, 1) 100%;
+    padding: 0 0 0 10px;
+    color: var(--light-color);
+}
+
+/* Edição de imagens */
+.nav-info .user {
+    height: 35px;
+    margin: 0 0 0 10px;
+    border-right: solid var(--light-color) 1px;
+    padding: 0 10px 0 0;
+}
+
+.nav-info .config {
+    height: 20px;
+    margin: 0 0 0 10px;
+}
+
+/* Navbar que contém a lista para acesso as outras páginas, exemplo: home, cadastro... */
+.nav-esquerda {
+    height: 89vh;
+    width: 20%;
+    background: rgb(30, 47, 59);
+    background: linear-gradient(183deg, rgba(30, 47, 59, 1) 0%,
+            rgba(43, 78, 103, 1) 47%, rgba(79, 116, 141, 1) 100%);
+    display: flex;
+    border-radius: 0 0 0 10px;
+    align-items: center;
+    box-shadow: 0px 5px 10px var(--blue-dark2);
+}
+
+/* Lista navbar */
+ul {
+    color: var(--light-color);
+
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 20px;
+    font-family: 'Readex Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+}
