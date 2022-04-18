@@ -21,7 +21,7 @@ function Login(props) {
                             <div class="formAcess">
                                 <label for="name" class="input-fild">
                                     <input type="text" id="nomeEmpresa" name="nomeEmpresa"
-                                        placeholder="Usuário" required minlength="4"
+                                        placeholder="Usuário:" required minlength="4"
                                         autofocus="autofocus" />
                                     <div class="underline"></div>
                                 </label>

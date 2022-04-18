@@ -5,6 +5,7 @@ import IconAvatar from '../html-css-template/imagens/usuario.png';
 import IconConfig from '../html-css-template/imagens/configuracao.png';
 import IconSino from '../html-css-template/imagens/sino.png';
 import Home from '../componentes/HomeDash'
+import Salas from "./Salas";
 function ItemNavbar(props) {
     return (
         <>
@@ -39,7 +40,7 @@ function ItemNavbar(props) {
                             </ul>
                         </div>
                         <div class="conteudo">
-                        <Home />
+                        <Salas />
                         </div>
                     </div>
                 </div>
