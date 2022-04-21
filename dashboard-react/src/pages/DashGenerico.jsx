@@ -32,7 +32,7 @@ function ItemNavbar(props) {
                             <ul>
                                 <li>Home</li>
                                 <li>Cadastrar/Editar</li>
-                                <Link to="/salas"><li> Salas</li></Link>
+                                <li> Salas</li>
                                 <li>Painel de controle</li>
                                 <li>Consumo/equipamento</li>
                                 <li>Relatório de fatura</li>
