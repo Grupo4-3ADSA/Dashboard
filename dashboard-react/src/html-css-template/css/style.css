@@ -360,6 +360,7 @@ li {
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
+    cursor: pointer;
 }
 
 /* Parte onde ficará os conteúdos de cada etapa da dash, exemplo: Home Dash */
