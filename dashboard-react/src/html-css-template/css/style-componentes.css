@@ -1,0 +1,196 @@
+/* Cores */
+:root {
+    --blue: #20577D;
+    --blue-dark: #0d283b;
+    --blue-dark2: #071b29;
+    --off-white: #F2F2F2;
+    --pure-black: #000000;
+    --font-defaut: 'Readex Pro', normal;
+    --light-color: #f2f2f2;
+    --light-color-2: #8f8f8f;
+    --cinza-primary: #757575;
+    --cinza-secondary: #BBBBBB;
+    --cinza-terciary: #F0F0F0;
+    --cinza-dark: #2c2c2c;
+    --color-graditent: rgb(32, 87, 125), linear-gradient(86deg, rgba(32, 87, 125, 1) 0%, rgba(93, 155, 197, 1) 100%);
+}
+
+/* Estilizando componentes que ficaram dentro de conteúdo na dash*/
+
+/* Home Dash */
+.box-conteudo-home {
+    margin-top: 15px;
+    /* background-color: #d25454; */
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.btns-direcionar {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.direcionar-conteudo {
+    margin-top: 45px;
+    align-items: center;
+    justify-content: center;
+    width: 19%;
+    height: 21vh;
+    background-color: #f9f9f9;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    padding-top: 4px;
+}
+
+.direcionar-conteudo img {
+    height: 50%;
+    margin: 0 auto;
+}
+
+.box-salas {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    border: solid var(--cinza-secondary) 1px;
+}
+
+.salas-momento {
+    height: 41vh;
+    align-items: center;
+    width: 95%;
+}
+
+.list {
+    height: 30vh;
+    overflow-y: scroll;
+    width: 100%;
+    margin: auto
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    margin-left: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    height: 50%;
+    background: rgb(32, 87, 125);
+    background: linear-gradient(187deg, rgba(32, 87, 125, 1) 0%, rgba(183, 206, 222, 1) 100%);
+}
+
+.list li {
+    height: 20vh;
+    width: 20%;
+    background-color: var(--cinza-terciary);
+    color: #000000;
+    float: left;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.list li img {
+    align-items: stretch;
+    float: right;
+    margin: 10px 10px 0 0;
+}
+
+.list li h3 {
+    margin: 30px 0 0 0;
+}
+
+
+/* Componente salas */
+
+
+
+/* Modal */
+
+.containerl_modal {
+    width: 90%;
+    height: 70%;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.containerl_modal input {
+    width: 100%;
+    height: 4vh;
+    border: none;
+    background: rgba(140, 140, 140, 0.3);
+}
+
+.containerl_modal button {
+    border-color: none;
+    margin: 5% 0 0 0;
+    float: right;
+    width: 20%;
+    height: 40px;
+    color: white;
+    background: #112D41;
+    border-radius: 5px;
+}
+
+.edit .botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+.confirmacao {
+    align-items: center;
+    text-align: center;
+
+}
+
+.confimacao_button {
+    display: flex;
+    justify-content: space-around;
+    margin: 10% 0 0 0;
+}
+
+.confimacao_button .atualizar {
+    border: none;
+    margin: 5% 0 0 0;
+    float: right;
+    width: 20%;
+    height: 40px;
+    color: white;
+    background: #112D41;
+    border-radius: 5px;
+}
+
+.confimacao_button .cancelar {
+    border: none;
+    margin: 5% 0 0 0;
+    float: right;
+    width: 20%;
+    height: 40px;
+    color: #000000;
+    background: #F0F0F0;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+/* Fim do modal */
+
+@media screen and (max-width: 1300px) {
+    .lista {
+        height: 8vh;
+    }
+}
+
+
+/* Fim do componente salas */

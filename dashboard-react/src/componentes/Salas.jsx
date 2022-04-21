@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import '../html-css-template/css/style.css';
+import '../html-css-template/css/style-componentes.css';
+
 import atencao from '../html-css-template/imagens/atencao.png';
 import bolaVerde from '../html-css-template/imagens/bolaVerde.png';
 import edit from '../html-css-template/imagens/edit.png';
 import trash from '../html-css-template/imagens/trash.png';
 import Modal from "react-modal/lib/components/Modal";
-import ItemNavbar from "./DashGenerico";
 
 Modal.setAppElement('#root')
 
-function Salas() {
+function Sala() {
 
     const [modalIsOpen, setIsOpen] = useState(false)
     const [modalEditIsOpen, setEditIsOpen] = useState(false)
@@ -52,9 +54,9 @@ function Salas() {
     return (
 
         <>
-        <head>
-            
-        </head>
+            <head>
+
+            </head>
             <title>Salas</title>
             <div class="conteudo-lista">
 
@@ -80,9 +82,30 @@ function Salas() {
                     <button className="filtrar">Filtrar por: Status</button>
                 </div>
 
-                <div className="lista">
+                <ul >
+                    <li>
+                        info
+                    </li>
+                    <li>
+                        info
+                    </li><li>
+                        info
+                    </li><li>
+                        info
+                    </li><li>
+                        info
+                    </li><li>
+                        info
+                    </li>
+                </ul>
 
-                    <div className="sala">
+
+
+
+
+                {/*  
+                 <div class="lista">
+                <div className="sala">
                         <p id="sala">A</p>
                     </div>
 
@@ -104,34 +127,10 @@ function Salas() {
                     <div className="acessar">
                         <a href="">Acessar</a>
                     </div>
+                     </div>
+ */}
 
-                </div>
 
-                <div className="lista">
-
-                    <div className="sala">
-                        <p id="sala">B</p>
-                    </div>
-
-                    <div className="andar">
-                        <p id="andar">1</p>
-                    </div>
-
-                    <div className="status">
-                        <img src={bolaVerde} alt="" />
-                    </div>
-
-                    <div className="acao">
-                        <a href=""><img src={edit} alt="" /> Editar </a>
-                        |
-                        <a href=""> <img src={trash} alt="" /> Deletar</a>
-                    </div>
-
-                    <div className="acessar">
-                        <a href="">Acessar</a>
-                    </div>
-
-                </div>
             </div>
 
             <Modal
@@ -231,4 +230,4 @@ function Salas() {
 
 }
 
-export default Salas;
+export default Sala;

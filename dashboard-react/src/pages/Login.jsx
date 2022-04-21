@@ -2,8 +2,12 @@ import React from "react";
 import '../html-css-template/css/style.css';
 import logoOncln from '../html-css-template/imagens/logo-cln.png'
 import fundoLogin from '../html-css-template/imagens/fundo-login.png'
+import {useNavigate} from 'react-router-dom'
 
 function Login(props) {
+    const navigate = useNavigate();
+
+
     return (
         <>
             <nav>
@@ -35,8 +39,8 @@ function Login(props) {
                             </div>
 
                             <h4>Esqueceu sua senha?</h4>
-                            {/* onClick={window.location.href= "http://localhost:3000/componentes/DashGenerico"}  */}
-                            <button class="btn">Entrar</button>
+                
+                            <button class="btn" onClick={()=> navigate("/home")}>Entrar</button>
                         </form>
                     </div>
                 </div>

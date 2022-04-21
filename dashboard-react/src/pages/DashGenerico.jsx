@@ -5,7 +5,8 @@ import IconAvatar from '../html-css-template/imagens/usuario.png';
 import IconConfig from '../html-css-template/imagens/configuracao.png';
 import IconSino from '../html-css-template/imagens/sino.png';
 import Home from '../componentes/HomeDash'
-import Salas from "./Salas";
+import {Link} from 'react-router-dom'
+
 function ItemNavbar(props) {
     return (
         <>
@@ -31,7 +32,7 @@ function ItemNavbar(props) {
                             <ul>
                                 <li>Home</li>
                                 <li>Cadastrar/Editar</li>
-                                <li>Salas</li>
+                                <Link to="/salas"><li> Salas</li></Link>
                                 <li>Painel de controle</li>
                                 <li>Consumo/equipamento</li>
                                 <li>Relatório de fatura</li>
@@ -40,7 +41,7 @@ function ItemNavbar(props) {
                             </ul>
                         </div>
                         <div class="conteudo">
-                        <Salas />
+                        <Home/>
                         </div>
                     </div>
                 </div>
