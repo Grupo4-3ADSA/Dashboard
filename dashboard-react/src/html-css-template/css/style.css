@@ -252,7 +252,7 @@ h4 {
 .superior {
     display: flex;
     box-shadow: 0px 5px 15px var(--cinza-primary);
-
+    border-radius: 20px;
 }
 
 /* Navbar que contém o ícone Oncln */
@@ -274,7 +274,6 @@ h4 {
     width: 62%;
     align-items: center;
     display: flex;
-
     background: rgb(17, 45, 65);
     background: linear-gradient(86deg, rgba(17, 45, 65, 1) 0%, rgba(58, 100, 130, 1) 100%);
 }
@@ -348,12 +347,14 @@ input::placeholder {
 }
 
 /* Lista navbar */
-ul {
+
+.list-nav-esqueda {
     color: var(--light-color);
 
+    padding-left: 1px;
 }
 
-li {
+.list-nav-esqueda li {
     list-style-type: none;
     margin-bottom: 20px;
     font-family: 'Readex Pro';
@@ -363,10 +364,10 @@ li {
     cursor: pointer;
 }
 
+
 /* Parte onde ficará os conteúdos de cada etapa da dash, exemplo: Home Dash */
 .conteudo {
     width: 80%;
     border-radius: 0 0 10px 0;
     box-shadow: 0px 5px 20px var(--cinza-dark);
 }
-

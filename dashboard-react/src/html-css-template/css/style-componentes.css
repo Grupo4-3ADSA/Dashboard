@@ -17,8 +17,18 @@
 
 /* Estilizando componentes que ficaram dentro de conteúdo na dash*/
 
+.h2-titulo {
+    text-align: left;
+    margin-left: 24px;
+}
+
+a{
+    text-decoration: none;
+    color: var(--blue);
+}
+
 /* Home Dash */
-.box-conteudo-home {
+.container-conteudo {
     margin-top: 15px;
     /* background-color: #d25454; */
     align-items: center;
@@ -63,7 +73,7 @@
     border: solid var(--cinza-secondary) 1px;
 }
 
-.salas-momento {
+.box-list {
     height: 41vh;
     align-items: center;
     width: 95%;
@@ -73,7 +83,7 @@
     height: 30vh;
     overflow-y: scroll;
     width: 100%;
-    margin: auto
+    margin: auto;
 }
 
 ::-webkit-scrollbar {
@@ -89,28 +99,133 @@
 }
 
 .list li {
-    height: 20vh;
-    width: 20%;
     background-color: var(--cinza-terciary);
     color: #000000;
-    float: left;
     margin: 10px;
+    list-style-type: none;
+}
+
+.li-box-salas {
     border-radius: 10px;
+    height: 20vh;
+    width: 20%;
+    float: left;
     cursor: pointer;
 }
 
-.list li img {
+.box-salas li img {
     align-items: stretch;
     float: right;
     margin: 10px 10px 0 0;
 }
 
-.list li h3 {
+.box-salas li h3 {
     margin: 30px 0 0 0;
 }
 
 
 /* Componente salas */
+
+.container-conteudo select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--cinza-terciary);
+    font-size: 16px;
+    height: 34px;
+    outline: none;
+    border: 1px solid var(--off-white);
+    appearance: none;
+    padding-left: 5px;
+    margin-left: 2%;
+}
+
+.select-maior {
+    width: 24%;
+    background: url(../imagens/seta-select.png) 96% / 5% no-repeat;
+}
+
+.select-menor {
+    width: 14%;
+    background: url(../imagens/seta-select.png) 96% / 10% no-repeat;
+}
+
+.btn-box-select {
+    margin-left: 25%;
+    border: none;
+    width: 12%;
+    ;
+    background-color: var(--blue-dark);
+    height: 34px;
+    color: var(--off-white);
+    border-radius: 5px;
+}
+
+/* Lista de salas */
+/* Reaproveitei códigos da lista quem tem em Home */
+.organiza-lista {
+    margin-top: 8%;
+    width: 95%;
+    height: 55vh;
+}
+
+.list-salas {
+    padding-left: 0px;
+    width: 98%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    border-color: #20577D;
+}
+
+.list-salas li {
+    height: 8vh;
+    width: 98%;
+    border-radius: 5px;
+}
+
+.title-list-salas {
+    background-color: #f0f0f000 !important;
+}
+
+.organiza-lista th {
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 52px;
+    word-break: normal;
+}
+
+.organiza-lista td {
+    overflow: hidden;
+    padding: 10px 62px;
+    word-break: normal;
+}
+
+.organiza-lista .tg-baqh {
+    text-align: center;
+    vertical-align: top;
+}
+
+.organiza-lista .tg-baqh-a {
+    padding: 10px 112px;
+
+}
+
+/* Estilo do tg editar e deletar */
+.organiza-lista .tg-baqh-editar-deletar {
+    display: flex;
+}
+.organiza-lista .tg-baqh-editar-deletar button {
+    padding-left: 18px;
+    width: 50%;
+    border: none;
+    cursor: pointer;
+}
+.organiza-lista .tg-baqh-editar-deletar .editar{
+    background: rgba(255, 255, 255, 0) url(../imagens/edit.png) no-repeat 2% center;
+}
+.organiza-lista .tg-baqh-editar-deletar .deletar{
+    background: rgba(255, 255, 255, 0) url(../imagens/trash.png) no-repeat 2% center;
+}
 
 
 
@@ -145,9 +260,6 @@
     display: flex;
     justify-content: space-between;
 }
-
-
-
 
 .confirmacao {
     align-items: center;

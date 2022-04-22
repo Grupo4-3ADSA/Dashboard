@@ -4,8 +4,8 @@ import LogoOnclnBranco from '../html-css-template/imagens/logo-branco.png';
 import IconAvatar from '../html-css-template/imagens/usuario.png';
 import IconConfig from '../html-css-template/imagens/configuracao.png';
 import IconSino from '../html-css-template/imagens/sino.png';
-import Home from '../componentes/HomeDash'
-import Salas from '../componentes/Salas'
+import Home from '../componentes/HomeDash';
+import Salas from '../componentes/Salas';
 
 function ItemNavbar(props) {
 
@@ -77,7 +77,7 @@ function ItemNavbar(props) {
 
                     <div class="container-dash">
                         <div class="nav-esquerda">
-                            <ul>
+                            <ul class = "list-nav-esqueda">
                                 {listItems}
                             </ul>
                         </div>

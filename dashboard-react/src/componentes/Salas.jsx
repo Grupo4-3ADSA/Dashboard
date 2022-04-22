@@ -7,6 +7,7 @@ import bolaVerde from '../html-css-template/imagens/bolaVerde.png';
 import edit from '../html-css-template/imagens/edit.png';
 import trash from '../html-css-template/imagens/trash.png';
 import Modal from "react-modal/lib/components/Modal";
+import setaSelect from "../html-css-template/imagens/seta-select.png";
 
 Modal.setAppElement('#root')
 
@@ -57,74 +58,174 @@ function Sala() {
             <head>
 
             </head>
-            <title>Salas</title>
-            <div class="conteudo-lista">
 
-                <h2>Salas</h2>
+            <div className="container-conteudo">
 
-                <div className="op">
+                <h2 className="h2-titulo">Salas cadastradas</h2>
 
-                    <select name="select">
+                <div classNameName="box-select">
+
+                    <select name="select-predio" className="select-maior">
+                        <img src="" alt="" />
                         <option value="valor1" selected >Predio 1 - Haddock Lobo 595</option>
                         <option value="valor2">Valor 2</option>
                         <option value="valor3">Valor 3</option>
                     </select>
+                    <select name="select-andar" className="select-menor">
+                        <option value="valor1" selected >Andar</option>
+                        <option value="valor2">Valor 2</option>
+                        <option value="valor3">Valor 3</option>
+                    </select>
+                    <select name="select-sala" className="select-menor">
+                        <option value="valor1" selected >Sala</option>
+                        <option value="valor2">Valor 2</option>
+                        <option value="valor3">Valor 3</option>
+                    </select>
 
-                    <button className="cadastrar" onClick={handleOpenModal}>Cadastrar Sala</button>
+                    <button className="btn-box-select" onClick={handleOpenModal}>Cadastrar Sala</button>
 
                 </div>
+                <div className="list organiza-lista">
+                    <ul className="list-salas">
+                        <table className="list-salas">
+                            <li className="title-list-salas">
+                                <thead>
+                                    <tr>
+                                        <th className="tg-baqh">Sala</th>
+                                        <th className="tg-baqh">Andar</th>
+                                        <th className="tg-baqh">Status</th>
+                                        <th className="tg-baqh-a">Ação</th>
+                                        <th className="tg-baqh"></th>
+                                    </tr>
+                                </thead>
+                            </li>
+                            <li>
+                                <thead>
+                                    <tr>
+                                        <td class="tg-baqh">A</td>
+                                        <td class="tg-baqh">1°</td>
+                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
+                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button className="editar">Editar/</button>
+                                        <button className="deletar">Deletar</button>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
+                                    </tr>
+                                </thead>
+                            </li>
+                            <li>
+                                <thead>
+                                    <tr>
+                                        <td class="tg-baqh">A</td>
+                                        <td class="tg-baqh">1°</td>
+                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
+                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button className="editar">Editar/</button>
+                                        <button className="deletar">Deletar</button>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
+                                    </tr>
+                                </thead>
+                            </li><li>
+                                <thead>
+                                    <tr>
+                                        <td class="tg-baqh">A</td>
+                                        <td class="tg-baqh">1°</td>
+                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
+                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button className="editar">Editar/</button>
+                                        <button className="deletar">Deletar</button>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
+                                    </tr>
+                                </thead>
+                            </li><li>
+                                <thead>
+                                    <tr>
+                                        <td class="tg-baqh">A</td>
+                                        <td class="tg-baqh">1°</td>
+                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
+                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button className="editar">Editar/</button>
+                                        <button className="deletar">Deletar</button>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
+                                    </tr>
+                                </thead>
+                            </li><li>
+                                <thead>
+                                    <tr>
+                                        <td class="tg-baqh">A</td>
+                                        <td class="tg-baqh">1°</td>
+                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
+                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button className="editar">Editar/</button>
+                                        <button className="deletar">Deletar</button>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
+                                    </tr>
+                                </thead>
+                            </li><li>
+                                <thead>
+                                    <tr>
+                                        <td class="tg-baqh">A</td>
+                                        <td class="tg-baqh">1°</td>
+                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
+                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button className="editar">Editar/</button>
+                                        <button className="deletar">Deletar</button>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
+                                    </tr>
+                                </thead>
+                            </li><li>
+                                <thead>
+                                    <tr>
+                                        <td class="tg-baqh">A</td>
+                                        <td class="tg-baqh">1°</td>
+                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
+                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <button className="editar">Editar/</button>
+                                        <button className="deletar">Deletar</button>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
+                                    </tr>
+                                </thead>
+                            </li>
 
-                <div className="titulos">
-                    <p>Sala</p>
-                    <p>Andar</p>
-                    <p>Status</p>
-                    <p>Ação</p>
-                    <button className="filtrar">Filtrar por: Status</button>
+                        </table>
+                    </ul>
+
+                    {/*    <ul className="list-salas">
+
+                        <li>
+
+                        </li>
+                    </ul> */}
                 </div>
-
-                <ul >
-                    <li>
-                        info
-                    </li>
-                    <li>
-                        info
-                    </li><li>
-                        info
-                    </li><li>
-                        info
-                    </li><li>
-                        info
-                    </li><li>
-                        info
-                    </li>
-                </ul>
-
-
-
-
 
                 {/*  
-                 <div class="lista">
-                <div className="sala">
+                 <div className="lista">
+                <div classNameName="sala">
                         <p id="sala">A</p>
                     </div>
 
-                    <div className="andar">
+                    <div classNameName="andar">
                         <p id="andar">1</p>
                     </div>
 
-                    <div className="status">
+                    <div classNameName="status">
                         <img src={atencao} alt="" />
                     </div>
 
-                    <div className="acao">
+                    <div classNameName="acao">
                         <a href="" type="button" ><img src={edit} alt="" /> Editar</a>
                         <button onClick={handleOpenModalEdit}>Editar</button>
                         |
                         <a href=""> <img src={trash} alt="" /> Deletar</a>
                     </div>
 
-                    <div className="acessar">
+                    <div classNameName="acessar">
                         <a href="">Acessar</a>
                     </div>
                      </div>
@@ -142,7 +243,7 @@ function Sala() {
 
                 <h2>Cadastrar Salas</h2>
 
-                <div className="containerl_modal">
+                <div classNameName="containerl_modal">
 
                     <form action="">
 
@@ -175,7 +276,7 @@ function Sala() {
 
                 <h2>Editar-Sala A | Andar: 1</h2>
 
-                <div className="containerl_modal edit">
+                <div classNameName="containerl_modal edit">
 
                     <form action="">
 
@@ -189,10 +290,10 @@ function Sala() {
                             <input type="text" name="nomeSala" />
                         </label>
 
-                        <div className="botoes">
-                            <button className="atualizar" onClick={handleOpenModalAtualizar}>Atualizar</button>
+                        <div classNameName="botoes">
+                            <button classNameName="atualizar" onClick={handleOpenModalAtualizar}>Atualizar</button>
 
-                            <button className="deletar">Deletar</button>
+                            <button classNameName="deletar">Deletar</button>
                         </div>
 
                     </form>
@@ -210,14 +311,14 @@ function Sala() {
 
                 <button onClick={handleCloseModal}>close</button>
 
-                <div className="confirmacao">
+                <div classNameName="confirmacao">
 
                     <h1>Tem certeza que deseja atualizar as informações dessa sala?</h1>
 
-                    <div className="confimacao_button">
-                        <button className="atualizar">Atualizar</button>
+                    <div classNameName="confimacao_button">
+                        <button classNameName="atualizar">Atualizar</button>
 
-                        <button className="cancelar" onClick={handleCloseModal}>Cancelar</button>
+                        <button classNameName="cancelar" onClick={handleCloseModal}>Cancelar</button>
                     </div>
                 </div>
 
