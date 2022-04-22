@@ -1,54 +1,58 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import '../html-css-template/css/style.css';
 import LogoOnclnBranco from '../html-css-template/imagens/logo-branco.png';
 import IconAvatar from '../html-css-template/imagens/usuario.png';
 import IconConfig from '../html-css-template/imagens/configuracao.png';
 import IconSino from '../html-css-template/imagens/sino.png';
-import Home from '../componentes/HomeDash';
-import Salas from '../componentes/Salas';
+import ConteudoHome from '../componentes/HomeDash';
+import ConteudoCadastrar from '../componentes/CadastrareEditar';
+import ConteudoSalas from '../componentes/Salas';
+import ConteudoPainel from '../componentes/PainelControle';
+import ConteudoConsumo from '../componentes/ConsumoEquipamento';
+import ConteudoRelatorio from '../componentes/RelatoriaFatura';
+import ConteudoResumo from '../componentes/ResumoConsumo';
+import ConteudoCentral from '../componentes/CadastrareEditar';
 
 function ItemNavbar(props) {
 
-    const [conteudo, setConteudo] = useState([<Home />]);
+    const [conteudo, setConteudo] = useState([<ConteudoHome />]);
 
-    const data = [{ "name": ["Home", "Cadastrar/Editar", "Salas", "Painel de Controle", "Consumo/Equipamento", "Relatorio de Fatura", "Resumo de Consumo", "Central de Ajuda"] }]
+    const data = [{ "name": ["Home", "CadastrarEditar", "Salas", "Painel de Controle",
+     "Consumo/Equipamento", "Relatorio de Fatura", "Resumo de Consumo", "Central de Ajuda"] }]
     const listItems = data.map((d) => <ul>{d.name.map((a) => <li key={a} onClick={() => clicado(a)}>{a}</li>)} </ul>)
 
     function clicado(element) {
         switch (element) {
             case "Home":
-                console.log("FOI O HOME")
-                setConteudo(<Home />)
+                setConteudo(<ConteudoHome />)
                 break;
 
-            case "Cadastrar/Editar":
-                console.log("FOI O CADASTRAR")
-
+            case "CadastrarEditar":
+                setConteudo(<ConteudoCadastrar />)
                 break;
 
             case "Salas":
-                console.log("FOI O salas")
-                setConteudo(<Salas />)
+                setConteudo(<ConteudoSalas />)
                 break;
 
             case "Painel de Controle":
-                console.log("FOI O PAINEL")
+                setConteudo(<ConteudoPainel />)
                 break;
 
             case "Consumo/Equipamento":
-                console.log("FOI O CONSUMO")
+                setConteudo(<ConteudoConsumo />)
                 break;
 
             case "Relatorio de Fatura":
-                console.log("FOI O RELATORIO")
+                setConteudo(<ConteudoRelatorio />)
                 break;
 
             case "Resumo de Consumo":
-                console.log("FOI O RESUMO")
+                setConteudo(<ConteudoResumo />)
                 break;
 
             case "Central de Ajuda":
-                console.log("FOI O AJUDA")
+                setConteudo(<ConteudoCentral />)
                 break;
 
             default:
@@ -77,7 +81,7 @@ function ItemNavbar(props) {
 
                     <div class="container-dash">
                         <div class="nav-esquerda">
-                            <ul class = "list-nav-esqueda">
+                            <ul class="list-nav-esqueda">
                                 {listItems}
                             </ul>
                         </div>

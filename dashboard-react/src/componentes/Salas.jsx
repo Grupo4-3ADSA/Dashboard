@@ -55,10 +55,6 @@ function Sala() {
     return (
 
         <>
-            <head>
-
-            </head>
-
             <div className="container-conteudo">
 
                 <h2 className="h2-titulo">Salas cadastradas</h2>
@@ -106,8 +102,8 @@ function Sala() {
                                         <td class="tg-baqh">1°</td>
                                         <td class="tg-baqh"><img src={atencao} alt="" /></td>
                                         <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <button className="editar">Editar/</button>
-                                        <button className="deletar">Deletar</button>
+                                            <button className="editar">Editar/</button>
+                                            <button className="deletar">Deletar</button>
                                             &nbsp;&nbsp;&nbsp;&nbsp;</td>
                                         <td class="tg-baqh"><a href="/">Acessar</a> </td>
                                     </tr>
@@ -120,8 +116,8 @@ function Sala() {
                                         <td class="tg-baqh">1°</td>
                                         <td class="tg-baqh"><img src={atencao} alt="" /></td>
                                         <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <button className="editar">Editar/</button>
-                                        <button className="deletar">Deletar</button>
+                                            <button className="editar">Editar/</button>
+                                            <button className="deletar">Deletar</button>
                                             &nbsp;&nbsp;&nbsp;&nbsp;</td>
                                         <td class="tg-baqh"><a href="/">Acessar</a> </td>
                                     </tr>
@@ -133,8 +129,8 @@ function Sala() {
                                         <td class="tg-baqh">1°</td>
                                         <td class="tg-baqh"><img src={atencao} alt="" /></td>
                                         <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <button className="editar">Editar/</button>
-                                        <button className="deletar">Deletar</button>
+                                            <button className="editar">Editar/</button>
+                                            <button className="deletar">Deletar</button>
                                             &nbsp;&nbsp;&nbsp;&nbsp;</td>
                                         <td class="tg-baqh"><a href="/">Acessar</a> </td>
                                     </tr>
@@ -146,8 +142,8 @@ function Sala() {
                                         <td class="tg-baqh">1°</td>
                                         <td class="tg-baqh"><img src={atencao} alt="" /></td>
                                         <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <button className="editar">Editar/</button>
-                                        <button className="deletar">Deletar</button>
+                                            <button className="editar">Editar/</button>
+                                            <button className="deletar">Deletar</button>
                                             &nbsp;&nbsp;&nbsp;&nbsp;</td>
                                         <td class="tg-baqh"><a href="/">Acessar</a> </td>
                                     </tr>
@@ -159,8 +155,8 @@ function Sala() {
                                         <td class="tg-baqh">1°</td>
                                         <td class="tg-baqh"><img src={atencao} alt="" /></td>
                                         <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <button className="editar">Editar/</button>
-                                        <button className="deletar">Deletar</button>
+                                            <button className="editar">Editar/</button>
+                                            <button className="deletar">Deletar</button>
                                             &nbsp;&nbsp;&nbsp;&nbsp;</td>
                                         <td class="tg-baqh"><a href="/">Acessar</a> </td>
                                     </tr>
@@ -172,8 +168,8 @@ function Sala() {
                                         <td class="tg-baqh">1°</td>
                                         <td class="tg-baqh"><img src={atencao} alt="" /></td>
                                         <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <button className="editar">Editar/</button>
-                                        <button className="deletar">Deletar</button>
+                                            <button className="editar">Editar/</button>
+                                            <button className="deletar">Deletar</button>
                                             &nbsp;&nbsp;&nbsp;&nbsp;</td>
                                         <td class="tg-baqh"><a href="/">Acessar</a> </td>
                                     </tr>
@@ -185,8 +181,8 @@ function Sala() {
                                         <td class="tg-baqh">1°</td>
                                         <td class="tg-baqh"><img src={atencao} alt="" /></td>
                                         <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <button className="editar">Editar/</button>
-                                        <button className="deletar">Deletar</button>
+                                            <button className="editar">Editar/</button>
+                                            <button className="deletar">Deletar</button>
                                             &nbsp;&nbsp;&nbsp;&nbsp;</td>
                                         <td class="tg-baqh"><a href="/">Acessar</a> </td>
                                     </tr>
@@ -196,41 +192,7 @@ function Sala() {
                         </table>
                     </ul>
 
-                    {/*    <ul className="list-salas">
-
-                        <li>
-
-                        </li>
-                    </ul> */}
                 </div>
-
-                {/*  
-                 <div className="lista">
-                <div classNameName="sala">
-                        <p id="sala">A</p>
-                    </div>
-
-                    <div classNameName="andar">
-                        <p id="andar">1</p>
-                    </div>
-
-                    <div classNameName="status">
-                        <img src={atencao} alt="" />
-                    </div>
-
-                    <div classNameName="acao">
-                        <a href="" type="button" ><img src={edit} alt="" /> Editar</a>
-                        <button onClick={handleOpenModalEdit}>Editar</button>
-                        |
-                        <a href=""> <img src={trash} alt="" /> Deletar</a>
-                    </div>
-
-                    <div classNameName="acessar">
-                        <a href="">Acessar</a>
-                    </div>
-                     </div>
- */}
-
 
             </div>
 
