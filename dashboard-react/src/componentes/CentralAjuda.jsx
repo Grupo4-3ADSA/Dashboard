@@ -15,8 +15,8 @@ function Central(props) {
                     <h5>Telefone: (11) 0000-1111</h5>
                     <button className="btn-box-select">Suporte 24 horas</button>
                     <h3>Manuais de instruções</h3>
-                    <button class= "btn-central">Manual de instalação</button>
-                    <button>Manual de utilozação da dashboard</button>
+                    <button class= "btn-central">Manual de instalação</button><br/><br/>
+                    <button className="btn-central-maior">Manual de utilização da dashboard</button>
                 </div>
             </div>
         </>

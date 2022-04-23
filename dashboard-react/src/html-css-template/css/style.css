@@ -285,10 +285,8 @@ h4 {
     height: 20px;
     padding: 2px 0 0 35px;
     color: var(--light-color);
-
     font-family: var(--font-defaut);
     font-size: 0.9rem;
-
     box-shadow: none;
     outline: 0;
     border: solid var(--blue-dark) 0px;
@@ -327,7 +325,6 @@ input::placeholder {
 }
 
 /* colocando lado a lado conteudo com a navbar esquerda */
-
 .container-dash {
     display: flex;
 }
@@ -347,7 +344,6 @@ input::placeholder {
 }
 
 /* Lista navbar */
-
 .list-nav-esqueda {
     color: var(--light-color);
 
@@ -356,14 +352,13 @@ input::placeholder {
 
 .list-nav-esqueda li {
     list-style-type: none;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
     font-family: 'Readex Pro';
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
     cursor: pointer;
 }
-
 
 /* Parte onde ficará os conteúdos de cada etapa da dash, exemplo: Home Dash */
 .conteudo {

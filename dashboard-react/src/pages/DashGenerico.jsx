@@ -8,7 +8,6 @@ import ConteudoHome from '../componentes/HomeDash';
 import ConteudoCadastrar from '../componentes/CadastrareEditar';
 import ConteudoPainel from '../componentes/PainelControle';
 import ConteudoConsumo from '../componentes/ConsumoEquipamento';
-import ConteudoRelatorio from '../componentes/RelatoriaFatura';
 import ConteudoResumo from '../componentes/ResumoConsumo';
 import ConteudoCentral from '../componentes/CentralAjuda';
 import ConteudoSalas from "../componentes/Salas";

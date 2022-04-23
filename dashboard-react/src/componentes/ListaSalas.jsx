@@ -18,7 +18,6 @@ function ListaSalas(props) {
                 .then(() => {
                     console.log("excluido com sucesso")
                 })
-                
         }
 
     }
@@ -78,14 +77,14 @@ function ListaSalas(props) {
             <li>
                 <thead >
                     <tr>
-                        <td class="tg-lista">{props.name}</td>
-                        <td class="tg-lista">{props.floor}</td>
-                        <td class="tg-lista"><img src={atencao} alt="" /></td>
-                        <td class="tg-lista-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
+                        <td class="td-lista">{props.name}</td>
+                        <td class="td-lista">{props.floor}</td>
+                        <td class="td-lista"><img src={atencao} alt="" /></td>
+                        <td class="td-lista-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
                             <button className="editar" onClick={() => handleOpenModalAtualizar(`${props.idRoom}`)}>Editar/</button>
                             <button className="deletar" onClick={() => handleOpenModalDeletar(`${props.idRoom}`)}>Deletar</button>
                             &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        <td class="tg-lista"><a href="/">Acessar</a> </td>
+                        <td class="td-lista"><a href="/">Acessar</a> </td>
                     </tr>
                 </thead>
             </li>

@@ -99,16 +99,16 @@ function Sala() {
                 </div>
 
                 <div className="list organiza-lista">
-                    <ul className="list-salas">
+                    <ul>
                         <table className="table-salas">
                             <li className="title-list-salas">
                                 <thead>
                                     <tr>
-                                        <th className="tg-baqh">Sala</th>
-                                        <th className="tg-baqh">Andar</th>
-                                        <th className="tg-baqh">Status</th>
-                                        <th className="tg-baqh-a">Ação</th>
-                                        <th className="tg-baqh"></th>
+                                        <th >Sala</th>
+                                        <th >Andar</th>
+                                        <th >Status</th>
+                                        <th >Ação</th>
+                                        <th ></th>
                                     </tr>
                                 </thead>
                             </li>

@@ -35,12 +35,11 @@ function Consumo(props) {
                             <li className="title-lista">
                                 <thead>
                                     <tr>
-                                        <th className="tg-lista">ID</th>
-                                        <th className="tg-lista-equipamento">Equipamento</th>
-                                        <th className="tg-lista">Sala</th>
-                                        <th className="tg-lista">Andar</th>
-                                        <th className="tg-lista">Estado</th>
-                                        <th className="tg-lista"></th>
+                                        <th className="tg-baqh">Equipamento</th>
+                                        <th className="tg-baqh">Sala</th>
+                                        <th className="tg-baqh">Andar</th>
+                                        <th className="tg-baqh">Estado</th>
+                                        <th className="tg-baqh "></th>
                                     </tr>
                                 </thead>
                             </li>
@@ -48,12 +47,22 @@ function Consumo(props) {
                             <li>
                                 <thead >
                                     <tr>
-                                        <td class="tg-lista-consumo">012548</td>
-                                        <td class="tg-lista-equi">Ar-Condicionado</td>
-                                        <td class="tg-lista">A</td>
-                                        <td class="tg-lista">1°</td>
-                                        <td class="tg-lista">Ligado</td>
-                                        <td class="tg-lista"><a href="/">Acessar</a> </td>
+                                        <td class="td-lista">Ar-Condicionado</td>
+                                        <td class="td-lista">A</td>
+                                        <td class="td-lista">1°</td>
+                                        <td class="td-lista">Ligado</td>
+                                        <td class="td-lista"><a href="/">Acessar</a> </td>
+                                    </tr>
+                                </thead>
+                            </li>
+                            <li>
+                                <thead >
+                                    <tr>
+                                        <td class="td-lista">Ar-Condicionado</td>
+                                        <td class="td-lista">A</td>
+                                        <td class="td-lista">1°</td>
+                                        <td class="td-lista">Ligado</td>
+                                        <td class="td-lista"><a href="/">Acessar</a> </td>
                                     </tr>
                                 </thead>
                             </li>
