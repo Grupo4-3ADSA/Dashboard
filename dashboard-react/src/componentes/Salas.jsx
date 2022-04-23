@@ -1,17 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../html-css-template/css/style.css';
 import '../html-css-template/css/style-componentes.css';
+import api from '../Api'
 
-import atencao from '../html-css-template/imagens/atencao.png';
-import bolaVerde from '../html-css-template/imagens/bolaVerde.png';
-import edit from '../html-css-template/imagens/edit.png';
-import trash from '../html-css-template/imagens/trash.png';
 import Modal from "react-modal/lib/components/Modal";
-import setaSelect from "../html-css-template/imagens/seta-select.png";
+import ListaSalas from "../componentes/ListaSalas"
 
 Modal.setAppElement('#root')
 
 function Sala() {
+
+    const [rooms, setRooms] = useState([]);
+    const [nomeSala, setNomeSala] = useState([])
+    const [andarSala, setAndarSala] = useState([])
+
+    useEffect(() => {
+        api.get("/rooms")
+            .then(response => {
+                console.log(response.data)
+                setRooms(response.data)
+            })
+            .catch(erro => {
+                console.log(erro)
+            })
+    }, [])
+
+    function cadastrar(){
+        console.log(nomeSala + " " + andarSala)
+        api.post("/rooms", {
+            name: nomeSala,
+            floor: andarSala
+        })
+    }
 
     const [modalIsOpen, setIsOpen] = useState(false)
     const [modalEditIsOpen, setEditIsOpen] = useState(false)
@@ -22,10 +42,6 @@ function Sala() {
 
     }
 
-    function handleOpenModalEdit() {
-        setEditIsOpen(true)
-
-    }
 
     function handleOpenModalAtualizar() {
         setAtualizarIsOpen(true)
@@ -81,35 +97,35 @@ function Sala() {
                     <button className="btn-box-select" onClick={handleOpenModal}>Cadastrar Sala</button>
 
                 </div>
+
                 <div className="list organiza-lista">
-                    <ul className="lista">
+                    <ul className="list-salas">
                         <table className="table-salas">
-                            <li className="title-lista">
+                            <li className="title-list-salas">
                                 <thead>
                                     <tr>
-                                        <th className="tg-lista">Sala</th>
-                                        <th className="tg-lista">Andar</th>
-                                        <th className="tg-lista">Status</th>
-                                        <th className="tg-lista-a">Ação</th>
-                                        <th className="tg-lista"></th>
+                                        <th className="tg-baqh">Sala</th>
+                                        <th className="tg-baqh">Andar</th>
+                                        <th className="tg-baqh">Status</th>
+                                        <th className="tg-baqh-a">Ação</th>
+                                        <th className="tg-baqh"></th>
                                     </tr>
                                 </thead>
                             </li>
-                            <li>
-                                <thead >
-                                    <tr>
-                                        <td class="tg-lista">A</td>
-                                        <td class="tg-lista">1°</td>
-                                        <td class="tg-lista"><img src={atencao} alt="" /></td>
-                                        <td class="tg-lista-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <button className="editar">Editar/</button>
-                                            <button className="deletar">Deletar</button>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                        <td class="tg-lista"><a href="/">Acessar</a> </td>
-                                    </tr>
-                                </thead>
-                            </li>
-                           
+                            
+                            {
+                                
+                                rooms.map(rooms => (
+                                    <ListaSalas
+                                    name={rooms.name}
+                                    floor={rooms.floor}
+                                    idRoom={rooms.idRoom}
+
+                                    />
+                                ))
+                                
+                            }
+
                         </table>
                     </ul>
 
@@ -128,56 +144,20 @@ function Sala() {
 
                 <div classNameName="containerl_modal">
 
-                    <form action="">
+                    <form onSubmit={cadastrar}>
 
                         <label htmlFor="">
                             <p>Nome:</p>
-                            <input type="text" name="nomeSala" />
+                            <input type="text" value={nomeSala} onChange={e => setNomeSala(e.target.value)}/>
                         </label> <br />
 
                         <label htmlFor="">
                             <p>Andar:</p>
-                            <input type="text" name="nomeSala" />
+                            <input type="text" value={andarSala} onChange={e => setAndarSala(e.target.value)}/>
                         </label>
 
-                        <button>Cadastrar</button>
 
-                    </form>
-
-                </div>
-
-
-
-            </Modal>
-
-            <Modal
-                isOpen={modalEditIsOpen}
-                onRequstClose={handleCloseModal}
-                style={customStyles}
-            >
-                <button onClick={handleCloseModal}>close</button>
-
-                <h2>Editar-Sala A | Andar: 1</h2>
-
-                <div classNameName="containerl_modal edit">
-
-                    <form action="">
-
-                        <label htmlFor="">
-                            <p>Sala:</p>
-                            <input type="text" name="nomeSala" />
-                        </label> <br />
-
-                        <label htmlFor="">
-                            <p>Andar:</p>
-                            <input type="text" name="nomeSala" />
-                        </label>
-
-                        <div classNameName="botoes">
-                            <button classNameName="atualizar" onClick={handleOpenModalAtualizar}>Atualizar</button>
-
-                            <button classNameName="deletar">Deletar</button>
-                        </div>
+                        <button type="submit">Cadastrar</button>
 
                     </form>
 

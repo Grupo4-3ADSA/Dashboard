@@ -6,12 +6,12 @@ import IconConfig from '../html-css-template/imagens/configuracao.png';
 import IconSino from '../html-css-template/imagens/sino.png';
 import ConteudoHome from '../componentes/HomeDash';
 import ConteudoCadastrar from '../componentes/CadastrareEditar';
-import ConteudoSalas from '../componentes/Salas';
 import ConteudoPainel from '../componentes/PainelControle';
 import ConteudoConsumo from '../componentes/ConsumoEquipamento';
 import ConteudoRelatorio from '../componentes/RelatoriaFatura';
 import ConteudoResumo from '../componentes/ResumoConsumo';
 import ConteudoCentral from '../componentes/CentralAjuda';
+import ConteudoSalas from "../componentes/Salas";
 
 function ItemNavbar(props) {
 

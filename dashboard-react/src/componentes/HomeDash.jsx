@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import api from '../Api'
 import '../html-css-template/css/style.css';
 import '../html-css-template/css/style-componentes.css';
 import ImgPainelControle from '../html-css-template/imagens/painel-controle.png';
 import ImgCentralAjuda from '../html-css-template/imagens/central-ajuda.png';
 import ImgRelatorio from '../html-css-template/imagens/relatorio.png';
 import ImgCadastrarEditar from '../html-css-template/imagens/edicad.png';
-import ImgAlerta from '../html-css-template/imagens/atencao.png';
+import ListaHome from "./ListaHome";
 
 function Home(props) {
+
+    const [rooms, setRooms] = useState([]);
+    console.log(rooms)
+
+    useEffect(() => {
+        api.get("/rooms")
+            .then(response => {
+                setRooms(response.data)
+            })
+            .catch(erro => {
+                console.log(erro)
+            })
+    }, [])
+
     return (
         <>
             <div className="container-conteudo">
@@ -31,20 +46,28 @@ function Home(props) {
                     </div>
 
                 </div>
+                
                 <div className="box-salas">
                     <div className="box-list">
                         <h2 className= "title-list">Salas que estão mais consumindo neste momento:</h2>
                         <div className="list">
                             <ul>
-                                <li className="li-box-salas"><img src={ImgAlerta} alt="" /><h3>Sala1 <br /> Andar 2</h3> </li>                            
-                                <li className="li-box-salas"><img src={ImgAlerta} alt="" /><h3>Sala1 <br /> Andar 2</h3> </li>                            
-                                <li className="li-box-salas"><img src={ImgAlerta} alt="" /><h3>Sala1 <br /> Andar 2</h3> </li>                            
-                                <li className="li-box-salas"><img src={ImgAlerta} alt="" /><h3>Sala1 <br /> Andar 2</h3> </li>                            
-                                <li className="li-box-salas"><img src={ImgAlerta} alt="" /><h3>Sala1 <br /> Andar 2</h3> </li> 
+                            {
+                                
+                                rooms.map(rooms => (
+                                    <ListaHome
+                                    name={rooms.name}
+                                    floor={rooms.floor}
+
+                                    />
+                                ))
+                                
+                            }                         
                             </ul>
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </>

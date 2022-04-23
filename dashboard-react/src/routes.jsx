@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 
 import RotaHome from "./pages/DashGenerico";
-import RotaSalas from "./componentes/Salas";
+import RotaSalas from "./componentes/ListaSalas";
 import RotaCadastrarEditar from "./componentes/CadastrareEditar";
 import RotaPainelControle from "./componentes/PainelControle";
 import RotaConsumoEquipamento from "./componentes/ConsumoEquipamento";
