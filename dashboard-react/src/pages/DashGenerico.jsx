@@ -11,14 +11,14 @@ import ConteudoPainel from '../componentes/PainelControle';
 import ConteudoConsumo from '../componentes/ConsumoEquipamento';
 import ConteudoRelatorio from '../componentes/RelatoriaFatura';
 import ConteudoResumo from '../componentes/ResumoConsumo';
-import ConteudoCentral from '../componentes/CadastrareEditar';
+import ConteudoCentral from '../componentes/CentralAjuda';
 
 function ItemNavbar(props) {
 
     const [conteudo, setConteudo] = useState([<ConteudoHome />]);
 
     const data = [{ "name": ["Home", "CadastrarEditar", "Salas", "Painel de Controle",
-     "Consumo/Equipamento", "Relatorio de Fatura", "Resumo de Consumo", "Central de Ajuda"] }]
+     "Consumo/Equipamento", "Resumo de Consumo", "Central de Ajuda"] }]
     const listItems = data.map((d) => <ul>{d.name.map((a) => <li key={a} onClick={() => clicado(a)}>{a}</li>)} </ul>)
 
     function clicado(element) {
@@ -41,10 +41,6 @@ function ItemNavbar(props) {
 
             case "Consumo/Equipamento":
                 setConteudo(<ConteudoConsumo />)
-                break;
-
-            case "Relatorio de Fatura":
-                setConteudo(<ConteudoRelatorio />)
                 break;
 
             case "Resumo de Consumo":

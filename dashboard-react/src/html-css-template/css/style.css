@@ -173,7 +173,7 @@ h2::before {
 }
 
 h4 {
-    font-weight: 400;
+    font-weight: 600;
     margin: 0 0 1rem 0;
     color: var(--blue);
     font-family: var(--font-defaut);

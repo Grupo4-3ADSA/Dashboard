@@ -13,19 +13,19 @@ function Home(props) {
             <div className="container-conteudo">
                 <h2>Com o nosso sistema você não emitiu 0,4 de co2 economizando R$ 20,00</h2>
                 <div className="btns-direcionar">
-                    <div className="direcionar-conteudo">
+                    <div className="btn-dorecionar">
                         <img src={ImgPainelControle} alt="" />
                         <h4>Painel de controle</h4>
                     </div>
-                    <div className="direcionar-conteudo">
+                    <div className="btn-dorecionar">
                         <img src={ImgRelatorio} alt="" />
                         <h4>Relatório de fatura</h4>
                     </div>
-                    <div className="direcionar-conteudo">
+                    <div className="btn-dorecionar">
                         <img src={ImgCadastrarEditar} alt="" />
                         <h4>Cadastros</h4>
                     </div>
-                    <div className="direcionar-conteudo">
+                    <div className="btn-dorecionar">
                         <img src={ImgCentralAjuda} alt="" />
                         <h4>Central de ajuda</h4>
                     </div>

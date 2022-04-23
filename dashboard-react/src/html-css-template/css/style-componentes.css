@@ -20,6 +20,7 @@
 .h2-titulo {
     text-align: left;
     margin-left: 44px;
+    margin-top: 50px;
 }
 
 a{
@@ -50,7 +51,7 @@ button{
     justify-content: center;
 }
 
-.direcionar-conteudo {
+.btn-dorecionar {
     margin-top: 45px;
     align-items: center;
     justify-content: center;
@@ -60,13 +61,13 @@ button{
     margin-left: 10px;
     border-radius: 10px;
     cursor: pointer;
-    padding-top: 4px;
-    
+    padding-top: 4px;  
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
-.direcionar-conteudo img {
+.btn-dorecionar img {
     height: 50%;
-    margin: 0 auto;
+    margin: 0 auto;    
 }
 
 .box-salas {
@@ -132,7 +133,6 @@ button{
 
 
 /*  Componente salas */
-
 .container-conteudo select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -144,6 +144,7 @@ button{
     appearance: none;
     padding-left: 5px;
     margin-left: 2%;
+    text-align: left;
 }
 
 .select-maior {
@@ -168,12 +169,12 @@ button{
 /* Lista de salas */
 /* Reaproveitei códigos da lista quem tem em Home */
 .organiza-lista {
-    margin-top: 8%;
+    margin-top: 4%;
     width: 95%;
     height: 55vh;
 }
 
-.list-salas {
+.lista {
     padding-left: 0px;
     width: 98%;
     margin: 0 auto;
@@ -182,51 +183,50 @@ button{
     border-color: #20577D;
 }
 
-.list-salas li {
+.lista li {
     height: 8vh;
     width: 98%;
     border-radius: 5px;
 }
 
-.title-list-salas {
+.title-lista {
     background-color: #f0f0f000 !important;
 }
 
-.organiza-lista th {
+.table-salas th {
     font-size: 14px;
     overflow: hidden;
     padding: 10px 52px;
     word-break: normal;
 }
 
-.organiza-lista td {
+.table-salas td {
     overflow: hidden;
     padding: 10px 62px;
     word-break: normal;
 }
 
-.organiza-lista .tg-baqh {
+.organiza-lista .tg-lista {
     text-align: center;
     vertical-align: top;
 }
 
-.organiza-lista .tg-baqh-a {
+.organiza-lista .tg-lista-a {
     padding: 10px 112px;
-
 }
 
 /* Estilo do tg editar e deletar */
-.organiza-lista .tg-baqh-editar-deletar {
+.organiza-lista .tg-lista-editar-deletar {
     display: flex;
 }
-.organiza-lista .tg-baqh-editar-deletar button {
+.organiza-lista .tg-lista-editar-deletar button {
     padding-left: 18px;
     width: 50%;
 }
-.organiza-lista .tg-baqh-editar-deletar .editar{
+.organiza-lista .tg-lista-editar-deletar .editar{
     background: rgba(255, 255, 255, 0) url(../imagens/edit.png) no-repeat 2% center;
 }
-.organiza-lista .tg-baqh-editar-deletar .deletar{
+.organiza-lista .tg-lista-editar-deletar .deletar{
     background: rgba(255, 255, 255, 0) url(../imagens/trash.png) no-repeat 2% center;
 }
 
@@ -249,6 +249,48 @@ button{
     margin-top: 50px;
 }
 
+/* Componente consumo */
+.tg-lista-consumo{
+    text-align: center;
+    vertical-align: top;
+}
+
+.table-consumo td{
+    overflow: hidden;
+    padding: 10px 53px;
+    word-break: normal;
+    font-size: 90%;
+}
+
+.organiza-lista .tg-lista-equipamento{
+    padding: 10px 55px;
+}
+
+.tg-lista-equi{
+    padding: 10px 45px;
+
+}
+
+.table-consumo th {
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 54px;
+    word-break: normal;
+}
+
+/* /Componente Central de Ajuda */
+
+.container-central .btn-central{
+    width: 20%;
+    height: 8vh;
+    background-color: var(cinza-terciary);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+
+}
+.container-central button{
+    margin: auto !important;
+    border-radius: 2px;
+}
 
 
 /* Modal */

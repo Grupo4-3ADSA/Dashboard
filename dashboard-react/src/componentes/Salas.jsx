@@ -82,113 +82,34 @@ function Sala() {
 
                 </div>
                 <div className="list organiza-lista">
-                    <ul className="list-salas">
-                        <table className="list-salas">
-                            <li className="title-list-salas">
+                    <ul className="lista">
+                        <table className="table-salas">
+                            <li className="title-lista">
                                 <thead>
                                     <tr>
-                                        <th className="tg-baqh">Sala</th>
-                                        <th className="tg-baqh">Andar</th>
-                                        <th className="tg-baqh">Status</th>
-                                        <th className="tg-baqh-a">Ação</th>
-                                        <th className="tg-baqh"></th>
+                                        <th className="tg-lista">Sala</th>
+                                        <th className="tg-lista">Andar</th>
+                                        <th className="tg-lista">Status</th>
+                                        <th className="tg-lista-a">Ação</th>
+                                        <th className="tg-lista"></th>
                                     </tr>
                                 </thead>
                             </li>
                             <li>
-                                <thead>
+                                <thead >
                                     <tr>
-                                        <td class="tg-baqh">A</td>
-                                        <td class="tg-baqh">1°</td>
-                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
-                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <td class="tg-lista">A</td>
+                                        <td class="tg-lista">1°</td>
+                                        <td class="tg-lista"><img src={atencao} alt="" /></td>
+                                        <td class="tg-lista-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
                                             <button className="editar">Editar/</button>
                                             <button className="deletar">Deletar</button>
                                             &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
+                                        <td class="tg-lista"><a href="/">Acessar</a> </td>
                                     </tr>
                                 </thead>
                             </li>
-                            <li>
-                                <thead>
-                                    <tr>
-                                        <td class="tg-baqh">A</td>
-                                        <td class="tg-baqh">1°</td>
-                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
-                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <button className="editar">Editar/</button>
-                                            <button className="deletar">Deletar</button>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
-                                    </tr>
-                                </thead>
-                            </li><li>
-                                <thead>
-                                    <tr>
-                                        <td class="tg-baqh">A</td>
-                                        <td class="tg-baqh">1°</td>
-                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
-                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <button className="editar">Editar/</button>
-                                            <button className="deletar">Deletar</button>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
-                                    </tr>
-                                </thead>
-                            </li><li>
-                                <thead>
-                                    <tr>
-                                        <td class="tg-baqh">A</td>
-                                        <td class="tg-baqh">1°</td>
-                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
-                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <button className="editar">Editar/</button>
-                                            <button className="deletar">Deletar</button>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
-                                    </tr>
-                                </thead>
-                            </li><li>
-                                <thead>
-                                    <tr>
-                                        <td class="tg-baqh">A</td>
-                                        <td class="tg-baqh">1°</td>
-                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
-                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <button className="editar">Editar/</button>
-                                            <button className="deletar">Deletar</button>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
-                                    </tr>
-                                </thead>
-                            </li><li>
-                                <thead>
-                                    <tr>
-                                        <td class="tg-baqh">A</td>
-                                        <td class="tg-baqh">1°</td>
-                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
-                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <button className="editar">Editar/</button>
-                                            <button className="deletar">Deletar</button>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
-                                    </tr>
-                                </thead>
-                            </li><li>
-                                <thead>
-                                    <tr>
-                                        <td class="tg-baqh">A</td>
-                                        <td class="tg-baqh">1°</td>
-                                        <td class="tg-baqh"><img src={atencao} alt="" /></td>
-                                        <td class="tg-baqh-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <button className="editar">Editar/</button>
-                                            <button className="deletar">Deletar</button>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                        <td class="tg-baqh"><a href="/">Acessar</a> </td>
-                                    </tr>
-                                </thead>
-                            </li>
-
+                           
                         </table>
                     </ul>
 
