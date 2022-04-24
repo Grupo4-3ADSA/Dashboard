@@ -309,36 +309,7 @@ select {
     border-radius: 2px;
 }
 
-/* Componente resumo consumo*/
-.conteudo-chart {
-    height: 80vh;
-    overflow-y: scroll;
-    text-align: left !important;
-    align-items: left;
-}
 
-.conteudo-chart select{
-    margin-left: 4% !important;
-}
-
-.conteudo-chart button {
-    margin: 10px !important;
-    border-radius: 0px;
-}
-
-.conteudo-chart .container-conteudo {
-    align-items: left;
-}
-.conteudo-chart image{
-    height:100%;
-}
-
-.box-chart {
-    align-items: center;
-    text-align: center;
-    margin: auto;
-    width: 50%;
-}
 
 
 /* Modal */

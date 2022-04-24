@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../html-css-template/css/style.css';
 import '../html-css-template/css/style-componentes.css';
-import api from '../Api'
 
 import ImgAlerta from '../html-css-template/imagens/atencao.png';
 

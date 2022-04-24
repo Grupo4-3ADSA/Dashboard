@@ -40,7 +40,7 @@ function Login(props) {
 
                             <h4>Esqueceu sua senha?</h4>
                 
-                            <button class="btn" onClick={()=> navigate("/home")}>Entrar</button>
+                            <button class="btn" onClick={()=> navigate("/dash-generico")}>Entrar</button>
                         </form>
                     </div>
                 </div>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Chart from "react-google-charts";
 
 const data = [
-  ['Year', 'Mês', { role: 'style' } ],
+  ['Year', 'Mês', { role: 'style' }],
   ['Jan', 15.000, 'color: #2E495C'],
   ['Fev', 15.000, 'color: #2E495C'],
   ['Mar', 14.060, 'color: #2E495C'],
@@ -17,24 +17,27 @@ const data = [
   ['Dez', 13.000, 'color: #2E495C'],
 ];
 
+
 class GoogleChart extends Component {
-  
+
   constructor(props) {
     super(props)
   }
   render() {
-      return (
-          <div className="box-chart mt-1">
-              <h3>Gráfico de consumo R$</h3>  
-              <Chart
-                  width={550}
-                  height={260}
-                  data={data}
-                  chartType="ColumnChart"
-                  loader={<div>Loading Chart...</div>}                
-              />
-          </div>
-      )
+    return (
+      <div className="box-chart mt-1">
+        <h3>Gráfico de consumo R$</h3>
+        <Chart
+          width={550}
+          height={260}
+          data={data}
+          backgroundColor= '#E4E4E4'
+          chartType="ColumnChart"
+          loader={<div>Loading Chart...</div>
+        }
+        />
+      </div>
+    )
   }
 }
 

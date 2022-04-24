@@ -2,13 +2,14 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 
-import RotaHome from "./pages/DashGenerico";
+import RotaDashGenerico from "./pages/DashGenerico";
 import RotaSalas from "./componentes/ListaSalas";
 import RotaCadastrarEditar from "./componentes/CadastrareEditar";
 import RotaPainelControle from "./componentes/PainelControle";
 import RotaConsumoEquipamento from "./componentes/ConsumoEquipamento";
 import RotaResumoConsumo from "./componentes/ResumoConsumo";
 import RotaCentralAjuda from "./componentes/CentralAjuda";
+import Rota from "./componentes/CentralAjuda";
 
 
 function Rotas() {
@@ -16,7 +17,7 @@ function Rotas() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" exact element={<Login />} />
-                <Route path="/home" exact element={<RotaHome />} />
+                <Route path="/dash-generico" exact element={<RotaDashGenerico />} />
                 <Route path="/salas" exact element={<RotaSalas />} />
                 <Route path="/cadastroedicao" exact element={<RotaCadastrarEditar/>} />
                 <Route path="/painel-controle" exact element={<RotaPainelControle/>} />
