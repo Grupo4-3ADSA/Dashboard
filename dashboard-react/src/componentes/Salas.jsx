@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import '../html-css-template/css/style.css';
 import '../html-css-template/css/style-componentes.css';
-import api from '../Api'
+import '../html-css-template/css/style-list.css';
+import '../html-css-template/css/style-modais.css';
+import Api from '../Api'
 
 import Modal from "react-modal/lib/components/Modal";
-import ListaSalas from "../componentes/ListaSalas"
+import ListaSalas from "../componentes/listas/ListaSalas"
 
 Modal.setAppElement('#root')
 
@@ -15,7 +17,7 @@ function Sala() {
     const [andarSala, setAndarSala] = useState([])
 
     useEffect(() => {
-        api.get("/rooms")
+        Api.get("/rooms")
             .then(response => {
                 console.log(response.data)
                 setRooms(response.data)
@@ -25,9 +27,9 @@ function Sala() {
             })
     }, [])
 
-    function cadastrar(){
+    function cadastrar() {
         console.log(nomeSala + " " + andarSala)
-        api.post("/rooms", {
+        Api.post("/rooms", {
             name: nomeSala,
             floor: andarSala
         })
@@ -56,15 +58,18 @@ function Sala() {
     }
 
     const customStyles = {
+        overlay: {
+            backgroundColor: 'rgba(255, 255, 255, 0.75)'
+        },
         content: {
             width: '30%',
-            height: '35%',
+            height: '45%',
             top: '50%',
-            left: '50%',
+            left: '60%',
             right: 'auto',
             bottom: 'auto',
             marginRight: '-50%',
-            transform: 'translate(-50%, -50%)'
+            transform: 'translate(-50%, -50%)',
         }
     }
 
@@ -100,8 +105,8 @@ function Sala() {
 
                 <div className="list organiza-lista">
                     <ul>
-                        <table className="table-salas">
-                            <li className="title-list-salas">
+                        <table className="table-lista">
+                            <li className="title-lista">
                                 <thead>
                                     <tr>
                                         <th >Sala</th>
@@ -112,18 +117,17 @@ function Sala() {
                                     </tr>
                                 </thead>
                             </li>
-                            
+
                             {
-                                
                                 rooms.map(rooms => (
                                     <ListaSalas
-                                    name={rooms.name}
-                                    floor={rooms.floor}
-                                    idRoom={rooms.idRoom}
+                                        name={rooms.name}
+                                        floor={rooms.floor}
+                                        idRoom={rooms.idRoom}
 
                                     />
                                 ))
-                                
+
                             }
 
                         </table>
@@ -134,30 +138,26 @@ function Sala() {
             </div>
 
             <Modal
-                isOpen={modalIsOpen}
-                onRequstClose={handleCloseModal}
-                style={customStyles}
-            >
-                <button onClick={handleCloseModal}>close</button>
+                isOpen={modalIsOpen} onRequestClose={handleCloseModal} style={customStyles} >
+
+                <button onClick={handleCloseModal} className='btn-close'>X</button>
 
                 <h2>Cadastrar Salas</h2>
 
-                <div classNameName="containerl_modal">
+                <div>
 
                     <form onSubmit={cadastrar}>
 
                         <label htmlFor="">
                             <p>Nome:</p>
-                            <input type="text" value={nomeSala} onChange={e => setNomeSala(e.target.value)}/>
+                            <input type="text" value={nomeSala} onChange={e => setNomeSala(e.target.value)} />
                         </label> <br />
 
                         <label htmlFor="">
                             <p>Andar:</p>
-                            <input type="text" value={andarSala} onChange={e => setAndarSala(e.target.value)}/>
-                        </label>
-
-
-                        <button type="submit">Cadastrar</button>
+                            <input type="text" value={andarSala} onChange={e => setAndarSala(e.target.value)} />
+                        </label><br /><br />
+                        <button type="submit" className="btn-modal-escuro lado">Cadastrar</button>
 
                     </form>
 
@@ -169,10 +169,10 @@ function Sala() {
 
             <Modal
                 isOpen={modalAtualizarIsOpen}
-                onRequstClose={handleCloseModal}
+                onRequestClose={handleCloseModal}
                 style={customStyles}>
 
-                <button onClick={handleCloseModal}>close</button>
+                <button onClick={handleCloseModal} className='btn-close'>close</button>
 
                 <div classNameName="confirmacao">
 
@@ -181,7 +181,7 @@ function Sala() {
                     <div classNameName="confimacao_button">
                         <button classNameName="atualizar">Atualizar</button>
 
-                        <button classNameName="cancelar" onClick={handleCloseModal}>Cancelar</button>
+                        <button classNameName="btn-modal-escuro" onClick={handleCloseModal}>Cancelar</button>
                     </div>
                 </div>
 

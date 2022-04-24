@@ -88,11 +88,6 @@ nav {
     visibility: visible !important;
 }
 
-form {
-    width: 100%;
-    font-family: 'Readex Pro';
-}
-
 /* Estilização de INPUT */
 .input-fild {
     position: relative;
@@ -332,7 +327,7 @@ input::placeholder {
 /* Navbar que contém a lista para acesso as outras páginas, exemplo: home, cadastro... */
 .nav-esquerda {
     height: 89vh;
-    width: 20%;
+    min-width: 19.9%;
     background: rgb(30, 47, 59);
     background: linear-gradient(183deg, rgba(30, 47, 59, 1) 0%,
             rgba(43, 78, 103, 1) 47%, rgba(79, 116, 141, 1) 100%);

@@ -9,7 +9,7 @@ import ConteudoCadastrar from '../componentes/CadastrareEditar';
 import ConteudoPainel from '../componentes/PainelControle';
 import ConteudoConsumo from '../componentes/ConsumoEquipamento';
 import ConteudoResumo from '../componentes/ResumoConsumo';
-import ConteudoCentral from '../componentes/CentralAjuda';
+import ConteudoCentral from '../componentes/PainelControleSalas';
 import ConteudoSalas from "../componentes/Salas";
 
 function ItemNavbar(props) {

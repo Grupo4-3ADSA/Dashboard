@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import '../html-css-template/css/style.css';
-import '../html-css-template/css/style-componentes.css'
-import atencao from '../html-css-template/imagens/atencao.png';
+import '../../html-css-template/css/style.css';
+import '../../html-css-template/css/style-componentes.css';
+import '../../html-css-template/css/style-modais.css';
+
+import atencao from '../../html-css-template/imagens/atencao.png';
 import Modal from "react-modal/lib/components/Modal";
-import api from '../Api'
+import Api from '../../Api'
 
 function ListaSalas(props) {
 
@@ -14,7 +16,7 @@ function ListaSalas(props) {
 
         if (typeof idSalaSelecionada !== "undefined") {
 
-            api.delete(`/rooms/${idSalaSelecionada}/`)
+            Api.delete(`/rooms/${idSalaSelecionada}/`)
                 .then(() => {
                     console.log("excluido com sucesso")
                 })
@@ -25,7 +27,7 @@ function ListaSalas(props) {
     function atualizar(idSalaSelecionada) {
         if (typeof idSalaSelecionada !== "undefined") {
 
-            api.put(`/rooms/${idSalaSelecionada}/`, {
+            Api.put(`/rooms/${idSalaSelecionada}/`, {
                 name: nomeSala,
                 floor: andarSala
             })
@@ -60,15 +62,19 @@ function ListaSalas(props) {
     }
 
     const customStyles = {
+        overlay: {
+            backgroundColor: 'rgba(255, 255, 255, 0.75)'
+        },
         content: {
             width: '30%',
-            height: '35%',
+            height: '45%',
             top: '50%',
-            left: '50%',
+            left: '60%',
             right: 'auto',
             bottom: 'auto',
             marginRight: '-50%',
-            transform: 'translate(-50%, -50%)'
+            transform: 'translate(-50%, -50%)',
+            alingItens: 'center'
         }
     }
 
@@ -88,23 +94,19 @@ function ListaSalas(props) {
                     </tr>
                 </thead>
             </li>
-            
+
             <Modal
                 isOpen={modalDeletarIsOpen}
                 onRequstClose={handleCloseModal}
                 style={customStyles}>
 
-                <button onClick={handleCloseModal}>close</button>
+                <button className="btn-close" onClick={handleCloseModal}>X</button>
 
-                <div classNameName="confirmacao">
+                <h1>Tem certeza que deseja deletar a sala?</h1>
 
-                    <h1>Tem certeza que deseja deletar a sala?</h1>
-
-                    <div classNameName="confimacao_button">
-                        <button classNameName="atualizar" onClick={() => deletar(idSalaSelecionada)}>Deletar</button>
-
-                        <button classNameName="cancelar" onClick={handleCloseModal}>Cancelar</button>
-                    </div>
+                <div >
+                    <button onClick={() => deletar(idSalaSelecionada)} className="btn-modal-escuro">Deletar</button>
+                    <button onClick={handleCloseModal} className="btn-modal">Cancelar</button>
                 </div>
 
 
@@ -115,7 +117,7 @@ function ListaSalas(props) {
                 onRequstClose={handleCloseModal}
                 style={customStyles}
             >
-                <button onClick={handleCloseModal}>close</button>
+                <button onClick={handleCloseModal} className="btn-close">X</button>
 
                 <h2>Editar-Sala A | Andar: 1</h2>
 
@@ -134,9 +136,9 @@ function ListaSalas(props) {
                         </label>
 
                         <div classNameName="botoes">
-                            <button classNameName="atualizar" type="submit" onClick={() => atualizar(idSalaSelecionada)}>Atualizar</button>
+                            <button className="btn-modal-escuro" type="submit" onClick={() => atualizar(idSalaSelecionada)}>Atualizar</button>
 
-                            <button classNameName="deletar">cancelar</button>
+                            <button className="btn-modal">Cancelar</button>
                         </div>
 
                     </form>
