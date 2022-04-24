@@ -11,7 +11,7 @@ function Consumo(props) {
                 <h2 className="h2-titulo">Equipamentos com mias consumo</h2>
 
 
-                    <select name="select-predio" className="select-maior">
+                    <select name="select-predio" className="select-maior ">
                         <img src="" alt="" />
                         <option value="valor1" selected >Predio 1 - Haddock Lobo 595</option>
                         <option value="valor2">Valor 2</option>

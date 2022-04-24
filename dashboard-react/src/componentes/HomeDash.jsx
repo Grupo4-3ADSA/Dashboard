@@ -52,8 +52,7 @@ function Home(props) {
                         <h2 className= "title-list">Salas que estão mais consumindo neste momento:</h2>
                         <div className="list">
                             <ul>
-                            {
-                                
+                            { 
                                 rooms.map(rooms => (
                                     <ListaHome
                                     name={rooms.name}
@@ -61,7 +60,6 @@ function Home(props) {
 
                                     />
                                 ))
-                                
                             }                         
                             </ul>
                         </div>

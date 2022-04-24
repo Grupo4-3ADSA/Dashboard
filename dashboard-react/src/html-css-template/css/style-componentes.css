@@ -33,6 +33,20 @@ button {
     cursor: pointer;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--cinza-terciary) !important;
+    font-size: 16px;
+    height: 34px;
+    outline: none;
+    border: 1px solid var(--off-white);
+    appearance: none;
+    padding-left: 5px;
+    margin-left: 2%;
+    text-align: left;
+}
+
 /* Componente HomeDash */
 .container-conteudo {
     margin-top: 15px;
@@ -132,19 +146,7 @@ button {
 
 
 /*  Componente salas */
-.container-conteudo select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-color: var(--cinza-terciary);
-    font-size: 16px;
-    height: 34px;
-    outline: none;
-    border: 1px solid var(--off-white);
-    appearance: none;
-    padding-left: 5px;
-    margin-left: 2%;
-    text-align: left;
-}
+
 
 .select-maior {
     width: 24%;
@@ -311,10 +313,17 @@ button {
 .conteudo-chart {
     height: 80vh;
     overflow-y: scroll;
+    text-align: left !important;
+    align-items: left;
+}
+
+.conteudo-chart select{
+    margin-left: 4% !important;
 }
 
 .conteudo-chart button {
-    margin: auto !important;
+    margin: 10px !important;
+    border-radius: 0px;
 }
 
 .conteudo-chart .container-conteudo {
