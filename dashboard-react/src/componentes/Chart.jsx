@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Chart from "react-google-charts";
+
 const data = [
   ['Year', 'Mês', { role: 'style' } ],
   ['Jan', 15.000, 'color: #2E495C'],
@@ -15,6 +16,7 @@ const data = [
   ['Nov', 15.000, 'color: #2E495C'],
   ['Dez', 13.000, 'color: #2E495C'],
 ];
+
 class GoogleChart extends Component {
   
   constructor(props) {
@@ -22,11 +24,11 @@ class GoogleChart extends Component {
   }
   render() {
       return (
-          <div className="container mt-5">
-              <h3>Google Column Chart in React Js</h3>  
+          <div className="box-chart mt-1">
+              <h3>Gráfico de consumo R$</h3>  
               <Chart
                   width={550}
-                  height={250}
+                  height={260}
                   data={data}
                   chartType="ColumnChart"
                   loader={<div>Loading Chart...</div>}                

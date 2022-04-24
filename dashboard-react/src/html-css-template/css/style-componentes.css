@@ -40,7 +40,6 @@ button {
     align-items: center;
     text-align: center;
     justify-content: center;
-
 }
 
 .btns-direcionar {
@@ -283,7 +282,7 @@ button {
 }
 
 /* /Componente Central de Ajuda */
-.container-central{
+.container-central {
     margin-left: 4%;
     margin-top: 5%;
 }
@@ -296,7 +295,7 @@ button {
     margin-bottom: 20px;
 }
 
-.container-central .btn-central-maior{
+.container-central .btn-central-maior {
     margin-top: 20px;
     width: 30%;
     height: 8vh;
@@ -306,6 +305,30 @@ button {
 .container-central button {
     margin: auto !important;
     border-radius: 2px;
+}
+
+/* Componente resumo consumo*/
+.conteudo-chart {
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.conteudo-chart button {
+    margin: auto !important;
+}
+
+.conteudo-chart .container-conteudo {
+    align-items: left;
+}
+.conteudo-chart image{
+    height:100%;
+}
+
+.box-chart {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 50%;
 }
 
 
