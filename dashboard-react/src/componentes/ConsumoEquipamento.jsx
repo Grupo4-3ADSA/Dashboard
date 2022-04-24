@@ -1,9 +1,26 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import '../html-css-template/css/style.css';
 import '../html-css-template/css/style-componentes.css';
+import api from '../Api'
+import ListaEquipamentos from "./ListaEquipamentos";
 
 
 function Consumo(props) {
+
+    
+    const [equips, setEquips] = useState([]);
+
+    useEffect(() => {
+        api.get("/equipments")
+            .then(response => {
+                console.log(response.data)
+                setEquips(response.data)
+            })
+            .catch(erro => {
+                console.log(erro)
+            })
+    }, [])
+
     return (
         <>
             <div className="container-conteudo">
@@ -44,28 +61,19 @@ function Consumo(props) {
                                 </thead>
                             </li>
 
-                            <li>
-                                <thead >
-                                    <tr>
-                                        <td class="td-lista">Ar-Condicionado</td>
-                                        <td class="td-lista">A</td>
-                                        <td class="td-lista">1°</td>
-                                        <td class="td-lista">Ligado</td>
-                                        <td class="td-lista"><a href="/">Acessar</a> </td>
-                                    </tr>
-                                </thead>
-                            </li>
-                            <li>
-                                <thead >
-                                    <tr>
-                                        <td class="td-lista">Ar-Condicionado</td>
-                                        <td class="td-lista">A</td>
-                                        <td class="td-lista">1°</td>
-                                        <td class="td-lista">Ligado</td>
-                                        <td class="td-lista"><a href="/">Acessar</a> </td>
-                                    </tr>
-                                </thead>
-                            </li>
+                            {
+                                
+                                equips.map(equips => (
+                                    <ListaEquipamentos
+                                    name={equips.name}
+                                    floor={equips.floor}
+                                    idRoom={equips.idRoom}
+
+                                    />
+                                ))
+                                
+                            }
+                            
                         </table>
                     </ul>
 
