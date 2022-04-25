@@ -7,7 +7,6 @@ import api from '../Api'
 
 function Consumo(props) {
 
-
     const [equips, setEquips] = useState([]);
 
     useEffect(() => {

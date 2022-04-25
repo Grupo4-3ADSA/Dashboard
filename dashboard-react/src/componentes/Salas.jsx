@@ -6,7 +6,7 @@ import '../html-css-template/css/style-modais.css';
 import Api from '../Api'
 
 import Modal from "react-modal/lib/components/Modal";
-import ListaSalas from "../componentes/Listas/ListaSalas"
+import ListaSalas from "../componentes/listas/ListaSalas"
 
 Modal.setAppElement('#root')
 
@@ -17,7 +17,7 @@ function Sala() {
     const [andarSala, setAndarSala] = useState([])
 
     useEffect(() => {
-        Api.get("/rooms")
+        Api.Api.get("/rooms")
             .then(response => {
                 console.log(response.data)
                 setRooms(response.data)
@@ -29,9 +29,12 @@ function Sala() {
 
     function cadastrar() {
         console.log(nomeSala + " " + andarSala)
-        Api.post("/rooms", {
+        Api.Api.post("/rooms", {
             name: nomeSala,
             floor: andarSala
+        })
+        .then(response => {
+            console.log(response.status)
         })
     }
 

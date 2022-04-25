@@ -15,11 +15,14 @@ function ListaSalas(props) {
     function deletar(idSalaSelecionada) {
 
         if (typeof idSalaSelecionada !== "undefined") {
-
-            Api.delete(`/rooms/${idSalaSelecionada}/`)
+            Api.Api.delete(`/rooms/${idSalaSelecionada}/`)
                 .then(() => {
                     console.log("excluido com sucesso")
+                    setDeletarIsOpen(false)
+                    document.location.reload(true);
                 })
+                
+    
         }
 
     }
@@ -27,13 +30,13 @@ function ListaSalas(props) {
     function atualizar(idSalaSelecionada) {
         if (typeof idSalaSelecionada !== "undefined") {
 
-            Api.put(`/rooms/${idSalaSelecionada}/`, {
+            Api.Api.put(`/rooms/${idSalaSelecionada}/`, {
                 name: nomeSala,
                 floor: andarSala
             })
-                .then(() => {
-                    console.log("Atualizado com sucesso")
-                })
+            .then(() => {
+                console.log("Atualizado com sucesso")
+            })
 
         }
 
