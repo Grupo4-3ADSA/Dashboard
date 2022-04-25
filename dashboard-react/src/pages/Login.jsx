@@ -3,10 +3,23 @@ import '../html-css-template/css/style.css';
 import logoOncln from '../html-css-template/imagens/logo-cln.png'
 import fundoLogin from '../html-css-template/imagens/fundo-login.png'
 import {useNavigate} from 'react-router-dom'
+import autentica from '../Api'
 
 function Login(props) {
     const navigate = useNavigate();
 
+    function autenticacao(login, senha) {
+        if (typeof IdEquipamento !== "undefined") {
+
+            autentica.ApiLogin.Post(`autenticacao`, {
+            })
+                .then(() => {
+                    console.log("Atualizado com sucesso")
+                })
+                navigate("/dash-generico")
+        }
+
+    }
 
     return (
         <>
@@ -40,7 +53,7 @@ function Login(props) {
 
                             <h4>Esqueceu sua senha?</h4>
                 
-                            <button class="btn" onClick={()=> navigate("/dash-generico")}>Entrar</button>
+                            <button class="btn" onClick={()=> autentica()}>Entrar</button>
                         </form>
                     </div>
                 </div>

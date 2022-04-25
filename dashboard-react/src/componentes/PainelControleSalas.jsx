@@ -2,8 +2,23 @@ import React, { useState, useEffect } from "react";
 import '../html-css-template/css/style.css';
 import '../html-css-template/css/style-componentes.css';
 import '../html-css-template/css/style-list.css';
+import apiCln from '../Api'
 
 function PainelSalas(props) {
+
+    function atualizar(IdEquipamento) {
+        if (typeof IdEquipamento !== "undefined") {
+
+            apiCln.ApiCln.get(`atividade-luz-sala/${IdEquipamento}`, {
+            })
+                .then(() => {
+                    console.log("Atualizado com sucesso")
+                })
+
+        }
+
+    }
+
     return (
         <>
             <div className="container-conteudo">
@@ -31,7 +46,7 @@ function PainelSalas(props) {
                                         <td class="td-lista"> <div class="label">
                                             <label class="switch">
                                                 <input type="checkbox" />
-                                                <span class="slider round"></span>
+                                                <span class="slider round" onClick={() => (atualizar(1))}></span>
                                             </label>
                                         </div></td>
                                         <td class="td-lista"><a href="/">Acessar</a></td>

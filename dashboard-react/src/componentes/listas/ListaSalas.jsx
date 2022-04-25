@@ -63,7 +63,7 @@ function ListaSalas(props) {
 
     const customStyles = {
         overlay: {
-            backgroundColor: 'rgba(255, 255, 255, 0.75)'
+            backgroundColor: 'rgba(24, 24, 24, 0.822)'
         },
         content: {
             width: '30%',
@@ -74,7 +74,8 @@ function ListaSalas(props) {
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            alingItens: 'center'
+            alingItens: 'center', 
+            boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.25)',
         }
     }
 
@@ -106,7 +107,7 @@ function ListaSalas(props) {
 
                 <div >
                     <button onClick={() => deletar(idSalaSelecionada)} className="btn-modal-escuro">Deletar</button>
-                    <button onClick={handleCloseModal} className="btn-modal">Cancelar</button>
+                    <button className="btn-modal" onClick={handleCloseModal}>Cancelar</button>
                 </div>
 
 
@@ -138,7 +139,7 @@ function ListaSalas(props) {
                         <div classNameName="botoes">
                             <button className="btn-modal-escuro" type="submit" onClick={() => atualizar(idSalaSelecionada)}>Atualizar</button>
 
-                            <button className="btn-modal">Cancelar</button>
+                            <button onClick={handleCloseModal} className="btn-modal">Cancelar</button>
                         </div>
 
                     </form>

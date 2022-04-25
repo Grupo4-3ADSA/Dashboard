@@ -6,7 +6,7 @@ import '../html-css-template/css/style-modais.css';
 import Api from '../Api'
 
 import Modal from "react-modal/lib/components/Modal";
-import ListaSalas from "../componentes/listas/ListaSalas"
+import ListaSalas from "../componentes/Listas/ListaSalas"
 
 Modal.setAppElement('#root')
 

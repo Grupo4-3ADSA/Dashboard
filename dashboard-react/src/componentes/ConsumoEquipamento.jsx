@@ -3,8 +3,7 @@ import '../html-css-template/css/style.css';
 import '../html-css-template/css/style-componentes.css';
 import '../html-css-template/css/style-list.css';
 import api from '../Api'
-import ListaEquipamentos from "../componentes/listas/ListaEquipamentos";
-
+/* import ListaEquipamentos from "../componentes/listas/ListaEquipamentos"; */
 
 function Consumo(props) {
 
@@ -12,7 +11,7 @@ function Consumo(props) {
     const [equips, setEquips] = useState([]);
 
     useEffect(() => {
-        api.get("/equipments")
+        api.Api.get("/equipments")
             .then(response => {
                 console.log(response.data)
                 setEquips(response.data)
@@ -133,20 +132,20 @@ function Consumo(props) {
                                     </tr>
                                 </thead>
                             </li>
-                         
-                            {/*   {
 
-                                equips.map(equips => (
-                                    <ListaEquipamentos
-                                        name={equips.name}
-                                        floor={equips.floor}
-                                        idRoom={equips.idRoom}
+                            {/*{
 
-                                    />
-                                ))
+                                    equips.map(equips => (
+                                        <ListaEquipamentos
+                                            name={equips.name}
+                                            floor={equips.floor}
+                                            idRoom={equips.idRoom}
 
-                            }
- */}
+                                        />
+                                    ))
+
+                                }
+                            */}
                         </table>
                     </ul>
 
