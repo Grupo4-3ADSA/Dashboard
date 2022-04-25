@@ -12,6 +12,7 @@ function EditarCadastrar() {
 
     return (
         <>
+        
             <div className="container-conteudo">
                 <div className="box-btn-cadastro">
                     <h2 className="h2-titulo">Cadastrar ou editar</h2>

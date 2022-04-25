@@ -50,7 +50,6 @@ function ListaSalas(props) {
     function handleOpenModalAtualizar(idSala) {
         idSalaSelecionada = idSala
         setAtualizarIsOpen(true)
-
     }
 
     function handleOpenModalDeletar(idSala) {

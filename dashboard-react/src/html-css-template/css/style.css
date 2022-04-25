@@ -161,7 +161,7 @@ h2::before {
     position: absolute;
     height: 4px;
     width: 10%;
-    bottom: 1px;
+    bottom: -1px;
     border-radius: 8px;
     background: linear-gradient(90deg, var(--blue-dark) 50%,
             rgba(172, 184, 191, 0) 97.71%);

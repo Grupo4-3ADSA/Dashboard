@@ -6,7 +6,7 @@ import ImgPainelControle from '../html-css-template/imagens/painel-controle.png'
 import ImgCentralAjuda from '../html-css-template/imagens/central-ajuda.png';
 import ImgRelatorio from '../html-css-template/imagens/relatorio.png';
 import ImgCadastrarEditar from '../html-css-template/imagens/edicad.png';
-import ListaHome from "../componentes/listas/ListaHome";
+import ListaHome from "../componentes/Listas/ListaHome";
 
 function Home(props) {
 

@@ -6,7 +6,7 @@ import '../html-css-template/css/style-modais.css';
 import Api from '../Api'
 
 import Modal from "react-modal/lib/components/Modal";
-import ListaSalas from "../componentes/listas/ListaSalas"
+import ListaSalas from "../componentes/Listas/ListaSalas"
 
 Modal.setAppElement('#root')
 
@@ -27,15 +27,31 @@ function Sala() {
             })
     }, [])
 
-    function cadastrar() {
+    function fechar() {
+        document.getElementById('resposta').style.display = "none"
+    }
+
+    
+    function cadastrar(event) {
+        event.preventDefault()
         console.log(nomeSala + " " + andarSala)
         Api.Api.post("/rooms", {
             name: nomeSala,
             floor: andarSala
         })
-        .then(response => {
-            console.log(response.status)
-        })
+            .then(response => {
+                document.getElementById('resposta').style.display = "block"
+                handleCloseModal()
+                setTimeout(fechar, 5000)
+                console.log(response.status)
+
+
+            })
+            .catch(erro => {
+                console.log(erro)
+                document.getElementById('respostaDeuErro').style.display = "block"
+            })
+
     }
 
     const [modalIsOpen, setIsOpen] = useState(false)
@@ -44,7 +60,6 @@ function Sala() {
 
     function handleOpenModal() {
         setIsOpen(true)
-
     }
 
 
@@ -62,7 +77,7 @@ function Sala() {
 
     const customStyles = {
         overlay: {
-            backgroundColor: 'rgba(255, 255, 255, 0.75)'
+            backgroundColor: 'rgba(24, 24, 24, 0.822)'
         },
         content: {
             width: '30%',
@@ -79,6 +94,10 @@ function Sala() {
     return (
 
         <>
+            <div id="resposta" class="div-deu-certo" >
+                <h3>Cadastrado com sucesso!!!</h3>
+            </div>
+
             <div className="container-conteudo">
 
                 <h2 className="h2-titulo">Salas cadastradas</h2>
@@ -177,14 +196,14 @@ function Sala() {
 
                 <button onClick={handleCloseModal} className='btn-close'>close</button>
 
-                <div classNameName="confirmacao">
+                <div className="confirmacao">
 
                     <h1>Tem certeza que deseja atualizar as informações dessa sala?</h1>
 
-                    <div classNameName="confimacao_button">
-                        <button classNameName="atualizar">Atualizar</button>
+                    <div className="confimacao_button">
+                        <button className="atualizar">Atualizar</button>
 
-                        <button classNameName="btn-modal-escuro" onClick={handleCloseModal}>Cancelar</button>
+                        <button className="btn-modal-escuro" onClick={handleCloseModal}>Cancelar</button>
                     </div>
                 </div>
 

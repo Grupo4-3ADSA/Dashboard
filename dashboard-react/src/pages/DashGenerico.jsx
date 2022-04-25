@@ -17,7 +17,7 @@ function ItemNavbar(props) {
     const [conteudo, setConteudo] = useState([<ConteudoHome />]);
 
     const data = [{
-        "name": ["Home", "Cadastrar/Editar", "Salas", "Painel de Controle",
+        "name": ["Home" , "Cadastrar/Editar", "Salas", "Painel de Controle",
             "Consumo/Equipamento", "Resumo de Consumo", "Central de Ajuda"]
     }]
     const listItems = data.map((d) => <ul>{d.name.map((a) => <li key={a} onClick={() => clicado(a)}>{a}</li>)} </ul>)
