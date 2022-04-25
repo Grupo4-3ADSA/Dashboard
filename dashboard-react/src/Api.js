@@ -4,11 +4,11 @@ const Api = axios.create({
     baseURL: "http://localhost:8002/"
 });
 const ApiCln = axios.create({
-    baseURL: "http://192.168.1.36/registros/"
+    baseURL: "http://localhost/registros/"
 });
 
 const ApiLogin = axios.create({
-    baseURL: "http://192.168.1.36:1234/usuarios/"
+    baseURL: "http://localhost:1234/usuarios/"
 });
 
 

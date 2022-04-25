@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import '../html-css-template/css/style.css';
 import logoOncln from '../html-css-template/imagens/logo-cln.png'
 import fundoLogin from '../html-css-template/imagens/fundo-login.png'
@@ -11,20 +11,19 @@ function Login(props) {
     const [login, setLogin] = useState([])
     const [senha, setSenha] = useState([])
 
-    function autenticacao(login, senha) {
-
-        navigate("/dash-generico")
-
+    function autenticacao(e) {
+        e.preventDefault();
         autentica.ApiLogin.post("/autenticacao", {
             login: login,
             senha: senha
         })
             .then(response => {
-                if (response.status == 200) {
+                if (response.status === 200) {
                     console.log("Login feito com sucesso")
                     navigate("/dash-generico")
                 } else{
                     console.log("login deu errado irmao" + response.status)
+                    document.getElementById('senha').style.borderColor = 'red'
                 }
 
             })
@@ -55,7 +54,7 @@ function Login(props) {
                             </div>
                             <div class="formAcess">
                                 <label for="name" class="input-fild senha">
-                                    <input type="text" id="nomeEmpresa" name="senha" defaultValue={senha}
+                                    <input type="password" id="senha" name="senha" defaultValue={senha}
                                         placeholder="Senha:" required minlength="4" onChange={e => setSenha(e.target.value)} />
                                     <div class="underline"></div>
                                 </label>
