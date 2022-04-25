@@ -39,7 +39,6 @@ function Sala() {
     }
 
     const [modalIsOpen, setIsOpen] = useState(false)
-    const [modalEditIsOpen, setEditIsOpen] = useState(false)
     const [modalAtualizarIsOpen, setAtualizarIsOpen] = useState(false)
 
     function handleOpenModal() {
@@ -48,15 +47,8 @@ function Sala() {
     }
 
 
-    function handleOpenModalAtualizar() {
-        setAtualizarIsOpen(true)
-        setEditIsOpen(false)
-
-    }
-
     function handleCloseModal() {
         setIsOpen(false)
-        setEditIsOpen(false)
         setAtualizarIsOpen(false)
     }
 

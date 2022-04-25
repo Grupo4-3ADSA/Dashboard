@@ -23,6 +23,7 @@ function Login(props) {
                     navigate("/dash-generico")
                 } else{
                     console.log("login deu errado irmao" + response.status)
+                    document.getElementById('senha').style.borderColor = 'red'
                 }
 
             })
@@ -53,7 +54,7 @@ function Login(props) {
                             </div>
                             <div class="formAcess">
                                 <label for="name" class="input-fild senha">
-                                    <input type="password" id="nomeEmpresa" name="senha" defaultValue={senha}
+                                    <input type="password" id="senha" name="senha" defaultValue={senha}
                                         placeholder="Senha:" required minlength="4" onChange={e => setSenha(e.target.value)} />
                                     <div class="underline"></div>
                                 </label>

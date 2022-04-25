@@ -103,6 +103,7 @@ nav {
     color: var(--cinza-dark);
     outline: 0;
     border: solid var(--blue-dark) 0px;
+    
 }
 
 .input-fild input::placeholder {
