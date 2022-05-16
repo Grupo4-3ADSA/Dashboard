@@ -1,0 +1,550 @@
+:root {
+    --blue: #20577D;
+    --blue-dark: #0d283b;
+    --blue-dark2: #071b29;
+    --off-white: #F2F2F2;
+    --pure-black: #000000;
+    --font-defaut: 'Readex Pro', normal;
+    --light-color: #f2f2f2;
+    --light-color-2: #8f8f8f;
+    --cinza-primary: #757575;
+    --cinza-secondary: #BBBBBB;
+    --cinza-terciary: #F0F0F0;
+    --cinza-dark: #2c2c2c;
+    --color-graditent: rgb(32, 87, 125), linear-gradient(86deg, rgba(32, 87, 125, 1) 0%, rgba(93, 155, 197, 1) 100%);
+}
+
+body {
+    font-family: var(--font-defaut);
+}
+
+a {
+    text-decoration: none;
+    
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+h1 {
+    margin-left: 10%;
+    margin-top: 0%;
+}
+
+h2 {
+    font-weight: 300;
+    font-family: var(--font-defaut);
+    font-style: normal;
+    margin: 0 0 1rem 0;
+    position: relative;
+    align-items: center;
+    margin-left: 44px;
+}
+
+h2::before {
+    content: '';
+    font-family: 'Readex Pro';
+    position: absolute;
+    height: 4px;
+    width: 10%;
+    bottom: -1px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--blue-dark) 50%,
+            rgba(172, 184, 191, 0) 97.71%);
+}
+
+h4 {
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: var(--blue);
+    font-family: var(--font-defaut);
+    margin: 25px 0 25px 0;
+}
+
+link {
+    text-decoration: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: var(--cinza-terciary) !important;
+    font-size: 16px;
+    height: 34px;
+    outline: none;
+    border: 1px solid var(--off-white);
+    appearance: none;
+    padding-left: 5px;
+    margin-left: 4%;
+    text-align: left;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    /* background-color: tomato; */
+}
+
+.btn {
+    align-items: center;
+    text-align: center;
+    height: 35px;
+    width: 60%;
+    color: var(--off-white);
+    background: rgb(13, 40, 59);
+    background: linear-gradient(94deg, rgba(13, 40, 59, 1) 0%, rgba(167, 188, 201, 1) 100%);
+    border: none;
+    border-radius: 50px;
+
+    letter-spacing: 0.02em;
+    font-size: 14px;
+    font-family: var(--font-defaut);
+    font-weight: 500;
+    cursor: pointer;
+    margin: auto;
+}
+
+/* Navbar do login*/
+
+nav {
+    height: 80px;
+    width: 100%;
+}
+
+.logo {
+    margin-top: 15px;
+    height: 50px;
+}
+
+/* Login */
+.login-content {
+    display: flex;
+    min-height: 450px;
+    align-items: center;
+    text-align: center;
+}
+
+.login-img {
+    width: 60%;
+    margin: 0 30px 0 0;
+}
+
+/* Formulario Login */
+.formulario {
+    width: 100%;
+    /* Animação */
+    animation-name: slideDown;
+    -webkit-animation-name: slideDown;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-timing-function: ease;
+    -webkit-animation-timing-function: ease;
+    visibility: visible !important;
+
+
+}
+
+/* Estilização de INPUT */
+.input-fild {
+    position: relative;
+}
+
+.input-fild input {
+    width: 90%;
+    height: 15px;
+    background: none;
+    margin: 20px 0 10px 0;
+    font-family: var(--font-defaut);
+    font-size: 0.9rem;
+    color: var(--cinza-dark);
+    outline: 0;
+    border: solid var(--blue-dark) 0px;
+}
+
+.input-fild input::placeholder {
+    color: rgba(138, 138, 138, 0.733);
+}
+
+.input-fild .underline::before {
+    content: "";
+    position: absolute;
+    height: 0.5px;
+    width: 100%;
+    left: 0;
+    background-color: rgb(92, 91, 91);
+    border-radius: 10px;
+}
+
+.input-fild .underline::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    background: linear-gradient(86deg, rgba(32, 87, 125, 1) 0%, rgba(93, 155, 197, 1) 100%);
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.input-fild input:focus~.underline::after {
+    transform: scaleX(1);
+}
+
+::-webkit-input-placeholder {
+    color: rgba(83, 83, 83, 0.822);
+    font-weight: bold;
+}
+
+.senha {
+    background: rgba(255, 255, 255, 0) url(../imagens/ver.png) no-repeat 45% center;
+}
+
+/* Estilo Dash genérico */
+.box-dashboard img {
+    height: 20px;
+}
+
+/* Essa class serve para colocar todas navbar superiores lado a lado */
+.superior {
+    display: flex;
+    box-shadow: 0px 5px 15px var(--cinza-primary);
+    border-radius: 20px;
+}
+
+/* Navbar que contém o ícone Oncln */
+.nav-superior-esquerda {
+    height: 8vh;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    border-radius: 10px 0 0 0;
+    background-color: var(--blue-dark);
+    justify-content: center;
+    box-shadow: 0px 5px 10px var(--blue-dark2);
+}
+
+.nav-superior-esquerda img {
+    height: 60%;
+}
+
+/* Navbar central */
+.nav-superior-central {
+    height: 8vh;
+    width: 62%;
+    align-items: center;
+    display: flex;
+    background: rgb(17, 45, 65);
+    background: linear-gradient(86deg, rgba(17, 45, 65, 1) 0%, rgba(58, 100, 130, 1) 100%);
+}
+
+/* Estilizar input pesquisar */
+.nav-superior-central input {
+    margin: 0 0 0 20px;
+    width: 25%;
+    height: 20px;
+    padding: 2px 0 0 35px;
+    color: var(--light-color);
+    font-family: var(--font-defaut);
+    font-size: 0.9rem;
+    box-shadow: none;
+    outline: 0;
+    border: solid var(--blue-dark) 0px;
+    border-bottom: solid var(--cinza-primary) 1px;
+    background: rgba(255, 255, 255, 0) url(../imagens/lupa.png) no-repeat 2% center;
+}
+
+input::placeholder {
+    color: var(--cinza-primary);
+}
+
+/* Navbar superior esquerdo que contém os dados do usuário junto ao icones confi e sino */
+.nav-info {
+    height: 8vh;
+    width: 18%;
+    border-radius: 0 10px 0 0;
+    align-items: center;
+    display: flex;
+    border-left: solid var(--light-color) 1px;
+    background: rgba(58, 100, 130, 1) 100%;
+    padding: 0 0 0 10px;
+    color: var(--light-color);
+}
+
+/* Edição de imagens */
+.nav-info .user {
+    height: 35px;
+    margin: 0 0 0 10px;
+    border-right: solid var(--light-color) 1px;
+    padding: 0 10px 0 0;
+}
+
+.nav-info .config {
+    height: 20px;
+    margin: 0 0 0 10px;
+}
+
+/* Navbar que contém a lista para acesso as outras páginas, exemplo: home, cadastro... */
+.nav-esquerda {
+    height: 89vh;
+    width: 20%;
+    background: rgb(30, 47, 59);
+    background: linear-gradient(183deg, rgba(30, 47, 59, 1) 0%,
+            rgba(43, 78, 103, 1) 47%, rgba(79, 116, 141, 1) 100%);
+    display: flex;
+    border-radius: 0 0 0 10px;
+    align-items: center;
+    box-shadow: 0px 5px 20px var(--cinza-dark);
+    float: left;
+}
+
+/* Lista navbar */
+.list-nav-esqueda li {
+    list-style-type: none;
+    margin-bottom: 28px;
+    font-family: 'Readex Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    cursor: pointer;
+    color: var(--light-color);
+}
+
+.list-nav-esqueda a {
+    color: var(--cinza-terciary);
+}
+
+/* Parte onde ficará os conteúdos de cada etapa da dash, exemplo: Home Dash */
+.conteudo {
+    width: 80%;
+    height: 89vh;
+    border-radius: 0 0 10px 0;
+    box-shadow: 0px 5px 20px var(--cinza-dark);
+    float: right;
+}
+
+.conteudo img {
+    margin: 1% 0 0 5%;
+    height: 7%;
+    cursor: pointer;
+}
+
+.h2-titulo {
+    text-align: left;
+    margin-top: 50px;
+}
+
+.btns-direcionar {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.direcionar{
+    width: 19%;
+    height: 21vh;
+    background-color: var(--light-color);
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 25%);
+    text-align: center;
+    padding-top: 1%;
+}
+
+.direcionar img {
+    height: 55%;
+    margin: 0 auto;
+}
+
+.box-salas {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+    border: solid var(--cinza-secondary) 1px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    margin-left: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    height: 50%;
+    background: rgb(32, 87, 125);
+    background: linear-gradient(187deg, rgba(32, 87, 125, 1) 0%, rgba(183, 206, 222, 1) 100%);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    margin-left: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    height: 50%;
+    background: rgb(32, 87, 125);
+    background: linear-gradient(187deg, rgba(32, 87, 125, 1) 0%, rgba(183, 206, 222, 1) 100%);
+}
+
+.box-salas li img {
+    align-items: stretch;
+    float: right;
+    margin: 10px 10px 0 0;
+}
+
+.box-salas li h3 {
+    margin: 40px 0 0 0;
+}
+
+/*  Componente salas */
+.select-maior {
+    width: 24%;
+    background: url(../imagens/seta-select.png) 96% / 5% no-repeat;
+}
+
+.select-menor {
+    width: 14%;
+    background: url(../imagens/seta-select.png) 96% / 10% no-repeat;
+}
+
+.btn-box-select {
+    margin-left: 20%;
+    width: 12%;
+    background-color: var(--blue-dark);
+    height: 34px;
+    color: var(--off-white);
+    border-radius: 5px;
+}
+
+/* Componente Cadastrar/Editar */
+.box-btn-cadastro {
+    text-align: left;
+}
+
+.box-btn-cadastro button {
+    width: 25%;
+    height: 18vh;
+    margin: 35px;
+    font-size: 100%;
+    font-weight: 600;
+    font-family: 'Readex Pro';
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25)
+}
+
+/* Componente consumo */
+
+.table-consumo td {
+    overflow: hidden;
+    width: 205px;
+    height: 45px;
+    word-break: normal;
+    font-size: 90%;
+}
+
+.organiza-lista .td-lista-equipamento {
+    padding: 10px 55px;
+}
+
+.table-consumo th {
+    font-size: 14px;
+    overflow: hidden;
+    width: 200px;
+    height: 45px;
+    word-break: normal;
+}
+
+/* /Componente Central de Ajuda */
+.container-central {
+    margin-left: 4%;
+    margin-top: 5%;
+}
+
+.container-central .btn-central {
+    width: 20%;
+    height: 8vh;
+    background-color: var(cinza-terciary);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+}
+
+.container-central .btn-central-maior {
+    margin-top: 20px;
+    width: 30%;
+    height: 8vh;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+.container-central button {
+    margin: auto !important;
+    border-radius: 2px;
+}
+
+/* Painel Controle Salas */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--blue);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--blue);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

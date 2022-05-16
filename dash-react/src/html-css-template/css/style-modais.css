@@ -1,0 +1,74 @@
+:root {
+    --cinza: #e0e0e0ce;
+}
+
+
+.btn-modal{
+    margin-left: 65%;
+    width: 35%;
+    background-color: var(--cinza);
+    height: 6vh;
+    color: var(--off-white);
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.30);  
+    text-align: center; 
+    margin-top: 5%;
+    margin-left: 30%;
+    color: var(--blue-dark);
+}
+
+.btn-modal-escuro{
+    margin-left: 65%;
+    width: 35%;
+    background-color: var(--blue-dark);
+    height: 6vh;
+    color: var(--off-white);
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.30);
+    margin: 0 ;
+}
+
+.lado{
+    margin-left: 67%;
+}
+
+form{
+    width: 100%;
+    background-color: rgba(37, 37, 37, 0.893) 100%;
+    margin-left: 8%;
+}
+
+.btn-close{
+    border: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    margin-left: 95%;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.modal{
+   display: none;
+}
+
+.modal-cadastro{
+   position: absolute;
+   align-items: center;
+   background-color: aliceblue;
+   width: 35%;
+}
+
+.modal-cadastro h4{
+    margin: 2% 0 2% 0;
+    position: left;
+}
+
+.modal-cadastro input{
+    width: 80%;
+    height: 5vh;
+    background: none;
+    font-family: var(--font-defaut);
+    font-size: 0.9rem;
+    color: var(--cinza-dark);
+    outline: 0;
+    border: solid var(--blue-dark) 0px;
+    background-color: var(--cinza);
+}

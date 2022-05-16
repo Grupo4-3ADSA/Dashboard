@@ -1,0 +1,135 @@
+/* Kay Frame para surgir formulário */
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    50% {
+        transform: translateY(8%);
+    }
+
+    65% {
+        transform: translateY(-4%);
+    }
+
+    80% {
+        transform: translateY(4%);
+    }
+
+    95% {
+        transform: translateY(-2%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@-webkit-keyframes slideDown {
+    0% {
+        -webkit-transform: translateY(-100%);
+    }
+
+    50% {
+        -webkit-transform: translateY(8%);
+    }
+
+    65% {
+        -webkit-transform: translateY(-4%);
+    }
+
+    80% {
+        -webkit-transform: translateY(4%);
+    }
+
+    95% {
+        -webkit-transform: translateY(-2%);
+    }
+
+    100% {
+        -webkit-transform: translateY(0%);
+    }
+}
+
+/* Mensagem de erro */
+
+.div-deu-certo {
+    height: 7vh;
+    width: 65vh;
+    background-color: rgb(67, 214, 123);
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    margin-left: 50vh;
+    margin-top: 1vh;
+    transition-delay: 250ms;
+    animation-name: slideLeft;
+    -webkit-animation-name: slideLeft;
+    animation-duration: 1s;
+    -webkit-animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    visibility: visible !important;
+    position: absolute;
+    display: none;
+}
+
+.div-deu-certo h3 {
+    margin: auto;
+    padding-top: 2%;
+}
+
+.div-deu-certo button {
+    height: 30px;
+    width: 50px;
+    background-color: #f3d4c8;
+    border-radius: 7px;
+    border: none;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: 100%;
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(150%);
+    }
+    50% {
+        transform: translateX(-8%);
+    }
+    65% {
+        transform: translateX(4%);
+    }
+    80% {
+        transform: translateX(-4%);
+    }
+    95% {
+        transform: translateX(2%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@-webkit-keyframes slideLeft {
+    0% {
+        -webkit-transform: translateX(150%);
+    }
+    50% {
+        -webkit-transform: translateX(-8%);
+    }
+    65% {
+        -webkit-transform: translateX(4%);
+    }
+    80% {
+        -webkit-transform: translateX(-4%);
+    }
+    95% {
+        -webkit-transform: translateX(2%);
+    }
+    100% {
+        -webkit-transform: translateX(0%);
+    }
+}

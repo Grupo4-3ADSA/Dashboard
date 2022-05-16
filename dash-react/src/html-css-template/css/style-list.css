@@ -1,0 +1,94 @@
+.box-list {
+    height: 41vh;
+    align-items: center;
+    width: 95%;
+}
+
+.li-box-salas {
+    border-radius: 10px;
+    height: 20vh !important;
+    width: 20% !important;
+    float: left;
+    cursor: pointer;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.list {
+    height: 30vh;
+    overflow-y: scroll;
+    width: 100%;
+    margin: auto;
+}
+
+.list li {
+    background-color: var(--cinza-terciary);
+    color: #000000;
+    margin: 10px;
+    list-style-type: none;
+
+    height: 8vh;
+    width: 98%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.list a{
+    color: var(--blue);
+}
+
+.organiza-lista ul {
+    padding-left: 0px !important;
+}
+
+.organiza-lista {
+    margin-top: 4%;
+    width: 96%;
+    height: 55vh;
+}
+
+.title-lista {
+    background-color: #f0f0f000 !important;
+}
+
+.table-lista th {
+    font-size: 14px;
+    overflow: hidden;
+    min-width: 180px;
+    height: 45px;
+    word-break: normal;
+}
+
+.table-lista td {
+    overflow: hidden;
+    min-width: 183px;
+    height: 42px;
+    word-break: normal;
+}
+
+.organiza-lista .td-lista {
+    text-align: center;
+    vertical-align: center;
+}
+
+.organiza-lista .td-lista-a {
+    padding: 10px 112px;
+}
+
+/* Estilo do tg editar e deletar */
+.organiza-lista .td-lista-editar-deletar {
+    display: flex;
+}
+
+.organiza-lista .td-lista-editar-deletar button {
+    padding-left: 18px;
+    width: 30%;
+}
+
+.organiza-lista .td-lista-editar-deletar .editar {
+    background: rgba(255, 255, 255, 0) url(../imagens/edit.png) no-repeat 2% center;
+}
+
+.organiza-lista .td-lista-editar-deletar .deletar {
+    background: rgba(255, 255, 255, 0) url(../imagens/trash.png) no-repeat 2% center;
+}
