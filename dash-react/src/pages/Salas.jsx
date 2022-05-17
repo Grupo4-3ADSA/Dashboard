@@ -14,10 +14,8 @@ import Modal from '../componentes/modais/ModalCadastro'
 
 function Sala() {
     /* Abre modal */
-
-    function AbreModal() {
-        document.getElementById('modal').style.display = "block";
-    }
+    const [showElement, setShowElement] = useState(false)
+    const showOrHide = () => setShowElement(true)
 
     const navigate = useNavigate();
 
@@ -38,6 +36,9 @@ function Sala() {
 
     return (
         <>
+            {showElement ?
+                <Modal closeModal={() => setShowElement(false)} />
+                : <></>}
             <div clas="container">
                 <div class="superior">
                     <NavSupEsquerdo />
@@ -54,7 +55,7 @@ function Sala() {
                     <h2>Salas cadastradas</h2>
                     <Selects />
 
-                    <button className="btn-box-select" onClick={AbreModal} >Cadastrar Sala</button>
+                    <button className="btn-box-select" onClick={showOrHide} >Cadastrar Sala</button>
 
                     <div className="list organiza-lista">
                         <ul>
@@ -83,13 +84,8 @@ function Sala() {
                         </ul>
                     </div>
                 </div>
-
-                <div className="modal" id="modal"><Modal /></div>
-
             </div>
-
         </>
-
     )
 
 }
