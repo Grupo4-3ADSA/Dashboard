@@ -43,8 +43,8 @@ function Sala() {
                 setShowModalCadastrar(false)} /> : <></>}
                 
             
-            {showModalEditar ? <ModalEditar openModalEditar={() => 
-                setShowModalEditar(true)} /> :  <></>}
+            {showModalEditar ? <ModalEditar closeModalEditar={() => 
+                setShowModalEditar(false)} /> :  <></>}
 
             <div clas="container">
 
@@ -78,7 +78,8 @@ function Sala() {
                             </li>
                             {
                                 rooms.map(rooms => (
-                                    <ListaSalas
+                                    <ListaSalas openModalEditar={() => 
+                                        setShowModalEditar(true)}
                                         name={rooms.name}
                                         floor={rooms.floor}
                                         idRoom={rooms.idRoom}

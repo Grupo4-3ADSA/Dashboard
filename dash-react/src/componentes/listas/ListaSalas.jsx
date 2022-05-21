@@ -30,7 +30,7 @@ function ListaSalas(props) {
                         <td class="td-lista">{props.floor}</td>
                         <td class="td-lista"><img src={atencao} alt="" /></td>
                         <td class="td-lista-editar-deletar">
-                            <button className="editar" onClick={() => props.showOrHideEditar} >Editar/</button>
+                            <button className="editar" onClick={props.openModalEditar} >Editar/</button>
                             <button className="deletar"/*  onClick={showOrHide} */>Deletar</button>
                         </td>
                         <td class="td-lista"><a href="/painel-controle-salas">Acessar</a> </td>

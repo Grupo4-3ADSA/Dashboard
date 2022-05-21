@@ -31,7 +31,7 @@ function Modal(props) {
 
             <div className="modal-centro">
                 <div id="cadastro" className="modal">
-                    <button onClick={props.closeModal} className="btn-close" >X</button>
+                    <button onClick={props.closeModalEditar} className="btn-close" >X</button>
                     <h2>Editar salas</h2>
                     <form onSubmit={atualizar}>
                         <h4>Nome:</h4>
