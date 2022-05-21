@@ -1,5 +1,4 @@
 import React from "react";
-import '../../html-css-template/css/style-table.css'
 
 function TableResumo(props) {
 

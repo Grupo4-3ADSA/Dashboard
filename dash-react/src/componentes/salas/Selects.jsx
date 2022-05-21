@@ -22,7 +22,6 @@ function SelectSalas() {
                 <option value="valor3">Valor 3</option>
             </select>
         </>
-
     )
 
 }

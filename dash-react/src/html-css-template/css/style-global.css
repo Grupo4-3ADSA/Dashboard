@@ -20,7 +20,6 @@ body {
 
 a {
     text-decoration: none;
-    
 }
 
 button {
@@ -55,12 +54,21 @@ h2::before {
             rgba(172, 184, 191, 0) 97.71%);
 }
 
+.h2-titulo {
+    text-align: left;
+    margin-top: 50px;
+}
+
 h4 {
     font-weight: 600;
     margin: 0 0 1rem 0;
     color: var(--blue);
     font-family: var(--font-defaut);
-    margin: 25px 0 25px 0;
+    margin: 5px 0 25px 0;
+}
+
+h5 {
+    margin: 1rem 0 1rem 0;
 }
 
 link {
@@ -102,8 +110,6 @@ select {
     font-size: 14px;
     font-family: var(--font-defaut);
     font-weight: 500;
-    cursor: pointer;
-    margin: auto;
 }
 
 /* Navbar do login*/
@@ -142,8 +148,6 @@ nav {
     animation-timing-function: ease;
     -webkit-animation-timing-function: ease;
     visibility: visible !important;
-
-
 }
 
 /* Estilização de INPUT */
@@ -201,12 +205,11 @@ nav {
     background: rgba(255, 255, 255, 0) url(../imagens/ver.png) no-repeat 45% center;
 }
 
-/* Estilo Dash genérico */
 .box-dashboard img {
     height: 20px;
 }
 
-/* Essa class serve para colocar todas navbar superiores lado a lado */
+/* Navbar superiores lado a lado */
 .superior {
     display: flex;
     box-shadow: 0px 5px 15px var(--cinza-primary);
@@ -214,11 +217,14 @@ nav {
 }
 
 /* Navbar que contém o ícone Oncln */
-.nav-superior-esquerda {
+.nav {
     height: 8vh;
+    align-items: center;
+}
+
+.nav-superior-esquerda {
     width: 20%;
     display: flex;
-    align-items: center;
     border-radius: 10px 0 0 0;
     background-color: var(--blue-dark);
     justify-content: center;
@@ -231,11 +237,8 @@ nav {
 
 /* Navbar central */
 .nav-superior-central {
-    height: 8vh;
     width: 62%;
-    align-items: center;
     display: flex;
-    background: rgb(17, 45, 65);
     background: linear-gradient(86deg, rgba(17, 45, 65, 1) 0%, rgba(58, 100, 130, 1) 100%);
 }
 
@@ -259,12 +262,10 @@ input::placeholder {
     color: var(--cinza-primary);
 }
 
-/* Navbar superior esquerdo que contém os dados do usuário junto ao icones confi e sino */
+/* Navbar superior esquerdo que contém os dados do usuário */
 .nav-info {
-    height: 8vh;
     width: 18%;
     border-radius: 0 10px 0 0;
-    align-items: center;
     display: flex;
     border-left: solid var(--light-color) 1px;
     background: rgba(58, 100, 130, 1) 100%;
@@ -272,23 +273,22 @@ input::placeholder {
     color: var(--light-color);
 }
 
-/* Edição de imagens */
 .nav-info .user {
-    height: 35px;
+    height: 80%;
     margin: 0 0 0 10px;
     border-right: solid var(--light-color) 1px;
     padding: 0 10px 0 0;
 }
 
 .nav-info .config {
-    height: 20px;
+    height: 50%;
     margin: 0 0 0 10px;
 }
 
-/* Navbar que contém a lista para acesso as outras páginas, exemplo: home, cadastro... */
+/* Navbar que contém a lista para acesso as outras páginas */
 .nav-esquerda {
     height: 89vh;
-    width: 20%;
+    min-width: 20%;
     background: rgb(30, 47, 59);
     background: linear-gradient(183deg, rgba(30, 47, 59, 1) 0%,
             rgba(43, 78, 103, 1) 47%, rgba(79, 116, 141, 1) 100%);
@@ -315,7 +315,6 @@ input::placeholder {
     color: var(--cinza-terciary);
 }
 
-/* Parte onde ficará os conteúdos de cada etapa da dash, exemplo: Home Dash */
 .conteudo {
     width: 80%;
     height: 89vh;
@@ -324,32 +323,26 @@ input::placeholder {
     float: right;
 }
 
-.conteudo img {
-    margin: 1% 0 0 5%;
+.conteudo .voltar {
+    margin: 1% 0 0 4%;
     height: 7%;
     cursor: pointer;
-}
-
-.h2-titulo {
-    text-align: left;
-    margin-top: 50px;
 }
 
 .btns-direcionar {
     display: flex;
     width: 100%;
-    margin: 0 auto;
+    margin: auto;
     align-items: center;
     justify-content: center;
 }
 
-.direcionar{
-    width: 19%;
+.direcionar {
+    width: 17%;
     height: 21vh;
     background-color: var(--light-color);
-    margin-left: 10px;
+    margin: 10px;
     border-radius: 10px;
-    cursor: pointer;
     box-shadow: 10px 10px 10px rgb(0 0 0 / 25%);
     text-align: center;
     padding-top: 1%;
@@ -357,16 +350,16 @@ input::placeholder {
 
 .direcionar img {
     height: 55%;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .box-salas {
     display: flex;
     width: 90%;
-    margin: 0 auto;
+    margin: auto;
     align-items: center;
     justify-content: center;
-    margin-top: 35px;
+    margin-top: 20px;
     border: solid var(--cinza-secondary) 1px;
 }
 
@@ -394,17 +387,23 @@ input::placeholder {
     background: linear-gradient(187deg, rgba(32, 87, 125, 1) 0%, rgba(183, 206, 222, 1) 100%);
 }
 
-.box-salas li img {
-    align-items: stretch;
-    float: right;
-    margin: 10px 10px 0 0;
+/* Cadastrar/Editar */
+.box-btn-cadastro {
+    text-align: left;
 }
 
-.box-salas li h3 {
-    margin: 40px 0 0 0;
+.box-btn-cadastro button {
+    width: 25%;
+    height: 18vh;
+    margin: 35px;
+    font-size: 100%;
+    font-weight: 600;
+    font-family: 'Readex Pro';
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25)
 }
 
-/*  Componente salas */
+/*  Salas */
 .select-maior {
     width: 24%;
     background: url(../imagens/seta-select.png) 96% / 5% no-repeat;
@@ -424,24 +423,9 @@ input::placeholder {
     border-radius: 5px;
 }
 
-/* Componente Cadastrar/Editar */
-.box-btn-cadastro {
-    text-align: left;
-}
 
-.box-btn-cadastro button {
-    width: 25%;
-    height: 18vh;
-    margin: 35px;
-    font-size: 100%;
-    font-weight: 600;
-    font-family: 'Readex Pro';
-    border-radius: 5px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25)
-}
 
-/* Componente consumo */
-
+/* Consumo */
 .table-consumo td {
     overflow: hidden;
     width: 205px;
@@ -462,7 +446,7 @@ input::placeholder {
     word-break: normal;
 }
 
-/* /Componente Central de Ajuda */
+/* Page Central de Ajuda */
 .container-central {
     margin-left: 4%;
     margin-top: 5%;

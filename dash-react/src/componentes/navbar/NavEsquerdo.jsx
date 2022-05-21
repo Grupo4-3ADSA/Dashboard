@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function ItemNavEsq(props) {
     return (
         <>
-            <ul class="list-nav-esqueda">
+            <ul class=" list-nav-esqueda">
                 <li><Link to="/home">Home</Link> </li>
                 <li><Link to="/cadastra-edita">Cadastrar/Editar</Link></li>
                 <li><Link to="/salas">Salas</Link></li>

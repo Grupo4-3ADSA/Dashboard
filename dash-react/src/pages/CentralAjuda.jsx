@@ -19,7 +19,7 @@ function Central(props) {
                     <NavEsquerdo />
                 </div>
                 <div class="conteudo">
-                <img onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
+                <img className="voltar" onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
                     <div>
                         <h2>Central de ajuda</h2>
 

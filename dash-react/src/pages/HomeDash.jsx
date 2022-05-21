@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import api from '../Api'
 import '../html-css-template/css/style-global.css';
 import NavSupEsquerdo from '../componentes/navbar/NavSupEsquerdo';
@@ -37,14 +37,13 @@ function Home(props) {
                 </div>
 
                 <div class="conteudo">
-                    <img onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
+                    <img className="voltar" onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
                     <h2 >Com o nosso sistema você não emitiu 0,4 de co2 economizando R$ 20,00</h2>
                     <BtnsDirecionar />
                     <div className="box-salas">
                         <div className="box-list">
                             <h2 className="title-list">Salas que estão mais consumindo neste momento:</h2>
                             <div className="list">
-                                <ul>
                                     {
                                         rooms.map(rooms => (
                                             <ListaHome
@@ -53,7 +52,6 @@ function Home(props) {
                                             />
                                         ))
                                     }
-                                </ul>
                             </div>
                         </div>
                     </div>

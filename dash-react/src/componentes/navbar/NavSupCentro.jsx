@@ -7,10 +7,10 @@ import IconSino from '../../html-css-template/imagens/sino.png';
 function ItemNavSupCen(props) {
     return (
         <>
-            <div class="nav-superior-central">
+            <div class=" nav nav-superior-central">
                 <input class="input-field:first-child" type="text" placeholder="Pesquisar.." img />
             </div>
-            <div class="nav-info">
+            <div class="nav nav-info">
                 <span>Olá fulano</span>
                 <img class="user" src={IconAvatar} alt="" />
                 <img class="config" src={IconConfig} alt="" />

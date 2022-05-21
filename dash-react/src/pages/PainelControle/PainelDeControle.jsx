@@ -1,13 +1,13 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
-import '../html-css-template/css/style-global.css';
-import ImgNovoAgendamento from '../html-css-template/imagens/novo-agendamento.png';
-import ImgAgendamentoMarcado from '../html-css-template/imagens/agendamento-marcado.png';
-import ImgEmUso from '../html-css-template/imagens/em-uso.png';
-import NavSupEsquerdo from '../componentes/navbar/NavSupEsquerdo';
-import NavSupCentro from '../componentes/navbar/NavSupCentro';
-import NavEsquerdo from '../componentes/navbar/NavEsquerdo';
-import ImgDesfazer from '../html-css-template/imagens/desfazer.png';
+import '../../html-css-template/css/style-global.css';
+import ImgNovoAgendamento from '../../html-css-template/imagens/novo-agendamento.png';
+import ImgAgendamentoMarcado from '../../html-css-template/imagens/agendamento-marcado.png';
+import ImgEmUso from '../../html-css-template/imagens/em-uso.png';
+import NavSupEsquerdo from '../../componentes/navbar/NavSupEsquerdo';
+import NavSupCentro from '../../componentes/navbar/NavSupCentro';
+import NavEsquerdo from '../../componentes/navbar/NavEsquerdo';
+import ImgDesfazer from '../../html-css-template/imagens/desfazer.png';
 
 function PainelDeControle(props) {
     const navigate = useNavigate();
@@ -23,7 +23,7 @@ function PainelDeControle(props) {
                 </div>
 
                 <div class="conteudo">
-                    <img onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
+                    <img className="voltar" onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
                     <h2>Painel de controle</h2>
                     <div className="btns-direcionar">
                         <div className="direcionar">

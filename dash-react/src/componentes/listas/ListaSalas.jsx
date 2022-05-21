@@ -1,35 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import '../../html-css-template/css/style-global.css';
 import '../../html-css-template/css/style-modais.css';
+import atencao from '../../html-css-template/imagens/atencao.png';
+import ModalEditar from '../modais/ModalCadastro';
+import Api from '../../Api';
 
-import ModalEditar from '../modais/ModalCadastro'
-import Api from '../../Api'
+function ListaSalas(props) {
 
-function ListaSalas() {
-    /* const [props, setProps] = useState(""); */
-    document.getElementById('cadastro').style.display = "none"
+    /*   const [showModalEditar, setShowshowModalEditar] = useState(false)
+      const showOrHideEditar = () => setShowshowModalEditar(true)
+  
+      var idSalaSelecionada = props.idRoom */
 
-    function AbreModalEditar() {
-        document.getElementById('cadastro').style.display = "block"
-    }
+       function openModalEditar() {
+          /*  idSalaSelecionada = idSala */
+           props.showOrHideEditar(true)
+       }
+
+    const [showModalEditar, setShowModalEditar] = useState(false)
+    const showOrHideEditar = () => setShowModalEditar(true)
 
     return (
         <>
-            <ModalEditar id='cadastro' />
+
             <li>
-                <thead >
+                <thead>
                     <tr>
-                        <td class="td-lista">a</td>
-                        <td class="td-lista">a</td>
-                        <td class="td-lista"><img alt="" /></td>
-                        <td class="td-lista-editar-deletar">&nbsp;&nbsp;&nbsp;&nbsp;
-                            <button onClick={() => AbreModalEditar()} className="editar" >Editar|</button>
-                            <button className="deletar" >Deletar</button>
-                            &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                        <td class="td-lista"><a href="/">Acessar</a> </td>
+                        <td class="td-lista">{props.name}</td>
+                        <td class="td-lista">{props.floor}</td>
+                        <td class="td-lista"><img src={atencao} alt="" /></td>
+                        <td class="td-lista-editar-deletar">
+                            <button className="editar" onClick={() => props.showOrHideEditar} >Editar/</button>
+                            <button className="deletar"/*  onClick={showOrHide} */>Deletar</button>
+                        </td>
+                        <td class="td-lista"><a href="/painel-controle-salas">Acessar</a> </td>
                     </tr>
                 </thead>
             </li>
+
+           {/*  {showModalEditar ? <ModalEditar /> : <></>} */}
 
         </>
     )

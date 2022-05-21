@@ -6,7 +6,7 @@ import LogoOnclnBranco from '../../html-css-template/imagens/logo-branco.png';
 function ItemNavSupEsq(props) {
     return (    
         <>
-                <div class="nav-superior-esquerda">
+                <div class="nav nav-superior-esquerda">
                     <img src={LogoOnclnBranco} alt="Logo" />
                 </div>
         </>

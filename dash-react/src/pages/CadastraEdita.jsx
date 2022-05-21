@@ -20,7 +20,7 @@ function EditarCadastrar() {
                     <NavEsquerdo />
                 </div>
                 <div class="conteudo">
-                <img onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
+                <img className="voltar" onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
                     <div className="box-btn-cadastro">
                         <h2>Cadastrar, editar ou excluir</h2>
                         <button onClick={()=> navigate("/salas")}>Salas</button>

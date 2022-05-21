@@ -1,6 +1,5 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
-import '../html-css-template/css/style-table.css';
 import NavSupEsquerdo from '../componentes/navbar/NavSupEsquerdo';
 import NavSupCentro from '../componentes/navbar/NavSupCentro';
 import NavEsquerdo from '../componentes/navbar/NavEsquerdo';
@@ -23,7 +22,7 @@ function TableResumo(props) {
 
                 <div class="conteudo">
                     <div className="conteudo-chart">
-                        <img  onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
+                        <img className="voltar" onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
                         <h2 >Resumo de consumo Mensal</h2>
                         <Chart />
                         <h2 className="h2-titulo">Dados de consumo geral</h2>
