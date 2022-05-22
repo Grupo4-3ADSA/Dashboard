@@ -14,13 +14,23 @@ import ModalCadastro from '../componentes/modais/ModalCadastro';
 import ModalEditar from '../componentes/modais/ModalEditar';
 
 function Sala() {
+
+    var a = null
+   
+    const [musicas, setMusicas] = useState([]);
+
+    function setVariavel(props) {
+        setMusicas(props.name)
+        console.log(props)
+        setShowModalEditar(true)
+    }
+
     /* Abre modal cadastrar*/
     const [showModalCadastrar, setShowModalCadastrar] = useState(false)
     const showOrHideCadastro = () => setShowModalCadastrar(true)
 
     /* Abre modal editar*/
     const [showModalEditar, setShowModalEditar] = useState(false)
-    const showOrHideEditar = () => setShowModalEditar(true)
 
     const navigate = useNavigate();
 
@@ -39,12 +49,23 @@ function Sala() {
 
     return (
         <>
-            {showModalCadastrar ? <ModalCadastro closeModalCadastrar={() => 
-                setShowModalCadastrar(false)} /> : <></>}
-                
-            
-            {showModalEditar ? <ModalEditar closeModalEditar={() => 
-                setShowModalEditar(false)} /> :  <></>}
+            {showModalCadastrar ?
+                <ModalCadastro
+                    closeModalCadastrar={() =>
+                        setShowModalCadastrar(false)}
+                /> : <></>
+            }
+
+
+            {showModalEditar ?
+                <ModalEditar
+                    idRoom={musicas}
+                    name={musicas}
+                    floor={rooms.floor}
+                    closeModalEditar={() =>
+                        setShowModalEditar(false)}
+                /> : <></>
+            }
 
             <div clas="container">
 
@@ -78,12 +99,11 @@ function Sala() {
                             </li>
                             {
                                 rooms.map(rooms => (
-                                    <ListaSalas openModalEditar={() => 
-                                        setShowModalEditar(true)}
+                                    <ListaSalas
+                                        setId={setVariavel}
                                         name={rooms.name}
                                         floor={rooms.floor}
                                         idRoom={rooms.idRoom}
-                                        functionModal = {rooms.showOrHideEditar}
                                     />
                                 ))
                             }

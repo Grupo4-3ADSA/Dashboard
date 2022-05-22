@@ -169,6 +169,7 @@ nav {
 
 .input-fild input::placeholder {
     color: rgba(138, 138, 138, 0.733);
+    font-weight: 400;
 }
 
 .input-fild .underline::before {
