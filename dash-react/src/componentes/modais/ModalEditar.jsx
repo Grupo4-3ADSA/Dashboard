@@ -6,12 +6,14 @@ import '../../html-css-template/css/style-global.css';
 import api from "../../Api";
 
 function Modal(props) {
-    const [nomeSala, setNomeSala] = useState([])
-    const [andarSala, setAndarSala] = useState([])
+    const [nomeSala, setNomeSala] = useState(props.name)
+    const [andarSala, setAndarSala] = useState(props.floor)
 
     function atualizar(idRoom) {
-        setNomeSala (document.getElementById('inputName').value)
-        setAndarSala (document.getElementById('inputFloor').value)
+        setNomeSala(document.getElementById("inputName").value)
+        setAndarSala(document.getElementById("inputFloor").value)
+        console.log(nomeSala)
+        console.log(andarSala)
         
         if (typeof idRoom !== "undefined") {
             api.Api.put(`/rooms/${idRoom}/`, {
