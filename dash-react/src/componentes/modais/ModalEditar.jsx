@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import '../../html-css-template/css/style-modais.css';
 import '../../html-css-template/css/style-global.css';
+import RespostaCerto from '../respostas-post/RespostaCerto';
+import RespostaErro from '../respostas-post/RespostaErro';
 /* import Resposta from '../../componentes/respostas-post/resposta' */
 
 import api from "../../Api";
@@ -8,25 +10,38 @@ import api from "../../Api";
 function Modal(props) {
     const [nomeSala, setNomeSala] = useState(props.name)
     const [andarSala, setAndarSala] = useState(props.floor)
+    const [respostaCerto, setRespostaCerto] = useState(false)
+    const [respostaErrado, setRespostaErrado] = useState(false)
 
-    function atualizar(idRoom) {
-        
-        if (typeof idRoom !== "undefined") {
-            api.Api.put(`/rooms/${idRoom}/`, {
+    function atualizar(event) {
+        event.defaultValue()
+        if (typeof props.idRoom !== "undefined") {
+
+            api.Api.put(`/rooms/${props.idRoom}/`, {
                 name: nomeSala,
                 floor: andarSala
+            }).then(response => {
+                console.log(response.status)
+                setRespostaCerto(true)
+                setRespostaErrado(false)
+                setTimeout(setRespostaCerto, 1000)
+                window.location.reload()
+                
+            }).catch(erro => {
+                setRespostaErrado(true)
+                setRespostaCerto(false)
+                console.log("Deu ruim!");
             })
-                .then(() => {
-                    console.log("Atualizado com sucesso")
-                }).catch(erro => {
-                    console.log("Deu ruim!");
-                })
         }
     }
 
     return (
         <>
-            {/* {showElement ? <Resposta /> : <></>} */}
+            {respostaCerto ? <RespostaCerto closeRespostaCerto={
+                () => setRespostaCerto(false)} /> : <></>}
+
+            {respostaErrado ? <RespostaErro closeRespostaErro={
+                () => setRespostaErrado(false)} /> : <></>}
 
             <div className="modal-centro">
                 <div id="cadastro" className="modal">
@@ -37,7 +52,6 @@ function Modal(props) {
                         <h4>Sala:</h4>
 
                         <input className="input-fild"
-                            id="inputName"
                             defaultValue={(`${props.name}`)}
                             autoFocus type="text"
                             placeholder="Digite o nome da sala"
@@ -46,14 +60,13 @@ function Modal(props) {
 
                         <h4>Andar:</h4>
                         <input type="text"
-                            id="inputFloor"
                             placeholder="Digite o andar dessa sala"
                             defaultValue={(`${props.floor}`)}
                             onChange={e => setAndarSala(e.target.value)} />
 
                         <button onClick={props.closeModalEditar} className="btn-modal">Cancelar</button>
                         <button className="btn-modal-escuro" type="submit"
-                            onClick={() => atualizar(props.idRoom)}>Atualizar</button>
+                            onClick={() => atualizar}>Atualizar</button>
                     </form>
                 </div>
             </div>

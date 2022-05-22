@@ -14,6 +14,7 @@ function Modal(props) {
     const [andarSala, setAndarSala] = useState([])
 
     function cadastrar(event) {
+        event.preventDefault()
         console.log(nomeSala + " " + andarSala)
         api.Api.post("/rooms", {
             name: nomeSala,
@@ -23,10 +24,10 @@ function Modal(props) {
                 console.log(response.status)
                 setRespostaCerto(true)
                 setRespostaErrado(false)
-                setTimeout(setRespostaCerto, 1000)
+                setTimeout(setRespostaCerto, 10000)
+                window.location.reload()
             })
             .catch(erro => {
-                event.preventDefault()
                 console.log(erro)
                 setRespostaErrado(true)
                 setRespostaCerto(false)

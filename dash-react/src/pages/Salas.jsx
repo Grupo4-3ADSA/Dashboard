@@ -12,9 +12,10 @@ import Selects from '../componentes/salas/Selects';
 import ImgDesfazer from '../html-css-template/imagens/desfazer.png';
 import ModalCadastro from '../componentes/modais/ModalCadastro';
 import ModalEditar from '../componentes/modais/ModalEditar';
+import ModalDeletar from '../componentes/modais/ModalDeletar';
 
 function Sala() {
-    
+
     const [idRoom, setIdRoom] = useState([]);
     const [name, setName] = useState([]);
     const [floor, setFloor] = useState([]);
@@ -27,12 +28,20 @@ function Sala() {
         setShowModalEditar(true)
     }
 
+    function setVariavelDeletar(idRoom) {
+        setIdRoom(idRoom)
+        setShowModalDeletar(true)
+    }
+
     /* Abre modal cadastrar*/
     const [showModalCadastrar, setShowModalCadastrar] = useState(false)
     const showOrHideCadastro = () => setShowModalCadastrar(true)
 
     /* Abre modal editar*/
     const [showModalEditar, setShowModalEditar] = useState(false)
+
+    /* Abre modal deletar*/
+    const [showModalDeletar, setShowModalDeletar] = useState(false)
 
     const navigate = useNavigate();
 
@@ -69,6 +78,16 @@ function Sala() {
                 /> : <></>
             }
 
+            {showModalDeletar ?
+                <ModalDeletar
+                    idRoom={idRoom}
+                    name={name}
+                    floor={floor}
+                    closeModalEditar={() =>
+                        setShowModalDeletar(false)}
+                /> : <></>
+            }
+
             <div clas="container">
 
                 <div class="superior">
@@ -102,7 +121,8 @@ function Sala() {
                             {
                                 rooms.map(rooms => (
                                     <ListaSalas
-                                        setId={setVariavel}
+                                        update={setVariavel}
+                                        delete= {setVariavelDeletar}
                                         name={rooms.name}
                                         floor={rooms.floor}
                                         idRoom={rooms.idRoom}

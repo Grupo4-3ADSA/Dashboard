@@ -104,7 +104,7 @@
     border-radius: 10px;
     margin: 2% 0 0 34.5%;
     -webkit-animation-name: slideLeft;
-    -webkit-animation-duration: 2s;
+    -webkit-animation-duration: 3s;
     -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
     position: absolute;
     display: flex;
