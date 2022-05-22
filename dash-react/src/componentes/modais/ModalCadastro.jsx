@@ -4,7 +4,7 @@ import '../../html-css-template/css/style-global.css';
 import RespostaCerto from '../respostas-post/RespostaCerto';
 import RespostaErro from '../respostas-post/RespostaErro';
 
-import Api from "../../Api";
+import api from "../../Api";
 
 function Modal(props) {
     const [respostaCerto, setRespostaCerto] = useState(false)
@@ -14,9 +14,8 @@ function Modal(props) {
     const [andarSala, setAndarSala] = useState([])
 
     function cadastrar(event) {
-        event.preventDefault()
         console.log(nomeSala + " " + andarSala)
-        Api.Api.post("/rooms", {
+        api.Api.post("/rooms", {
             name: nomeSala,
             floor: andarSala
         })
@@ -24,12 +23,14 @@ function Modal(props) {
                 console.log(response.status)
                 setRespostaCerto(true)
                 setRespostaErrado(false)
+                setTimeout(setRespostaCerto, 1000)
             })
             .catch(erro => {
+                event.preventDefault()
                 console.log(erro)
                 setRespostaErrado(true)
                 setRespostaCerto(false)
-
+                setTimeout(setRespostaErrado, 7000)
             })
     }
 
@@ -53,7 +54,7 @@ function Modal(props) {
                         <h4>Andar:</h4>
                         <input type="text" placeholder="Digite o andar dessa sala"
                             value={andarSala} onChange={e => setAndarSala(e.target.value)} />
-                            
+
                         <button onClick={props.closeModalCadastrar} className="btn-modal">Cancelar</button>
                         <button className="btn-modal-escuro lado " type="submit">Cadastrar</button>
                     </form>

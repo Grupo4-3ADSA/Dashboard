@@ -9,16 +9,19 @@ function Modal(props) {
     const [nomeSala, setNomeSala] = useState([])
     const [andarSala, setAndarSala] = useState([])
 
-    var idSalaSelecionada = props.idRoom
-
-    function atualizar(idSalaSelecionada) {
-        if (typeof idSalaSelecionada !== "undefined") {
-            api.Api.put(`/rooms/${idSalaSelecionada}/`, {
+    function atualizar(idRoom) {
+        setNomeSala (document.getElementById('inputName').value)
+        setAndarSala (document.getElementById('inputFloor').value)
+        
+        if (typeof idRoom !== "undefined") {
+            api.Api.put(`/rooms/${idRoom}/`, {
                 name: nomeSala,
                 floor: andarSala
             })
                 .then(() => {
                     console.log("Atualizado com sucesso")
+                }).catch(erro => {
+                    console.log("Deu ruim!");
                 })
         }
     }
@@ -31,10 +34,12 @@ function Modal(props) {
                 <div id="cadastro" className="modal">
                     <button onClick={props.closeModalEditar} className="btn-close" >X</button>
                     <h2>Editar salas</h2>
+
                     <form onSubmit={atualizar}>
                         <h4>Sala:</h4>
 
                         <input className="input-fild"
+                            id="inputName"
                             defaultValue={(`${props.name}`)}
                             autoFocus type="text"
                             placeholder="Digite o nome da sala"
@@ -42,11 +47,15 @@ function Modal(props) {
                         />
 
                         <h4>Andar:</h4>
-                        <input type="text" placeholder="Digite o andar dessa sala"
-                            defaultValue={(`${props.floor}`)} onChange={e => setAndarSala(e.target.value)} />
+                        <input type="text"
+                            id="inputFloor"
+                            placeholder="Digite o andar dessa sala"
+                            defaultValue={(`${props.floor}`)}
+                            onChange={e => setAndarSala(e.target.value)} />
+
                         <button onClick={props.closeModalEditar} className="btn-modal">Cancelar</button>
                         <button className="btn-modal-escuro" type="submit"
-                            onClick={() => atualizar(idSalaSelecionada)}>Atualizar</button>
+                            onClick={() => atualizar(props.idRoom)}>Atualizar</button>
                     </form>
                 </div>
             </div>

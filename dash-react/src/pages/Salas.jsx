@@ -14,14 +14,12 @@ import ModalCadastro from '../componentes/modais/ModalCadastro';
 import ModalEditar from '../componentes/modais/ModalEditar';
 
 function Sala() {
-
-    var a = null
-   
-    const [name, setName] = useState([]);
+    
     const [idRoom, setIdRoom] = useState([]);
+    const [name, setName] = useState([]);
     const [floor, setFloor] = useState([]);
 
-    function setVariavel(pName,pIdRoom,pFloor) {
+    function setVariavel(pName, pIdRoom, pFloor) {
         setName(pName)
         setIdRoom(pIdRoom)
         setFloor(pFloor)
