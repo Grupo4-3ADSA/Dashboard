@@ -10,10 +10,6 @@ function Modal(props) {
     const [andarSala, setAndarSala] = useState(props.floor)
 
     function atualizar(idRoom) {
-        setNomeSala(document.getElementById("inputName").value)
-        setAndarSala(document.getElementById("inputFloor").value)
-        console.log(nomeSala)
-        console.log(andarSala)
         
         if (typeof idRoom !== "undefined") {
             api.Api.put(`/rooms/${idRoom}/`, {
