@@ -17,11 +17,15 @@ function Sala() {
 
     var a = null
    
-    const [musicas, setMusicas] = useState([]);
+    const [name, setName] = useState([]);
+    const [idRoom, setIdRoom] = useState([]);
+    const [floor, setFloor] = useState([]);
 
-    function setVariavel(props) {
-        setMusicas(props.name)
-        console.log(props)
+    function setVariavel(pName,pIdRoom,pFloor) {
+        setName(pName)
+        setIdRoom(pIdRoom)
+        setFloor(pFloor)
+        console.log(pName)
         setShowModalEditar(true)
     }
 
@@ -59,9 +63,9 @@ function Sala() {
 
             {showModalEditar ?
                 <ModalEditar
-                    idRoom={musicas}
-                    name={musicas}
-                    floor={rooms.floor}
+                    idRoom={idRoom}
+                    name={name}
+                    floor={floor}
                     closeModalEditar={() =>
                         setShowModalEditar(false)}
                 /> : <></>

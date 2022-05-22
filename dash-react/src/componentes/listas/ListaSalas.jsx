@@ -17,7 +17,7 @@ function ListaSalas(props) {
                         <td class="td-lista">{props.floor}</td>
                         <td class="td-lista"><img src={atencao} alt="" /></td>
                         <td class="td-lista-editar-deletar">
-                            <button className="editar" onClick={() => props.setId(`${props}`)} >
+                            <button className="editar" onClick={() => props.setId(`${props.name}`,`${props.idRoom}`,`${props.floor}`)} >
                                 Editar/</button>
                             <button className="deletar"/*  onClick={showOrHide} */>Deletar</button>
                         </td>

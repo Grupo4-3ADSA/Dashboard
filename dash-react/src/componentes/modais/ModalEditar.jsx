@@ -35,7 +35,7 @@ function Modal(props) {
                         <h4>Sala:</h4>
 
                         <input className="input-fild"
-                            defaultValue={(`${props}`)}
+                            defaultValue={(`${props.name}`)}
                             autoFocus type="text"
                             placeholder="Digite o nome da sala"
                             onChange={e => setNomeSala(e.target.value)}
@@ -43,7 +43,7 @@ function Modal(props) {
 
                         <h4>Andar:</h4>
                         <input type="text" placeholder="Digite o andar dessa sala"
-                            value={andarSala} onChange={e => setAndarSala(e.target.value)} />
+                            defaultValue={(`${props.floor}`)} onChange={e => setAndarSala(e.target.value)} />
                         <button onClick={props.closeModalEditar} className="btn-modal">Cancelar</button>
                         <button className="btn-modal-escuro" type="submit"
                             onClick={() => atualizar(idSalaSelecionada)}>Atualizar</button>
