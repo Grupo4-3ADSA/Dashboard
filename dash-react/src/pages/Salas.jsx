@@ -12,7 +12,7 @@ import Selects from '../componentes/salas/Selects';
 import ImgDesfazer from '../html-css-template/imagens/desfazer.png';
 import ModalCadastro from '../componentes/modais/modais-salas/ModalCadastro';
 import ModalEditar from '../componentes/modais/modais-salas/ModalEditar';
-import ModalDeletar from '../componentes/modais/ModalDeletar';
+import ModalDeletar from '../componentes/modais/modais-salas/ModalDeletar';
 
 function Sala() {
     const [idRoom, setIdRoom] = useState([]);
