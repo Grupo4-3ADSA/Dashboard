@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from "react";
-import '../../html-css-template/css/style-modais.css';
-import '../../html-css-template/css/style-global.css';
-import RespostaCerto from '../respostas-post/RespostaCerto';
-import RespostaErro from '../respostas-post/RespostaErro';
-/* import Resposta from '../../componentes/respostas-post/resposta' */
+import React, { useState } from "react";
+import '../../../html-css-template/css/style-modais.css';
+import '../../../html-css-template/css/style-global.css';
+import RespostaCerto from '../../respostas-crud/RespostaCerto';
+import RespostaErro from '../../respostas-crud/RespostaErro';
 
 import api from "../../Api";
 
 function ModalDeletar(props) {
-    const [nomeSala, setNomeSala] = useState(props.name)
-    const [andarSala, setAndarSala] = useState(props.floor)
+
     const [respostaCerto, setRespostaCerto] = useState(false)
     const [respostaErrado, setRespostaErrado] = useState(false)
 
-    function deletar(idSalaSelecionada) {
+    var setRespostaCerta
+    setRespostaCerta = document.getElementById('respostaErrada')
 
+    function deletar(idSalaSelecionada) {
         if (typeof idSalaSelecionada !== "undefined") {
             api.Api.delete(`/rooms/${idSalaSelecionada}/`)
                 .then(() => {
@@ -27,19 +27,21 @@ function ModalDeletar(props) {
     return (
         <>
             {respostaCerto ? <RespostaCerto closeRespostaCerto={
-                () => setRespostaCerto(false)} /> : <></>}
+                () => setRespostaCerto(false)}
+            /> : <></>}
 
             {respostaErrado ? <RespostaErro closeRespostaErro={
-                () => setRespostaErrado(false)} /> : <></>}
+                () => setRespostaErrado(false) && setRespostaCerta.value("Erro ao deletar")
+            } /> : <></>}
 
             <div className="modal-centro">
-                <div id="cadastro" className="modal">
-                    <button onClick={props.closeModalEditar} className="btn-close" >X</button>
+                <div className="modal">
+                    <button className="btn-close" onClick={props.closeModalEditar} >X</button>
+
                     <h2>Tem certeza que deseja Deletar??</h2>
-                    <button onClick={props.closeModalEditar} className="btn-modal">Cancelar</button>
+                    <button className="btn-modal" onClick={props.closeModalEditar} >Cancelar</button>
                     <button className="btn-modal-escuro" type="submit"
                         onClick={() => deletar(props.idRoom)}>Deletar</button>
-
                 </div>
             </div>
         </>

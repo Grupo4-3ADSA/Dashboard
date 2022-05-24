@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import '../../html-css-template/css/style-global.css';
 import '../../html-css-template/css/style-modais.css';
 import atencao from '../../html-css-template/imagens/atencao.png';
-import ModalEditar from '../modais/ModalCadastro';
-import Api from '../../Api';
 
 function ListaSalas(props) {
-
     return (
         <>
             <li>

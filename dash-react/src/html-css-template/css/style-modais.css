@@ -1,12 +1,14 @@
 :root {
     --white: #ffffff;
-    --grey: #dcdcdc;
-    --dark-grey: #686868;
+    --grey-one: #dcdcdc;
+    --grey-two: #c0c0c0;
+    --grey-three: #969696;
+    --dark-grey: #464646;
     --grey-medium: #DDDDDD;
 }
 
 .modal-centro h2 {
-    margin: 4% 0 5% 0  !important;
+    margin: 4% 0 5% 0 !important;
 }
 
 .modal-centro h4 {
@@ -33,7 +35,7 @@
 
 .btn-modal {
     width: 35%;
-    background-color: var(--grey);
+    background-color: var(--grey-one);
     height: 6vh;
     color: var(white);
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.30);
@@ -83,13 +85,43 @@
     color: var(--grey-dark);
     outline: 0;
     border: solid var(--blue-dark) 0px;
-    background-color: var(--grey);
+    background-color: var(--grey-one);
     margin-bottom: 5%;
 }
 
 .modal input::placeholder {
-    color:var();
     font-weight: 350;
+    color: var(--grey-two) !important;
+
+}
+
+.input-editar {
+    cursor: not-allowed;
+    color: var(--grey-three) !important;
+}
+
+[data-tooltip] {
+    position: relative;
+    font-weight: bold;
+}
+
+[data-tooltip]:after {
+    font-weight: 50;
+    font-size: 13px;
+    display: none;
+    position: absolute;
+    top: -34px;
+    padding: 8px;
+    border-radius: 3px;
+    left: calc(-130% + 2px);
+    content: attr(data-tooltip);
+    white-space: nowrap;
+    background-color: var(--blue-dark);
+    color: var(--grey-one);
+}
+
+[data-tooltip]:hover:after {
+    display: block;
 }
 
 /* Mensagem de retorno ao cadastro */
@@ -103,9 +135,9 @@
     color: white;
     border-radius: 10px;
     margin: 2% 0 0 34.5%;
-    -webkit-animation-name: slideLeft;
-    -webkit-animation-duration: 3s;
-    -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-animation-name: slideDown;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);
     position: absolute;
     display: flex;
     z-index: 99;
@@ -120,6 +152,7 @@
     cursor: pointer;
     font-size: 100%;
     float: right;
+    color: var(--white);
 }
 
 .div-deu-erro {
@@ -128,15 +161,19 @@
     width: 65vh;
     background-color: rgb(214, 67, 67);
     text-align: center;
-    color: white;
+    color: var(--white);
     border-radius: 10px;
     margin: 2% 0 0 34.5%;
-    -webkit-animation-name: slideLeft;
+    -webkit-animation-name: slideDown;
     -webkit-animation-duration: 2s;
     -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
     position: absolute;
     display: flex;
     z-index: 99;
+}
+
+.div-deu-erro button{
+    color: var(--white);
 }
 
 .div-deu-erro h3 {

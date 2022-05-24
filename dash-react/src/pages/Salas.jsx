@@ -10,12 +10,11 @@ import NavSupCentro from '../componentes/navbar/NavSupCentro';
 import NavEsquerdo from '../componentes/navbar/NavEsquerdo';
 import Selects from '../componentes/salas/Selects';
 import ImgDesfazer from '../html-css-template/imagens/desfazer.png';
-import ModalCadastro from '../componentes/modais/ModalCadastro';
-import ModalEditar from '../componentes/modais/ModalEditar';
+import ModalCadastro from '../componentes/modais/modais-salas/ModalCadastro';
+import ModalEditar from '../componentes/modais/modais-salas/ModalEditar';
 import ModalDeletar from '../componentes/modais/ModalDeletar';
 
 function Sala() {
-
     const [idRoom, setIdRoom] = useState([]);
     const [name, setName] = useState([]);
     const [floor, setFloor] = useState([]);

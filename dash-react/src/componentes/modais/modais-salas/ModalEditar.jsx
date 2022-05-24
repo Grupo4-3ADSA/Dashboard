@@ -1,72 +1,67 @@
-import React, { useState, useEffect } from "react";
-import '../../html-css-template/css/style-modais.css';
-import '../../html-css-template/css/style-global.css';
-import RespostaCerto from '../respostas-post/RespostaCerto';
-import RespostaErro from '../respostas-post/RespostaErro';
-/* import Resposta from '../../componentes/respostas-post/resposta' */
+import React, { useState } from "react";
+import '../../../html-css-template/css/style-modais.css';
+import '../../../html-css-template/css/style-global.css';
+import RespostaCerto from '../../respostas-crud/RespostaCerto';
+import RespostaErrado from '../../respostas-crud/RespostaErro'
+import ImgInfo from '../../../html-css-template/imagens/simbolo-de-informacao.png'
 
-import api from "../../Api";
+import api from "../../../Api";
 
 function Modal(props) {
     const [nomeSala, setNomeSala] = useState(props.name)
     const [andarSala, setAndarSala] = useState(props.floor)
+
     const [respostaCerto, setRespostaCerto] = useState(false)
     const [respostaErrado, setRespostaErrado] = useState(false)
 
     function atualizar(event) {
-        event.defaultValue()
+        event.preventDefault()
         if (typeof props.idRoom !== "undefined") {
-
             api.Api.put(`/rooms/${props.idRoom}/`, {
                 name: nomeSala,
                 floor: andarSala
+
             }).then(response => {
                 console.log(response.status)
                 setRespostaCerto(true)
                 setRespostaErrado(false)
-                setTimeout(setRespostaCerto, 1000)
+                setTimeout(setRespostaCerto, 10000)
                 window.location.reload()
-                
             }).catch(erro => {
+                console.log(erro)
                 setRespostaErrado(true)
                 setRespostaCerto(false)
-                console.log("Deu ruim!");
+                setTimeout(setRespostaErrado, 7000)
             })
         }
     }
 
     return (
         <>
-            {respostaCerto ? <RespostaCerto closeRespostaCerto={
-                () => setRespostaCerto(false)} /> : <></>}
-
-            {respostaErrado ? <RespostaErro closeRespostaErro={
-                () => setRespostaErrado(false)} /> : <></>}
+            {respostaCerto ? <RespostaCerto /> : <></>}
+            {respostaErrado ? <RespostaErrado /> : <></>}
 
             <div className="modal-centro">
                 <div id="cadastro" className="modal">
                     <button onClick={props.closeModalEditar} className="btn-close" >X</button>
                     <h2>Editar salas</h2>
-
                     <form onSubmit={atualizar}>
                         <h4>Sala:</h4>
-
-                        <input className="input-fild"
+                        <input placeholder="Digite o nome da sala" autoFocus type="text"
                             defaultValue={(`${props.name}`)}
-                            autoFocus type="text"
-                            placeholder="Digite o nome da sala"
                             onChange={e => setNomeSala(e.target.value)}
                         />
+                        
+                        <h4>Andar: <span data-tooltip="Para alterar este campo entre em contato com o suporte"><img src={ImgInfo} alt="" /></span> </h4>
 
-                        <h4>Andar:</h4>
-                        <input type="text"
-                            placeholder="Digite o andar dessa sala"
+                        <input className="input-editar" type="text" placeholder="Digite o andar dessa sala"
                             defaultValue={(`${props.floor}`)}
-                            onChange={e => setAndarSala(e.target.value)} />
+                            onChange={e => setAndarSala(e.target.value)} disabled
+                        />
 
-                        <button onClick={props.closeModalEditar} className="btn-modal">Cancelar</button>
-                        <button className="btn-modal-escuro" type="submit"
-                            onClick={() => atualizar}>Atualizar</button>
+                        <button className="btn-modal"
+                            onClick={props.closeModalEditar}>Cancelar</button>
+                        <button className="btn-modal-escuro" type="submit">Atualizar</button>
                     </form>
                 </div>
             </div>
