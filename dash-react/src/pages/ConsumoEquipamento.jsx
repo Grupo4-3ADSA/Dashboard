@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import '../html-css-template/css/style-global.css';
 import '../html-css-template/css/style-list.css';
 import api from '../Api'
 import ListaSalas from '../componentes/listas/ListaSalas';
-import NavSupEsquerdo from '../componentes/navbar/NavSupEsquerdo';
 import NavSupCentro from '../componentes/navbar/NavSupCentro';
 import NavEsquerdo from '../componentes/navbar/NavEsquerdo';
 import ImgDesfazer from '../html-css-template/imagens/desfazer.png';
+import LogoOnclnBranco from '../html-css-template/imagens/logo-branco.png';
 /* import ListaEquipamentos from "../componentes/listas/ListaEquipamentos"; */
 
 function Consumo(props) {
@@ -28,15 +28,21 @@ function Consumo(props) {
     return (
         <>
             <div clas="container">
+
                 <div class="superior">
-                    <NavSupEsquerdo />
+                    <div class="nav-superior-esquerda">
+                        <img src={LogoOnclnBranco} alt="Logo" />
+                    </div>
+
                     <NavSupCentro />
                 </div>
-                <div class="nav-esquerda">
-                    <NavEsquerdo />
-                </div>
-                <div class="conteudo">
-                <img className="voltar" onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
+
+                <div class="container-dash">
+                    <div class="nav-esquerda">
+                        <NavEsquerdo />
+                    </div>
+                    <div class="conteudo">
+                        <img className="voltar" onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
                         <h2>Equipamentos com mias consumo</h2>
                         <select name="select-predio" className="select-maior ">
                             <img src="" alt="" />
@@ -56,52 +62,53 @@ function Consumo(props) {
                         </select>
 
                         <div className="list organiza-lista">
-                                <table className="table-lista">
-                                    <li className="title-lista">
-                                        <thead>
-                                            <tr>
-                                                <th className="tg-baqh">Equipamento</th>
-                                                <th className="tg-baqh">Sala</th>
-                                                <th className="tg-baqh">Andar</th>
-                                                <th className="tg-baqh">Estado</th>
-                                                <th className="tg-baqh "></th>
-                                            </tr>
-                                        </thead>
-                                    </li>
+                            <table className="table-lista">
+                                <li className="title-lista">
+                                    <thead>
+                                        <tr>
+                                            <th className="tg-baqh">Equipamento</th>
+                                            <th className="tg-baqh">Sala</th>
+                                            <th className="tg-baqh">Andar</th>
+                                            <th className="tg-baqh">Estado</th>
+                                            <th className="tg-baqh "></th>
+                                        </tr>
+                                    </thead>
+                                </li>
 
-                                    <li>
-                                        <thead >
-                                            <tr>
-                                                <td class="td-lista">Ar condicionado</td>
-                                                <td class="td-lista">A</td>
-                                                <td class="td-lista">1°</td>
-                                                <td class="td-lista">Ligado</td>
-                                                <td class="td-lista"><a href="/">Acessar</a> </td>
-                                            </tr>
-                                        </thead>
-                                    </li>
+                                <li>
+                                    <thead >
+                                        <tr>
+                                            <td class="td-lista">Ar condicionado</td>
+                                            <td class="td-lista">A</td>
+                                            <td class="td-lista">1°</td>
+                                            <td class="td-lista">Ligado</td>
+                                            <td class="td-lista"><a href="/">Acessar</a> </td>
+                                        </tr>
+                                    </thead>
+                                </li>
 
-                                   
 
-                                    {/*{
 
-                                    equips.map(equips => (
-                                        <ListaEquipamentos
-                                            name={equips.name}
-                                            floor={equips.floor}
-                                            idRoom={equips.idRoom}
+                                {/*{
 
-                                        />
-                                    ))
+                                equips.map(equips => (
+                                    <ListaEquipamentos
+                                        name={equips.name}
+                                        floor={equips.floor}
+                                        idRoom={equips.idRoom}
 
-                                }
-                            */}
-                                </table>
+                                    />
+                                ))
+
+                            }
+                        */}
+                            </table>
 
                         </div>
                     </div>
-            </div>
 
+                </div>
+            </div>
 
         </>
     )

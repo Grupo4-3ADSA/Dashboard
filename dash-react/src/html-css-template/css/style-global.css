@@ -71,10 +71,6 @@ h5 {
     margin: 1rem 0 1rem 0;
 }
 
-link {
-    text-decoration: none;
-}
-
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -89,19 +85,12 @@ select {
     text-align: left;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    /* background-color: tomato; */
-}
-
 .btn {
     align-items: center;
     text-align: center;
     height: 35px;
     width: 60%;
     color: var(--off-white);
-    background: rgb(13, 40, 59);
     background: linear-gradient(94deg, rgba(13, 40, 59, 1) 0%, rgba(167, 188, 201, 1) 100%);
     border: none;
     border-radius: 50px;
@@ -112,17 +101,12 @@ select {
     font-weight: 500;
 }
 
-/* Navbar do login*/
-
 nav {
     height: 80px;
     width: 100%;
 }
 
-.logo {
-    margin-top: 15px;
-    height: 50px;
-}
+
 
 /* Login */
 .login-content {
@@ -130,6 +114,11 @@ nav {
     min-height: 450px;
     align-items: center;
     text-align: center;
+}
+
+.logo {
+    margin-top: 15px;
+    height: 50px;
 }
 
 .login-img {
@@ -148,6 +137,10 @@ nav {
     animation-timing-function: ease;
     -webkit-animation-timing-function: ease;
     visibility: visible !important;
+}
+
+.formulario h2{
+    margin: 0 !important
 }
 
 /* Estilização de INPUT */
@@ -206,11 +199,16 @@ nav {
     background: rgba(255, 255, 255, 0) url(../imagens/ver.png) no-repeat 45% center;
 }
 
-.box-dashboard img {
-    height: 20px;
+/* Estilo Dash */
+.container {
+    width: 80%;
 }
 
-/* Navbar superiores lado a lado */
+.box-dashboard {
+    height: 97vh;
+}
+
+/* Essa class serve para colocar todas navbar superiores lado a lado */
 .superior {
     display: flex;
     box-shadow: 0px 5px 15px var(--cinza-primary);
@@ -218,18 +216,16 @@ nav {
 }
 
 /* Navbar que contém o ícone Oncln */
-.nav {
-    height: 8vh;
-    align-items: center;
-}
-
 .nav-superior-esquerda {
+    height: 8vh;
     width: 20%;
     display: flex;
+    align-items: center;
     border-radius: 10px 0 0 0;
     background-color: var(--blue-dark);
     justify-content: center;
     box-shadow: 0px 5px 10px var(--blue-dark2);
+    z-index: 1000;
 }
 
 .nav-superior-esquerda img {
@@ -238,8 +234,11 @@ nav {
 
 /* Navbar central */
 .nav-superior-central {
+    height: 8vh;
     width: 62%;
+    align-items: center;
     display: flex;
+    background: rgb(17, 45, 65);
     background: linear-gradient(86deg, rgba(17, 45, 65, 1) 0%, rgba(58, 100, 130, 1) 100%);
 }
 
@@ -261,6 +260,31 @@ nav {
 
 input::placeholder {
     color: var(--cinza-primary);
+}
+
+/* Navbar superior esquerdo que contém os dados do usuário junto ao icones config e sino */
+.nav-info {
+    height: 8vh;
+    width: 18%;
+    border-radius: 0 10px 0 0;
+    align-items: center;
+    display: flex;
+    border-left: solid var(--light-color) 1px;
+    background: rgba(58, 100, 130, 1) 100%;
+    padding: 0 0 0 10px;
+    color: var(--light-color);
+}
+
+.nav-info .user {
+    height: 35px;
+    margin: 0 0 0 10px;
+    border-right: solid var(--light-color) 1px;
+    padding: 0 10px 0 0;
+}
+
+.nav-info .config {
+    height: 20px;
+    margin: 0 0 0 10px;
 }
 
 /* Navbar superior esquerdo que contém os dados do usuário */
@@ -286,18 +310,22 @@ input::placeholder {
     margin: 0 0 0 10px;
 }
 
+/* Colocando lado a lado conteudo com a navbar esquerda */
+.container-dash {
+    display: flex;
+}
+
 /* Navbar que contém a lista para acesso as outras páginas */
 .nav-esquerda {
     height: 89vh;
-    min-width: 20%;
-    background: rgb(30, 47, 59);
+    min-width: 19.9%;
     background: linear-gradient(183deg, rgba(30, 47, 59, 1) 0%,
             rgba(43, 78, 103, 1) 47%, rgba(79, 116, 141, 1) 100%);
     display: flex;
     border-radius: 0 0 0 10px;
     align-items: center;
     box-shadow: 0px 5px 20px var(--cinza-dark);
-    float: left;
+    z-index: 1000;
 }
 
 /* Lista navbar */
@@ -330,6 +358,7 @@ input::placeholder {
     cursor: pointer;
 }
 
+/* Home */
 .btns-direcionar {
     display: flex;
     width: 100%;
@@ -423,8 +452,6 @@ input::placeholder {
     color: var(--off-white);
     border-radius: 5px;
 }
-
-
 
 /* Consumo */
 .table-consumo td {
