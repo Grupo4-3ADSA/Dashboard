@@ -21,6 +21,9 @@ function Login(props) {
             .then(response => {
                 if (response.status === 200) {
                     console.log("Login feito com sucesso")
+                    sessionStorage.nomeGestor = response.data.nome;
+                    sessionStorage.idEmpresa = response.data.fkEmpresa;
+                    sessionStorage.idGestor = response.data.idGestor;
                     navigate("/dash-generico")
                 } else {
                     console.log("login deu errado irmao" + response.status)

@@ -5,6 +5,9 @@ import IconConfig from '../../html-css-template/imagens/configuracao.png';
 import IconSino from '../../html-css-template/imagens/sino.png';
 
 function ItemNavSupCen(props) {
+
+    const nome = sessionStorage.nomeGestor
+
     return (
         <>
             <div class="nav-superior-central">
@@ -12,7 +15,7 @@ function ItemNavSupCen(props) {
             </div>
 
             <div class="nav-info">
-                <span>Olá fulano</span>
+                <span>{nome}</span>
                 <img class="user" src={IconAvatar} alt="" />
                 <img class="config" src={IconConfig} alt="" />
                 <img class="config" src={IconSino} alt="" />
