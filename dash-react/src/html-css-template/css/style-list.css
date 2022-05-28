@@ -12,7 +12,7 @@
 }
 
 .list li {
-    background-color: var(--cinza-terciary);
+    background-color: var(--grey-one);
     color: #000000;
     margin: 10px;
     list-style-type: none;
@@ -37,7 +37,6 @@
 }
 
 .organiza-lista {
-    margin-top: 4%;
     width: 96%;
     height: 55vh;
 }
@@ -73,25 +72,9 @@
 }
 
 /* Tabelas */
-/* Page resumo consumo*/
-.conteudo-chart {
-    height: 80vh;
-    overflow-y: scroll;
-    text-align: left !important;
-    align-items: left;
-}
-
-.conteudo-chart select {
-    margin-left: 4% !important;
-}
 
 .conteudo-chart button {
     margin: 10px !important;
-    border-radius: 0px;
-}
-
-.conteudo-chart .container-conteudo {
-    align-items: left;
 }
 
 .conteudo-chart image {

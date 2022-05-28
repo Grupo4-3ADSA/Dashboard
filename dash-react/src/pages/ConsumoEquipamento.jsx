@@ -43,6 +43,7 @@ function Consumo(props) {
                     </div>
                     <div class="conteudo">
                         <img className="voltar" onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
+                        
                         <h2>Equipamentos com mias consumo</h2>
                         <select name="select-predio" className="select-maior ">
                             <img src="" alt="" />
@@ -60,6 +61,7 @@ function Consumo(props) {
                             <option value="valor2">Valor 2</option>
                             <option value="valor3">Valor 3</option>
                         </select>
+                        
 
                         <div className="list organiza-lista">
                             <table className="table-lista">

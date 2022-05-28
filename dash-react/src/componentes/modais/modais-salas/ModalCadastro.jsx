@@ -60,8 +60,8 @@ function Modal(props) {
                             value={andarSala} onChange={e => setAndarSala(e.target.value)}
                             maxLength="2" />
 
-                        <button onClick={props.closeModalCadastrar} className="btn-modal">Cancelar</button>
-                        <button className="btn-modal-escuro lado " type="submit">Cadastrar</button>
+                        <button onClick={props.closeModalCadastrar} className="button-cinza button-modal">Cancelar</button>
+                        <button className="button-azul lado button-modal" type="submit">Cadastrar</button>
                     </form>
                 </div>
             </div>

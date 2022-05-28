@@ -1,10 +1,13 @@
-:root {
-    --white: #ffffff;
-    --grey-one: #dcdcdc;
-    --grey-two: #c0c0c0;
-    --grey-three: #969696;
-    --dark-grey: #464646;
-    --grey-medium: #DDDDDD;
+.modal-centro {
+    width: 98.8%;
+    height: 97%;
+    background-color: rgba(0, 0, 0, 0.543);
+    justify-content: center;
+    position: absolute;
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    z-index: 98;
 }
 
 .modal-centro h2 {
@@ -21,37 +24,9 @@
     margin: auto;
 }
 
-.modal-centro {
-    width: 98.8%;
-    height: 97%;
-    background-color: rgba(0, 0, 0, 0.543);
-    justify-content: center;
-    position: absolute;
-    border-radius: 10px;
-    align-items: center;
-    display: flex;
-    z-index: 98;
-}
-
-.btn-modal {
+.button-modal {
     width: 35%;
-    background-color: var(--grey-one);
-    height: 6vh;
-    color: var(white);
-    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.30);
-    text-align: center;
-    color: var(--blue-dark);
-    float: left;
-}
-
-.btn-modal-escuro {
-    width: 35%;
-    background-color: var(--blue-dark);
-    height: 6vh;
-    color: var(--off-white);
-    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.30);
     margin: 0;
-    float: right;
 }
 
 .modal-centro form {
@@ -61,7 +36,7 @@
 
 .modal {
     align-items: center;
-    background-color: var(--off-white);
+    background-color: var(--white);
     width: 28%;
     padding: 2%;
     border-radius: 5px;
@@ -73,7 +48,9 @@
     font-size: 100%;
     font-weight: bold;
     float: right;
-    z-index: 99;
+    z-index: 1000;
+    display: flex;
+    color: var(--dark-grey);
 }
 
 .modal input {

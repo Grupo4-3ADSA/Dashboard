@@ -59,9 +59,9 @@ function Modal(props) {
                             onChange={e => setAndarSala(e.target.value)} disabled
                         />
 
-                        <button className="btn-modal"
+                        <button className="button-cinza button-modal"
                             onClick={props.closeModalEditar}>Cancelar</button>
-                        <button className="btn-modal-escuro" type="submit">Atualizar</button>
+                        <button className="button-azul lado button-modal" type="submit">Atualizar</button>
                     </form>
                 </div>
             </div>

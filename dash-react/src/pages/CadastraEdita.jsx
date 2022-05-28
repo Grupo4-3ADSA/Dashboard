@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import '../html-css-template/css/style-global.css';
 import { useNavigate } from 'react-router-dom';
 import NavSupCentro from '../componentes/navbar/NavSupCentro';
@@ -31,10 +31,11 @@ function EditarCadastrar() {
                         <div className="box-btn-cadastro">
                             <h2>Cadastrar, editar ou excluir</h2>
                             <button onClick={() => navigate("/salas")}>Salas</button>
+                            <button onClick={() => navigate("/salas")}>Dispositivo-Cln</button>
                             <button onClick={() => navigate("/salas")}>Ar-Condicionado</button>
                             <button onClick={() => navigate("/salas")}>Lampadas</button>
                             <button onClick={() => navigate("/salas")}>Tomadas</button>
-                            <button onClick={() => navigate("/salas")}>Dispositivo-Cln</button>
+                            
                         </div>
                     </div>
 

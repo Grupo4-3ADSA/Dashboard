@@ -27,11 +27,12 @@ function TableResumo(props) {
     </div>
     <div class="conteudo">
     <img className="voltar" onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
-
-        <div className="conteudo-chart">
+ 
+        <div className="conteudo-scroll conteudo-chart">
             
             <h2 >Resumo de consumo Mensal</h2>
             <Chart />
+            
             <h2 className="h2-titulo">Dados de consumo geral</h2>
 
             <div classNameName="box-select">
@@ -43,8 +44,7 @@ function TableResumo(props) {
                     <option value="valor3">Valor 3</option>
                 </select>
                 <button className="btn-box-select">Baixar relatório</button>
-                <button className="btn-box-select" onClick={() => window.print()}>Imprimir</button>
-
+                <button className="btn-box-select" onClick={() => window.print()}>Imprimir relatóio</button>
 
             </div>
 

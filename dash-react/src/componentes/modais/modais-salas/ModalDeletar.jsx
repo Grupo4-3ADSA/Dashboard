@@ -40,8 +40,8 @@ function ModalDeletar(props) {
                     <div className="centralizar"> 
                         <h3>Tem certeza que deseja Deletar?</h3>
                     </div>
-                    <button className="btn-modal" onClick={props.closeModalEditar} >Cancelar</button>
-                    <button className="btn-modal-escuro" type="submit"
+                    <button className="button-cinza button-modal" onClick={props.closeModalEditar} >Cancelar</button>
+                    <button className="button-azul lado button-modal" type="submit"
                         onClick={() => deletar(props.idRoom)}>Deletar</button>
                 </div>
             </div>
