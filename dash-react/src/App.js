@@ -10,7 +10,6 @@ function App() {
     <>
       <Rotas />
       <Favicon url={IconOn} />
-
     </>
   );
 }
