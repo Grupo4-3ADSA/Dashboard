@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import '../html-css-template/css/style-global.css';
-import '../html-css-template/css/style-list.css';
-import '../html-css-template/css/style-modais.css';
-import api from '../Api';
-import ListaSalas from '../componentes/listas/ListaSalas';
-import LogoOnclnBranco from '../html-css-template/imagens/img-logo/logo-branco.png';
-import NavSupCentro from '../componentes/navbar/NavSupCentro';
-import NavEsquerdo from '../componentes/navbar/NavEsquerdo';
-import SelectsGerais from '../componentes/selects/SelectsGerais';
-import ImgVoltar from '../html-css-template/imagens/voltar.png';
-import ModalCadastro from '../componentes/modais/modais-salas/ModalCadastro';
-import ModalEditar from '../componentes/modais/modais-salas/ModalEditar';
-import ModalDeletar from '../componentes/modais/modais-salas/ModalDeletar';
+import '../../html-css-template/css/style-global.css';
+import '../../html-css-template/css/style-list.css';
+import '../../html-css-template/css/style-modais.css';
+import api from '../../Api';
+import LogoOnclnBranco from '../../html-css-template/imagens/img-logo/logo-branco.png';
+import ListaSalas from '../../componentes/listas/ListaEquipamentos';
+import NavSupCentro from '../../componentes/navbar/NavSupCentro';
+import NavEsquerdo from '../../componentes/navbar/NavEsquerdo';
 
-function Sala() {
+import SelectsGerais from '../../componentes/selects/SelectsGerais';
+
+import ImgVoltar from '../../html-css-template/imagens/voltar.png';
+
+import ModalCadastro from '../../componentes/modais/modais-on-cln/CadastrarOnClnBox';
+import ModalEditar from '../../componentes/modais/modais-salas/ModalEditar';
+import ModalDeletar from '../../componentes/modais/modais-salas/ModalDeletar';
+
+
+function OnClnBox() {
     const [idRoom, setIdRoom] = useState([]);
     const [name, setName] = useState([]);
     const [floor, setFloor] = useState([]);
@@ -33,7 +37,7 @@ function Sala() {
     }
 
     /* Abre modal cadastrar*/
-    const [showModalCadastrar, setShowModalCadastrar] = useState(false)
+    const [showModalCadastrar, setShowModalCadastrar] = useState(true)
     const showOrHideCadastro = () => setShowModalCadastrar(true)
 
     /* Abre modal editar*/
@@ -44,13 +48,13 @@ function Sala() {
 
     const navigate = useNavigate();
 
-    const [rooms, setRooms] = useState([]);
-    console.log(rooms)
+    const [clnbox, setClnbox] = useState([]);
+    console.log(clnbox)
 
     useEffect(() => {
-        api.Api.get("/rooms")
+        api.Api.get("/clnboxex")
             .then(response => {
-                setRooms(response.data)
+                setClnbox(response.data)
             })
             .catch(erro => {
                 console.log(erro)
@@ -106,11 +110,9 @@ function Sala() {
                     <div class="conteudo">
                         <div className="box-select-button">
                             <img className="voltar" onClick={() => navigate(-1)} src={ImgVoltar} alt="" />
-                            <h2>Salas cadastradas</h2>
-
+                            <h2>OnCln-Box cadastrados</h2>
                             <SelectsGerais />
-
-                            <button className=" lado button-azul" onClick={showOrHideCadastro} >Cadastrar Sala</button>
+                            <button className=" lado button-azul" onClick={showOrHideCadastro} >Cadastrar OnCln-Box</button>
                         </div>
 
                         <div className="list organiza-lista">
@@ -118,23 +120,22 @@ function Sala() {
                                 <li className="title-lista">
                                     <thead>
                                         <tr>
+                                            <th >Tipo</th>
                                             <th >Sala</th>
                                             <th >Andar</th>
-                                            <th >Status</th>
                                             <th >Ação</th>
                                             <th ></th>
                                         </tr>
                                     </thead>
                                 </li>
-
                                 {
-                                    rooms.map(rooms => (
+                                    clnbox.map(clnbox => (
                                         <ListaSalas
                                             update={setVariavel}
                                             delete={setVariavelDeletar}
-                                            name={rooms.name}
-                                            floor={rooms.floor}
-                                            idRoom={rooms.idRoom}
+                                            Id={clnbox.name}
+                                            floor={clnbox.floor}
+                                            idRoom={clnbox.idRoom}
                                         />
                                     ))
                                 }
@@ -143,9 +144,10 @@ function Sala() {
                     </div>
                 </div>
             </div>
+
         </>
     )
 
 }
 
-export default Sala;
+export default OnClnBox;

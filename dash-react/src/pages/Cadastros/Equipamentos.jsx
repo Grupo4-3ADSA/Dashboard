@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import '../html-css-template/css/style-global.css';
-import '../html-css-template/css/style-list.css';
-import '../html-css-template/css/style-modais.css';
-import api from '../Api';
-import ListaSalas from '../componentes/listas/ListaSalas';
-import LogoOnclnBranco from '../html-css-template/imagens/img-logo/logo-branco.png';
-import NavSupCentro from '../componentes/navbar/NavSupCentro';
-import NavEsquerdo from '../componentes/navbar/NavEsquerdo';
-import SelectsGerais from '../componentes/selects/SelectsGerais';
-import ImgVoltar from '../html-css-template/imagens/voltar.png';
-import ModalCadastro from '../componentes/modais/modais-salas/ModalCadastro';
-import ModalEditar from '../componentes/modais/modais-salas/ModalEditar';
-import ModalDeletar from '../componentes/modais/modais-salas/ModalDeletar';
+import '../../html-css-template/css/style-global.css';
+import '../../html-css-template/css/style-list.css';
+import '../../html-css-template/css/style-modais.css';
+import api from '../../Api';
+import LogoOnclnBranco from '../../html-css-template/imagens/img-logo/logo-branco.png';
+import ListaSalas from '../../componentes/listas/ListaEquipamentos';
+import NavSupCentro from '../../componentes/navbar/NavSupCentro';
+import NavEsquerdo from '../../componentes/navbar/NavEsquerdo';
 
-function Sala() {
+import SelectsGerais from '../../componentes/selects/SelectsGerais';
+
+import ImgVoltar from '../../html-css-template/imagens/voltar.png';
+
+import ModalCadastro from '../../componentes/modais/modais-equipamentos/ModalCadastroEquipamento';
+import ModalEditar from '../../componentes/modais/modais-salas/ModalEditar';
+import ModalDeletar from '../../componentes/modais/modais-salas/ModalDeletar';
+
+
+function Equipamentos() {
     const [idRoom, setIdRoom] = useState([]);
     const [name, setName] = useState([]);
     const [floor, setFloor] = useState([]);
@@ -33,7 +37,7 @@ function Sala() {
     }
 
     /* Abre modal cadastrar*/
-    const [showModalCadastrar, setShowModalCadastrar] = useState(false)
+    const [showModalCadastrar, setShowModalCadastrar] = useState(true)
     const showOrHideCadastro = () => setShowModalCadastrar(true)
 
     /* Abre modal editar*/
@@ -106,11 +110,20 @@ function Sala() {
                     <div class="conteudo">
                         <div className="box-select-button">
                             <img className="voltar" onClick={() => navigate(-1)} src={ImgVoltar} alt="" />
-                            <h2>Salas cadastradas</h2>
+                            <h2>Equipamentos cadastrados</h2>
 
-                            <SelectsGerais />
+                            {
+                                <SelectsGerais
+                                    name={rooms.map(rooms => (
+                                        <option value={rooms.id}>{rooms.name}</option>
+                                    ))}
+                                    floor={rooms.map(rooms => (
+                                        <option value={rooms.id}>{rooms.floor}</option>
+                                    ))}
+                                />
+                            }
 
-                            <button className=" lado button-azul" onClick={showOrHideCadastro} >Cadastrar Sala</button>
+                            <button className=" lado button-azul" onClick={showOrHideCadastro} >Cadastrar Equipamento</button>
                         </div>
 
                         <div className="list organiza-lista">
@@ -118,15 +131,14 @@ function Sala() {
                                 <li className="title-lista">
                                     <thead>
                                         <tr>
+                                            <th >Tipo</th>
                                             <th >Sala</th>
                                             <th >Andar</th>
-                                            <th >Status</th>
                                             <th >Ação</th>
                                             <th ></th>
                                         </tr>
                                     </thead>
                                 </li>
-
                                 {
                                     rooms.map(rooms => (
                                         <ListaSalas
@@ -143,9 +155,10 @@ function Sala() {
                     </div>
                 </div>
             </div>
+
         </>
     )
 
 }
 
-export default Sala;
+export default Equipamentos;

@@ -7,17 +7,45 @@
     border-radius: 10px;
     align-items: center;
     display: flex;
-    z-index: 98;
+    z-index: 100;
 }
 
-.modal-centro h2 {
-    margin: 4% 0 5% 0 !important;
+.modal {
+    align-items: center;
+    background-color: var(--white);
+    width: 28%;
+    padding: 2%;
+    border-radius: 5px;
 }
 
-.modal-centro h4 {
+.modal h2 {
+    margin: 2% 0 5% 0 !important;
+    font-size: 3vh;
+    z-index: 10;
+}
+
+.modal h4 {
     margin: 0% !important;
     font-weight: 500;
     color: var(--grey-dark);
+}
+
+.modal .h4-topo {
+    margin-top: 5% !important;
+}
+
+.on-off {
+    align-items: center;
+    padding-top: 25%;
+}
+
+.on-off label {
+    margin-left: 10%;
+}
+
+.on-off h4 {
+    float: left;
+    padding-top: 2%;
 }
 
 .div-deu-certo h3 {
@@ -29,32 +57,12 @@
     margin: 0;
 }
 
-.modal-centro form {
+.modal form {
     width: 100%;
-    background-color: rgba(37, 37, 37, 0.893) 100%;
-}
-
-.modal {
-    align-items: center;
-    background-color: var(--white);
-    width: 28%;
-    padding: 2%;
-    border-radius: 5px;
-}
-
-.btn-close {
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0);
-    font-size: 100%;
-    font-weight: bold;
-    float: right;
-    z-index: 1000;
-    display: flex;
-    color: var(--dark-grey);
 }
 
 .modal input {
-    width: 100%;
+    width: 99%;
     height: 5vh;
     background: none;
     font-family: var(--font-defaut);
@@ -64,6 +72,30 @@
     border: solid var(--blue-dark) 0px;
     background-color: var(--grey-one);
     margin-bottom: 5%;
+}
+
+.modal input:last-child {
+    margin-bottom: 10%;
+}
+
+.input-lado {
+    width: 48%;
+    float: left;
+}
+
+.a {
+    padding-left: 4%;
+}
+
+.btn-close {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 100%;
+    font-weight: bold;
+    display: flex;
+    color: var(--dark-grey);
+    z-index: 1000;
+    position: relative;
 }
 
 .modal input::placeholder {
@@ -117,7 +149,7 @@
     -webkit-animation-timing-function: cubic-bezier(1, 0, 0, 1);
     position: absolute;
     display: flex;
-    z-index: 99;
+    z-index: 101;
 }
 
 .div-deu-certo button {
@@ -140,16 +172,16 @@
     text-align: center;
     color: var(--white);
     border-radius: 10px;
-    margin: 2% 0 0 34.5%;
+    margin: 1% 0 0 34%;
     -webkit-animation-name: slideDown;
     -webkit-animation-duration: 2s;
     -webkit-animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
     position: absolute;
     display: flex;
-    z-index: 99;
+    z-index: 101;
 }
 
-.div-deu-erro button{
+.div-deu-erro button {
     color: var(--white);
 }
 
@@ -157,7 +189,21 @@
     margin: auto;
 }
 
-.centralizar{
+.centralizar {
     text-align: center;
     padding: 10%;
+}
+
+.cadastro-equipamento input {
+    margin: 0 !important;
+}
+
+.cadastro-equipamento span {
+    font-weight: 400;
+    font-size: 90%;
+    line-height: 31px;
+}
+
+.cadastro-equipamento .button-top {
+    padding-top: 5%;
 }

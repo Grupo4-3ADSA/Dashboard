@@ -5,8 +5,8 @@ import '../../html-css-template/css/style-list.css';
 import apiCln from '../../Api'
 import NavSupCentro from '../../componentes/navbar/NavSupCentro';
 import NavEsquerdo from '../../componentes/navbar/NavEsquerdo';
-import ImgDesfazer from '../../html-css-template/imagens/desfazer.png';
-import LogoOnclnBranco from '../../html-css-template/imagens/logo-branco.png';
+import ImgVoltar from '../../html-css-template/imagens/voltar.png';
+import LogoOnclnBranco from '../../html-css-template/imagens/img-logo/logo-branco.png';
 
 function PainelSalas(props) {
     const navigate = useNavigate();
@@ -39,7 +39,7 @@ function PainelSalas(props) {
                         <NavEsquerdo />
                     </div>
                     <div class="conteudo">
-                        <img className="voltar" onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
+                        <img className="voltar" onClick={() => navigate(-1)} src={ImgVoltar} alt="" />
                         <h2 >Sala: A | Andar: 1º</h2>
                         <div className="list organiza-lista">
                             <table className="table-lista">

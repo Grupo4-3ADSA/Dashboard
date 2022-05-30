@@ -5,9 +5,10 @@ import '../html-css-template/css/style-global.css';
 import NavSupCentro from '../componentes/navbar/NavSupCentro';
 import NavEsquerdo from '../componentes/navbar/NavEsquerdo';
 import BtnsDirecionar from '../componentes/btns-home/btns-home';
-import ImgDesfazer from '../html-css-template/imagens/desfazer.png';
+import ImgVoltar from '../html-css-template/imagens/voltar.png';
 import ListaHome from "../componentes/listas/ListaHome";
-import LogoOnclnBranco from '../html-css-template/imagens/logo-branco.png';
+import LogoOnclnBranco from '../html-css-template/imagens/img-logo/logo-branco.png';
+
 function Home(props) {
     const navigate = useNavigate();
 
@@ -41,7 +42,7 @@ function Home(props) {
                         <NavEsquerdo />
                     </div>
                     <div class="conteudo">
-                        <img className="voltar" onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
+                        <img className="voltar" onClick={() => navigate(-1)} src={ImgVoltar} alt="" />
 
                         <h2 >Com o nosso sistema você não emitiu 0,4 de co2 economizando R$ 20,00</h2>
 

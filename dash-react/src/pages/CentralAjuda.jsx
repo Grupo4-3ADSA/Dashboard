@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import '../html-css-template/css/style-global.css';
 import NavSupCentro from '../componentes/navbar/NavSupCentro';
 import NavEsquerdo from '../componentes/navbar/NavEsquerdo';
-import ImgDesfazer from '../html-css-template/imagens/desfazer.png';
-import LogoOnclnBranco from '../html-css-template/imagens/logo-branco.png';
+import ImgVoltar from '../html-css-template/imagens/voltar.png';
+import LogoOnclnBranco from '../html-css-template/imagens/img-logo/logo-branco.png';
 
 function Central(props) {
     const navigate = useNavigate();
@@ -25,7 +25,7 @@ function Central(props) {
                         <NavEsquerdo />
                     </div>
                     <div class="conteudo">
-                        <img className="voltar" onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
+                        <img className="voltar" onClick={() => navigate(-1)} src={ImgVoltar} alt="" />
                             <h2>Central de ajuda</h2>
 
                             <div className="container-central">

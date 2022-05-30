@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {useNavigate} from 'react-router-dom';
-import ImgPainelControle from '../../html-css-template/imagens/painel-controle.svg';
-import ImgCentralAjuda from '../../html-css-template/imagens/central-ajuda.svg';
-import ImgRelatorio from '../../html-css-template/imagens/relatorio.svg';
-import ImgCadastrarEditar from '../../html-css-template/imagens/edicad.svg';
+import ImgPainelControle from '../../html-css-template/imagens/img-home/painel-controle.svg';
+import ImgCentralAjuda from '../../html-css-template/imagens/img-home/central-ajuda.svg';
+import ImgRelatorio from '../../html-css-template/imagens/img-home/relatorio.svg';
+import ImgCadastrarEditar from '../../html-css-template/imagens/img-home/edicad.svg';
 
 function Home(props) {
     const navigate = useNavigate();

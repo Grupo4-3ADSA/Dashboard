@@ -38,7 +38,7 @@
 
 .organiza-lista {
     width: 96%;
-    height: 55vh;
+    height: 58vh;
 }
 
 .table-lista th {
@@ -54,6 +54,10 @@
     height: 42px;
 }
 
+.menor{
+    min-width: 108px !important;
+}
+
 .organiza-lista .td-lista img {
     height: 50%;
 }
@@ -64,11 +68,11 @@
 }
 
 .organiza-lista .td-lista-editar-deletar .editar {
-    background: rgba(255, 255, 255, 0) url(../imagens/edit.png) no-repeat 2% center;
+    background: rgba(255, 255, 255, 0) url(../imagens/img-editar-deletar/edit.png) no-repeat 2% center;
 }
 
 .organiza-lista .td-lista-editar-deletar .deletar {
-    background: rgba(255, 255, 255, 0) url(../imagens/trash.png) no-repeat 2% center;
+    background: rgba(255, 255, 255, 0) url(../imagens/img-editar-deletar/trash.png) no-repeat 2% center;
 }
 
 /* Tabelas */

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import '../../html-css-template/css/style-global.css';
-import IconAvatar from '../../html-css-template/imagens/usuario.png';
-import IconConfig from '../../html-css-template/imagens/configuracao.png';
-import IconSino from '../../html-css-template/imagens/sino.png';
+import IconAvatar from '../../html-css-template/imagens/img-info-user/usuario.png';
+import IconConfig from '../../html-css-template/imagens/img-info-user/configuracao.png';
+import IconSino from '../../html-css-template/imagens/img-info-user/sino.png';
 
 function ItemNavSupCen(props) {
 

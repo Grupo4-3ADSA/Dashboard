@@ -43,7 +43,7 @@ function Modal(props) {
 
             <div className="modal-centro">
                 <div id="cadastro" className="modal">
-                    <button onClick={props.closeModalEditar} className="btn-close" >X</button>
+                    <button onClick={props.closeModalEditar} className="btn-close lado" >X</button>
                     <h2>Editar salas</h2>
                     <form onSubmit={atualizar}>
                         <h4>Sala:</h4>
@@ -51,7 +51,7 @@ function Modal(props) {
                             defaultValue={(`${props.name}`)}
                             onChange={e => setNomeSala(e.target.value)}
                         />
-                        
+
                         <h4>Andar: <span data-tooltip="Para alterar este campo entre em contato com o suporte"><img src={ImgInfo} alt="" /></span> </h4>
 
                         <input className="input-editar" type="text" placeholder="Digite o andar dessa sala"

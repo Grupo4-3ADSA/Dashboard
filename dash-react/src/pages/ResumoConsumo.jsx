@@ -4,8 +4,8 @@ import NavSupCentro from '../componentes/navbar/NavSupCentro';
 import NavEsquerdo from '../componentes/navbar/NavEsquerdo';
 import Chart from '../componentes/consumo/Chart';
 import TableConsumo from '../componentes/consumo/TableResumoConsumo';
-import ImgDesfazer from '../html-css-template/imagens/desfazer.png';
-import LogoOnclnBranco from '../html-css-template/imagens/logo-branco.png';
+import ImgVoltar from '../html-css-template/imagens/voltar.png';
+import LogoOnclnBranco from '../html-css-template/imagens/img-logo/logo-branco.png';
 
 function TableResumo(props) {
     const navigate = useNavigate();
@@ -26,7 +26,7 @@ function TableResumo(props) {
         <NavEsquerdo />
     </div>
     <div class="conteudo">
-    <img className="voltar" onClick={() => navigate(-1)} src={ImgDesfazer} alt="" />
+    <img className="voltar" onClick={() => navigate(-1)} src={ImgVoltar} alt="" />
  
         <div className="conteudo-scroll conteudo-chart">
             
