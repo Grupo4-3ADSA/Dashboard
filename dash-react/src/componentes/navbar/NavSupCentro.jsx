@@ -3,10 +3,18 @@ import '../../html-css-template/css/style-global.css';
 import IconAvatar from '../../html-css-template/imagens/img-info-user/usuario.png';
 import IconConfig from '../../html-css-template/imagens/img-info-user/configuracao.png';
 import IconSino from '../../html-css-template/imagens/img-info-user/sino.png';
+import { useNavigate } from "react-router-dom";
 
 function ItemNavSupCen(props) {
 
     const nome = sessionStorage.nomeGestor
+
+    const navigate = useNavigate()
+
+    function logoff() {
+        sessionStorage.clear()
+        navigate("/")
+    }
 
     return (
         <>
