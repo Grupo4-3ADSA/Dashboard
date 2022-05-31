@@ -39,8 +39,8 @@ function EditarCadastrar() {
                                     <img src={ImgCadastrarSalas} alt="" />
                                     <h4>Cadastrar Sala</h4>
                                 </div>
-                                <div className="direcionar">
-                                    <img src={ImgCadastrarOnCln} alt="" onClick={() => navigate("/on-cln-box")} />
+                                <div className="direcionar" onClick={() => navigate("/on-cln-box")}>
+                                    <img src={ImgCadastrarOnCln} alt=""  />
                                     <h4>Cadastrar Oncln</h4>
                                 </div>
                                 <div className="direcionar" onClick={() => navigate("/equipamentos")}>

@@ -40,7 +40,7 @@ function PainelSalas(props) {
                     </div>
                     <div class="conteudo">
                         <img className="voltar" onClick={() => navigate(-1)} src={ImgVoltar} alt="" />
-                        <h2 >Sala: A | Andar: 1º</h2>
+                        <h2>Sala: A | Andar: 1º</h2>
                         <div className="list organiza-lista">
                             <table className="table-lista">
                                 <li className="title-lista">

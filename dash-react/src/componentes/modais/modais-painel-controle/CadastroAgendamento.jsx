@@ -65,7 +65,7 @@ function ModalCadastroAgendamento(props) {
                 <div id="cadastro" className="modal">
                     <button onClick={props.closeModalCadastrar} className="btn-close lado" >X</button>
 
-                    <h2>Cadastrar equipamento</h2>
+                    <h2>Agendar função</h2>
                     <form onSubmit={cadastrarEquipamento} className="cadastro-equipamento">
 
                         <span >Sala desse agendamento:</span>
@@ -95,15 +95,20 @@ function ModalCadastroAgendamento(props) {
                                 onChange={e => setAndarSala(e.target.value)}
                             />
                         </div>
-
+                        <span>Horário:</span>
+                        <input type="number"
+                            /*  value={vidaUtil} */
+                            onChange={e => setAndarSala(e.target.value)}
+                            maxLength="3" />
+                        
+                        <span> Função do agendamento: </span>
+                       
                         <div className="on-off">
-                            <h4>On/Off:</h4>
-                            <label class="switch cima">
-                                <input type="checkbox" />
-                                <span class="slider round" /* onClick={() => (atualizar(1))} */></span>
-                            </label>
+                            <input type="radio" name="nome_do_grupo" value="true"/>
+                            <span>Ligar</span>
+                            <input type="radio" name="nome_do_grupo" value="false"/>
+                            <span> Desligar</span>
                         </div>
-
                         <div className="button-top">
                             <button onClick={props.closeModalCadastrar} className="button-cinza button-modal">Cancelar</button>
                             <button className="button-azul lado button-modal" type="submit">Cadastrar</button>

@@ -12,6 +12,7 @@ import CentralAjuda from "./pages/CentralAjuda";
 import Equipamentos from "./pages/Cadastros/Equipamentos";
 import OnClnbox from "./pages/Cadastros/OnClnBox";
 import AgendamentoMarcado from "./pages/PainelControle/AgendamentoMarcado";
+import SalaEmUso from "./pages/PainelControle/SalasEmUso";
 
 import PainleDeControleSalas from "./pages/PainelControle/PainelControleSalas";
 
@@ -30,7 +31,8 @@ function Rotas() {
                 <Route path="/painel-controle-salas" exact element={<PainleDeControleSalas />} />
                 <Route path="/equipamentos" exact element={<Equipamentos />} />
                 <Route path="/on-cln-box" exact element={<OnClnbox />} />
-                <Route path="/painel-de-controle-agendamento-marcado/" exact element={<AgendamentoMarcado />} />
+                <Route path="/painel-de-controle-agendamento-marcado" exact element={<AgendamentoMarcado />} />
+                <Route path="/painel-de-controle-salas-em-uso" exact element={<SalaEmUso />} />
                 
             </Routes>
         </BrowserRouter>

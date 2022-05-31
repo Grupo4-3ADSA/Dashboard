@@ -48,7 +48,6 @@ function Home(props) {
 
                         <BtnsDirecionar />
 
-
                         <div className="box-salas">
                             <div className="box-list">
                                 <h2 className="title-list">Salas que estão mais consumindo neste momento:</h2>

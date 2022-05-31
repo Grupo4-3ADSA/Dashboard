@@ -175,3 +175,10 @@
     text-align: left;
     vertical-align: top
 }
+
+.list-salas{
+    height: 72vh;
+    overflow-y: scroll;
+    width: 95%;
+    margin: auto;
+}

@@ -37,7 +37,7 @@ function PainelDeControle(props) {
                                     <img src={ImgAgendamentoMarcado} alt="" />
                                     <h4>Agendamento Marcado</h4>
                                 </div>
-                                <div className="direcionar">
+                                <div className="direcionar" onClick={() => navigate("/painel-de-controle-salas-em-uso")} >
                                     <img src={ImgEmUso} alt="" />
                                     <h4>Em uso</h4>
                                 </div>

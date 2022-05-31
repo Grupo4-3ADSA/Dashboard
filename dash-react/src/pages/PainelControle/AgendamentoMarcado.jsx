@@ -121,7 +121,7 @@ function PainelAgendamentoMarcado({ route, navigation }) {
                                             <th className="menor">Data inicial</th>
                                             <th className="menor">Data final</th>
                                             <th className="menor">Hora</th>
-                                            <th className="menor">On/Off</th>
+                                            <th className="menor">Função</th>
                                             <th >Ação</th>
                                         </tr>
                                     </thead>
