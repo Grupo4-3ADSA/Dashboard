@@ -24,7 +24,7 @@ function Login(props) {
                     sessionStorage.nomeGestor = response.data.nome;
                     sessionStorage.idEmpresa = response.data.fkEmpresa;
                     sessionStorage.idGestor = response.data.idGestor;
-                    navigate("/dash-generico")
+                    navigate("/home")
                 } else {
                     console.log("login deu errado irmao" + response.status)
                     document.getElementById('senha').style.borderColor = 'red'
