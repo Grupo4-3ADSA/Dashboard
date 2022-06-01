@@ -44,11 +44,13 @@ function Sala() {
 
     const navigate = useNavigate();
 
+    const idPredio = sessionStorage.idPredio
+
     const [rooms, setRooms] = useState([]);
     console.log(rooms)
 
     useEffect(() => {
-        api.Api.get("/rooms")
+        api.Api.get(`/rooms/${idPredio}`)
             .then(response => {
                 setRooms(response.data)
             })

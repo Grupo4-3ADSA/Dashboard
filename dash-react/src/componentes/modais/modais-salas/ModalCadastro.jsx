@@ -10,6 +10,7 @@ function ModalCadastroSalas(props) {
     const [respostaCerto, setRespostaCerto] = useState(false)
     const [respostaErrado, setRespostaErrado] = useState(false)
 
+    const idPredio = sessionStorage.idPredio
 
     const [nomeSala, setNomeSala] = useState([])
     const [andarSala, setAndarSala] = useState([])
@@ -18,6 +19,9 @@ function ModalCadastroSalas(props) {
         event.preventDefault()
         console.log(nomeSala + " " + andarSala)
         api.Api.post("/rooms", {
+            building:{
+                idBuilding: idPredio
+            },
             name: nomeSala,
             floor: andarSala
         }).then(response => {
