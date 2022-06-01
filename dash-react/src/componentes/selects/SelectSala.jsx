@@ -6,8 +6,10 @@ function SelectSalas(props) {
     
     const [setRooms] = useState([]);
 
+    const idPredio = sessionStorage.idPredio
+
     useEffect(() => {
-        api.Api.get("/rooms")
+        api.Api.get(`/rooms/${idPredio}`)
             .then(response => {
                 setRooms(response.data)
             })
