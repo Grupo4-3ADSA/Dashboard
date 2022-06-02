@@ -58,6 +58,10 @@
     min-width: 108px !important;
 }
 
+.maior{
+    min-width: 229px !important;
+}
+
 .organiza-lista .td-lista img {
     height: 50%;
 }

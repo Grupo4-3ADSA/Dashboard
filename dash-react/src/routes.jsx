@@ -13,6 +13,7 @@ import Equipamentos from "./pages/Cadastros/Equipamentos";
 import OnClnbox from "./pages/Cadastros/OnClnBox";
 import AgendamentoMarcado from "./pages/PainelControle/AgendamentoMarcado";
 import SalaEmUso from "./pages/PainelControle/SalasEmUso";
+import Erro404 from "./pages/Erro404";
 
 import PainleDeControleSalas from "./pages/PainelControle/PainelControleSalas";
 
@@ -33,6 +34,7 @@ function Rotas() {
                 <Route path="/on-cln-box" exact element={<OnClnbox />} />
                 <Route path="/painel-de-controle-agendamento-marcado" exact element={<AgendamentoMarcado />} />
                 <Route path="/painel-de-controle-salas-em-uso" exact element={<SalaEmUso />} />
+                <Route path="/erro-404" exact element={<Erro404 />} />
                 
             </Routes>
         </BrowserRouter>

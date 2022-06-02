@@ -4,7 +4,6 @@ import api from '../../Api'
 import '../../html-css-template/css/style-global.css';
 import NavSupCentro from '../../componentes/navbar/NavSupCentro';
 import NavEsquerdo from '../../componentes/navbar/NavEsquerdo';
-import BtnsDirecionar from '../../componentes/btns-home/btns-home';
 import ImgVoltar from '../../html-css-template/imagens/voltar.png';
 import ListaEmUso from "../../componentes/listas/ListaBtnEmUso";
 import LogoOnclnBranco from '../../html-css-template/imagens/img-logo/logo-branco.png';

@@ -20,6 +20,9 @@ function ModalCadastroOnCln(props) {
         event.preventDefault()
         console.log(qrCode)
         api.Api.post("/clnboxex", {
+            room: {
+                idRoom: rooms.id
+            },
             qrCode: qrCode
         }).then(response => {
             console.log(response.status)

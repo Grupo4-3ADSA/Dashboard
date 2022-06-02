@@ -2,7 +2,6 @@ import React, { useEffect} from "react";
 import '../../html-css-template/css/style-global.css';
 import IconAvatar from '../../html-css-template/imagens/img-info-user/usuario.png';
 import IconConfig from '../../html-css-template/imagens/img-info-user/configuracao.png';
-import IconSino from '../../html-css-template/imagens/img-info-user/sino.png';
 import { useNavigate} from "react-router-dom";
 
 function ItemNavSupCen(props) {
@@ -33,7 +32,6 @@ function ItemNavSupCen(props) {
                 <span>{nome}</span>
                 <img class="user" src={IconAvatar} alt="" />
                 <img class="config" src={IconConfig} alt="" />
-                <img class="config" src={IconSino} alt="" />
             </div>
         </>
     )

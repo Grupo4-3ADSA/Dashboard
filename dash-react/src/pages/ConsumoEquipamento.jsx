@@ -8,6 +8,8 @@ import NavSupCentro from '../componentes/navbar/NavSupCentro';
 import NavEsquerdo from '../componentes/navbar/NavEsquerdo';
 import ImgVoltar from '../html-css-template/imagens/voltar.png';
 import LogoOnclnBranco from '../html-css-template/imagens/img-logo/logo-branco.png';
+import SelectsGerais from '../componentes/selects/SelectsGerais';
+
 /* import ListaEquipamentos from "../componentes/listas/ListaEquipamentos"; */
 
 function Consumo(props) {
@@ -45,23 +47,7 @@ function Consumo(props) {
                         <img className="voltar" onClick={() => navigate(-1)} src={ImgVoltar} alt="" />
                         
                         <h2>Equipamentos com mias consumo</h2>
-                        <select name="select-predio" className="select-maior ">
-                            <img src="" alt="" />
-                            <option value="valor1" selected >Predio 1 - Haddock Lobo 595</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                        <select name="select-andar" className="select-menor">
-                            <option value="valor1" selected >Andar</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                        <select name="select-sala" className="select-menor">
-                            <option value="valor1" selected >Sala</option>
-                            <option value="valor2">Valor 2</option>
-                            <option value="valor3">Valor 3</option>
-                        </select>
-                        
+                        <SelectsGerais />
 
                         <div className="list organiza-lista">
                             <table className="table-lista">

@@ -5,7 +5,7 @@ import '../../html-css-template/css/style-list.css';
 import '../../html-css-template/css/style-modais.css';
 import api from '../../Api';
 import LogoOnclnBranco from '../../html-css-template/imagens/img-logo/logo-branco.png';
-import ListaSalas from '../../componentes/listas/ListaEquipamentos';
+import ListaOnClnBox from '../../componentes/listas/ListaOncln';
 import NavSupCentro from '../../componentes/navbar/NavSupCentro';
 import NavEsquerdo from '../../componentes/navbar/NavEsquerdo';
 
@@ -55,6 +55,7 @@ function OnClnBox() {
         api.Api.get("/clnboxex")
             .then(response => {
                 setClnbox(response.data)
+                console.log(response)
             })
             .catch(erro => {
                 console.log(erro)
@@ -97,7 +98,6 @@ function OnClnBox() {
                     <div class="nav-superior-esquerda">
                         <img src={LogoOnclnBranco} alt="Logo" />
                     </div>
-
                     <NavSupCentro />
                 </div>
 
@@ -120,20 +120,19 @@ function OnClnBox() {
                                 <li className="title-lista">
                                     <thead>
                                         <tr>
-                                            <th >Tipo</th>
-                                            <th >Sala</th>
-                                            <th >Andar</th>
-                                            <th >Ação</th>
-                                            <th ></th>
+                                            <th className="maior">Id On Cln</th>
+                                            <th className="maior">Sala</th>
+                                            <th className="maior">Andar</th>
+                                            <th className="maior">Ação</th>
                                         </tr>
                                     </thead>
                                 </li>
                                 {
                                     clnbox.map(clnbox => (
-                                        <ListaSalas
+                                        <ListaOnClnBox
                                             update={setVariavel}
                                             delete={setVariavelDeletar}
-                                            Id={clnbox.name}
+                                            idCLNBox={clnbox.idCLNBox}
                                             floor={clnbox.floor}
                                             idRoom={clnbox.idRoom}
                                         />
