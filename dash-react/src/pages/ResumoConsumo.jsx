@@ -34,12 +34,11 @@ function TableResumo(props) {
                             <Chart />
 
                             <h2 className="h2-titulo">Dados de consumo geral</h2>
-
+                            
                             <div classNameName="box-select">
-                                <span>Mês:</span>
                                 <select name="select-predio" className="select-menor">
                                     <img src="" alt="" />
-                                    <option value="valor1" selected >Mês:</option>
+                                    <option value="valor1" selected >Selecione o mês:</option>
                                     <option value="valor2">Janeiro</option>
                                     <option value="valor3">Fevereiro</option>
                                     <option value="valor3">Março</option>
@@ -53,9 +52,18 @@ function TableResumo(props) {
                                     <option value="valor3">Novembro</option>
                                     <option value="valor3">Dezembro</option>
                                 </select>
-                                <button className="btn-box-select">Baixar relatório</button>
-                                <button className="btn-box-select" onClick={() => window.print()}>Imprimir relatóio
+
+                                <select name="select-predio" className="select-menor">
+                                    <img src="" alt="" />
+                                    <option value="valor1" selected >Selecione o Ano:</option>
+                                    <option value="valor2">Janeiro</option>
+                                </select><br />
+
+                                <button className="button-azul">Baixar relatório CSV</button>
+                                <button className="button-azul" onClick={() => window.print()}>
+                                    Baixar relatório TXT
                                 </button>
+                                <button className="button-azul">Upload relatório TXT</button>
                             </div>
 
                             <TableConsumo />

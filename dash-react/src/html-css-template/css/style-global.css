@@ -32,13 +32,13 @@ button {
     height: 6vh;
 }
 
-.button-azul{
+.button-azul {
     background-color: var(--blue-dark);
     color: var(--white);
     box-shadow: 10px 10px 10px rgb(0 0 0 / 25%);
 }
 
-.button-cinza{
+.button-cinza {
     background-color: var(--grey-one);
     box-shadow: 10px 10px 10px rgb(0 0 0 / 25%);
 }
@@ -134,11 +134,12 @@ nav {
     margin: 0 30px 0 0;
 }
 
-.img-fundo-erro{
+.img-fundo-erro {
     width: 80%;
     float: right;
 }
-.erro404{
+
+.erro404 {
     width: 100%;
 }
 
@@ -155,7 +156,7 @@ nav {
     visibility: visible !important;
 }
 
-.formulario h2{
+.formulario h2 {
     margin: 0 !important
 }
 
@@ -166,7 +167,7 @@ nav {
 
 .input-fild input {
     width: 90%;
-    height: 15px;
+    height: 18px;
     background: none;
     margin: 20px 0 10px 0;
     font-family: var(--font-defaut);
@@ -211,8 +212,14 @@ nav {
     font-weight: bold;
 }
 
-.senha {
-    background: rgba(255, 255, 255, 0) url(../imagens/ver.png) no-repeat 45% center;
+.olho {
+    cursor: pointer;
+    width: 15px;
+    z-index: 100;
+}
+
+.senha{
+    width: 87% !important;
 }
 
 /* Estilo Dash */
@@ -373,15 +380,15 @@ input::placeholder {
     overflow-y: scroll;
 }
 
-.centro{
+.centro {
     padding: 5% 0 0 0;
 }
 
-.box-select-button{
+.box-select-button {
     padding: 2% 4% 0 0;
 }
 
-.lado{
+.lado {
     float: right;
 }
 
@@ -459,7 +466,28 @@ input::placeholder {
 
 .select-menor {
     width: 14%;
-    margin-left: 4%;    
+    margin-left: 4%;
+}
+
+/* Consumo por equipamento */
+.chart-consumo{
+    float: left;
+    text-align: center;
+}
+
+.chart-consumo .box-chart{
+    width: 90% !important;
+}
+
+.info-consumo{
+    float: right;
+    text-align: center;
+    margin-right:15% ;
+    text-align: left;
+}
+.info-consumo h5{
+    float:left ;
+    margin: 8px 4px 0  0 !important;
 }
 
 /* Consumo */

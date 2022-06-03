@@ -82,7 +82,8 @@
 /* Tabelas */
 
 .conteudo-chart button {
-    margin: 10px !important;
+    margin: 10px 0 10px 4% !important;
+    width: 14%;
 }
 
 .conteudo-chart image {

@@ -22,20 +22,6 @@ function OnClnBox() {
     const [idRoom, setIdRoom] = useState([]);
     const [name, setName] = useState([]);
     const [floor, setFloor] = useState([]);
-
-    function setVariavel(pName, pIdRoom, pFloor) {
-        setName(pName)
-        setIdRoom(pIdRoom)
-        setFloor(pFloor)
-        console.log(pName)
-        setShowModalEditar(true)
-    }
-
-    function setVariavelDeletar(idRoom) {
-        setIdRoom(idRoom)
-        setShowModalDeletar(true)
-    }
-
     /* Abre modal cadastrar*/
     const [showModalCadastrar, setShowModalCadastrar] = useState(true)
     const showOrHideCadastro = () => setShowModalCadastrar(true)
@@ -50,6 +36,19 @@ function OnClnBox() {
 
     const [clnbox, setClnbox] = useState([]);
     console.log(clnbox)
+
+    function setVariavel(pName, pIdRoom, pFloor) {
+        setName(pName)
+        setIdRoom(pIdRoom)
+        setFloor(pFloor)
+        console.log(pName)
+        setShowModalEditar(true)
+    }
+
+    function setVariavelDeletar(idRoom) {
+        setIdRoom(idRoom)
+        setShowModalDeletar(true)
+    }
 
     useEffect(() => {
         api.Api.get("/clnboxex")
