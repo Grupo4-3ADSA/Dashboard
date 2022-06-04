@@ -11,9 +11,11 @@ function ModalCadastroOnCln(props) {
     const [respostaCerto, setRespostaCerto] = useState(false)
     const [respostaErrado, setRespostaErrado] = useState(false)
 
-    const [nomeSala, setNomeSala] = useState([])
-    const [qrCode, setQrCode] = useState([])
 
+    const [idSala, setIdRoom] = useState([])
+
+    const [qrCode, setQrCode] = useState([])
+    
     const [rooms, setRooms] = useState([]);
 
     function cadastrar(event) {
@@ -21,9 +23,10 @@ function ModalCadastroOnCln(props) {
         console.log(qrCode)
         api.Api.post("/clnboxex", {
             room: {
-                idRoom: rooms.id
+                idRoom: idSala
             },
             qrCode: qrCode
+
         }).then(response => {
             console.log(response.status)
             setRespostaCerto(true)
@@ -36,6 +39,7 @@ function ModalCadastroOnCln(props) {
             setRespostaCerto(false)
             setTimeout(setRespostaErrado, 7000)
         })
+    
     }
 
     const idPredio = sessionStorage.idPredio
@@ -48,7 +52,8 @@ function ModalCadastroOnCln(props) {
             .catch(erro => {
                 console.log(erro)
             })
-    }, [])
+            
+    })
 
     return (
         <>
@@ -70,11 +75,14 @@ function ModalCadastroOnCln(props) {
                     
                     <form onSubmit={cadastrar}>
                         <h4>Sala:</h4>
-                        {
+                        {                
                             <SelectSala
-                                name={rooms.map(rooms => (
-                                    <option value={rooms.id}>{rooms.name}</option>
-                                ))} />
+                            onChange={(e)=>{
+                                setIdRoom(e.target.value)
+                                console.log(idSala)
+                            }}
+                                
+                            data={rooms}/>
                         }
 
                         <h4 className="h4-topo">Qr-Code:</h4>

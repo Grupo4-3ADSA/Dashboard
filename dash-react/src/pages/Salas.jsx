@@ -10,7 +10,7 @@ import NavSupCentro from '../componentes/navbar/NavSupCentro';
 import NavEsquerdo from '../componentes/navbar/NavEsquerdo';
 import SelectsGerais from '../componentes/selects/SelectsGerais';
 import ImgVoltar from '../html-css-template/imagens/voltar.png';
-import ModalCadastro from '../componentes/modais/modais-salas/ModalCadastro';
+import ModalCadastro from '../componentes/modais/modais-salas/ModalCadastroSala';
 import ModalEditar from '../componentes/modais/modais-salas/ModalEditar';
 import ModalDeletar from '../componentes/modais/modais-salas/ModalDeletar';
 

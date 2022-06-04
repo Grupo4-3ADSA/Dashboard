@@ -58,7 +58,7 @@ function Sala() {
             .catch(erro => {
                 console.log(erro)
             })
-    }, [])
+    })
 
     return (
         <>

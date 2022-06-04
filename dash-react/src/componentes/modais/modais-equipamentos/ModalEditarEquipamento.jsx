@@ -14,7 +14,7 @@ function ModalCadastroEquipamento(props) {
 
     const [nomeSala, setNomeSala] = useState([])
     const [andarSala, setAndarSala] = useState([])
-
+    const [idSala, setIdRoom] = useState([])
     const [rooms, setRooms] = useState([]);
 
     const idPredio = sessionStorage.idPredio
@@ -27,7 +27,7 @@ function ModalCadastroEquipamento(props) {
             .catch(erro => {
                 console.log(erro)
             })
-    }, [])
+    })
 
     return (
         <>
@@ -49,17 +49,19 @@ function ModalCadastroEquipamento(props) {
 
                     <form /* onSubmit={} */ className="cadastro-equipamento">
 
-                    <h4>Selecionar salas: <span data-tooltip="Para alterar este campo entre em contato com o suporte"><img src={ImgInfo} alt="" /></span> </h4>
-
+                        <h4>Selecionar salas: <span data-tooltip="Para alterar este campo entre em contato com o suporte"><img src={ImgInfo} alt="" /></span> </h4>
                         {
                             <SelectSala
-                                name={rooms.map(rooms => (
-                                    <option value={rooms.id} disabled>{rooms.name}</option>
-                                ))} />
+                                onChange={(e) => {
+                                    setIdRoom(e.target.value)
+                                    console.log(idSala)
+                                }}
+
+                                data={rooms} />
                         }
 
                         <span>Tipo do equipamento</span>
-                        <SelectEquipamento/>
+                        <SelectEquipamento />
 
                         <span>Data da instalação:</span>
                         <input type="date"

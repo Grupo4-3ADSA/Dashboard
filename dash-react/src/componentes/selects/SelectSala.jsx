@@ -16,18 +16,18 @@ function SelectSalas(props) {
             .catch(erro => {
                 console.log(erro)
             })
-    }, [])
+    })
 
     return (
         <>
-            <select name="select-sala">
+          <select id="select-sala" onChange={props.onChange}>
                 <img src="" alt="" />
                 <option value="valor1" selected >Selecione uma sala</option>
-                {props.name}
+                {props.data.map(value => (
+                <option key={value.idRoom} value={value.idRoom}>{value.name}</option>))}
             </select>
         </>
     )
-
 }
 
 export default SelectSalas;

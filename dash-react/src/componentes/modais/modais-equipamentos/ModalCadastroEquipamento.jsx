@@ -14,7 +14,7 @@ function ModalCadastroEquipamento(props) {
 
     const [nomeSala, setNomeSala] = useState([])
     const [andarSala, setAndarSala] = useState([])
-
+    const [idSala, setIdRoom] = useState([])
     const [rooms, setRooms] = useState([]);
 
     function cadastrarEquipamento(event) {
@@ -25,6 +25,7 @@ function ModalCadastroEquipamento(props) {
             floor: andarSala
         }).then(response => {
             console.log(response.status)
+            
             setRespostaCerto(true)
             setRespostaErrado(false)
             setTimeout(setRespostaCerto, 140000)
@@ -47,7 +48,7 @@ function ModalCadastroEquipamento(props) {
             .catch(erro => {
                 console.log(erro)
             })
-    }, [])
+    })
 
     return (
         <>
@@ -73,9 +74,12 @@ function ModalCadastroEquipamento(props) {
 
                         {
                             <SelectSala
-                                name={rooms.map(rooms => (
-                                    <option value={rooms.id}>{rooms.name}</option>
-                                ))} />
+                                onChange={(e) => {
+                                    setIdRoom(e.target.value)
+                                    console.log(idSala)
+                                }}
+
+                                data={rooms} />
                         }
 
                         <span>Tipo do equipamento</span>

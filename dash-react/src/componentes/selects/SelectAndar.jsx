@@ -3,7 +3,7 @@ import api from '../../Api';
 import '../../html-css-template/css/style-global.css';
 
 function SelectSalas(props) {
-    
+
     const [setRooms] = useState([]);
 
     const idPredio = sessionStorage.idPredio
@@ -16,7 +16,7 @@ function SelectSalas(props) {
             .catch(erro => {
                 console.log(erro)
             })
-    }, [])
+    })
 
     return (
         <>
