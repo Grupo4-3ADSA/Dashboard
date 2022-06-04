@@ -15,14 +15,20 @@ function ModalCadastroEquipamento(props) {
     const [nomeSala, setNomeSala] = useState([])
     const [andarSala, setAndarSala] = useState([])
     const [idSala, setIdRoom] = useState([])
-    const [rooms, setRooms] = useState([]);
+    const [rooms, setRooms] = useState([])
 
     function cadastrarEquipamento(event) {
         event.preventDefault()
         console.log(nomeSala + " " + andarSala)
-        api.Api.post("/rooms", {
+        api.Api.post("/equipments", {
+
+            room: {
+                idRoom: idSala
+            },
+
             name: nomeSala,
             floor: andarSala
+
         }).then(response => {
             console.log(response.status)
             

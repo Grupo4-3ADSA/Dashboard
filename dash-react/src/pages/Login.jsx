@@ -16,7 +16,7 @@ function Login(props) {
     const [passwordType, setPasswordType] = useState("password");
 
     function setView() {
-        if (passwordType == "text") {
+        if (passwordType === "text") {
             setPasswordType("password")
         } else {
             setPasswordType("text")
@@ -37,7 +37,7 @@ function Login(props) {
                     sessionStorage.idGestor = response.data.idGestor;
                     navigate("/home")
                 } else {
-                    console.log("login deu errado irmao" + response.status)
+                    console.log("login deu errado" + response.status)
                     document.getElementById('senha').style.borderColor = 'red'
                 }
 

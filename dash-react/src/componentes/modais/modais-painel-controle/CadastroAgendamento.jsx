@@ -13,6 +13,7 @@ import api from "../../../Api";
 function ModalCadastroAgendamento(props) {
     const [respostaCerto, setRespostaCerto] = useState(false)
     const [respostaErrado, setRespostaErrado] = useState(false)
+    const [idSala, setIdRoom] = useState([])
 
     const [nomeSala, setNomeSala] = useState([])
     const [andarSala, setAndarSala] = useState([])
@@ -71,11 +72,15 @@ function ModalCadastroAgendamento(props) {
                     <form onSubmit={cadastrarEquipamento} className="cadastro-equipamento">
 
                         <span >Sala desse agendamento:</span>
-                        {<SelectSala
-                                name={rooms.map(rooms => (
-                                    <option value={rooms.id}>{rooms.name}</option>
-                                ))} />}
-
+                        {                
+                            <SelectSala
+                            onChange={(e)=>{
+                                setIdRoom(e.target.value)
+                                console.log(idSala)
+                            }}
+                                
+                            data={rooms}/>
+                        }
                         <span >Andar</span>
                         {<SelectAndar
                                 floor={rooms.map(rooms => (

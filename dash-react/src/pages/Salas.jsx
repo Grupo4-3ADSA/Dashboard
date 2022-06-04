@@ -53,11 +53,12 @@ function Sala() {
         api.Api.get(`/rooms/${idPredio}`)
             .then(response => {
                 setRooms(response.data)
+                console.log("Aquiiii" + rooms)
             })
             .catch(erro => {
                 console.log(erro)
             })
-    }, [])
+    })
 
     return (
         <>

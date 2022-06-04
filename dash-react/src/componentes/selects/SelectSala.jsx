@@ -7,7 +7,6 @@ function SelectSalas(props) {
     const [setRooms] = useState([]);
 
     const idPredio = sessionStorage.idPredio
-
     useEffect(() => {
         api.Api.get(`/rooms/${idPredio}`)
             .then(response => {
@@ -24,7 +23,7 @@ function SelectSalas(props) {
                 <img src="" alt="" />
                 <option value="valor1" selected >Selecione uma sala</option>
                 {props.data.map(value => (
-                <option key={value.idRoom} value={value.idRoom}>{value.name}</option>))}
+                <option key={value.idRoom} value={value.idRoom} >{value.name}</option>))}
             </select>
         </>
     )
