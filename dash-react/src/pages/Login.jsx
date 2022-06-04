@@ -9,7 +9,6 @@ import ImgSenha from '../html-css-template/imagens/ver.png'
 
 function Login(props) {
 
-
     const navigate = useNavigate();
     const [login, setLogin] = useState([])
     const [senha, setSenha] = useState([])

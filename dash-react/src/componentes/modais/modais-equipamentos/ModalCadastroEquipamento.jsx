@@ -21,13 +21,11 @@ function ModalCadastroEquipamento(props) {
         event.preventDefault()
         console.log(nomeSala + " " + andarSala)
         api.Api.post("/equipments", {
-
+            name: nomeSala,
+            floor: andarSala,
             room: {
                 idRoom: idSala
-            },
-
-            name: nomeSala,
-            floor: andarSala
+            }
 
         }).then(response => {
             console.log(response.status)

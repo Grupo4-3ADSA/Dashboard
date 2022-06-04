@@ -19,6 +19,7 @@ function Sala() {
     const [idRoom, setIdRoom] = useState([]);
     const [name, setName] = useState([]);
     const [floor, setFloor] = useState([]);
+    const [idSala, setIdSala] = useState([]);
 
     function setVariavel(pName, pIdRoom, pFloor) {
         setName(pName)
@@ -45,20 +46,35 @@ function Sala() {
 
     const navigate = useNavigate();
 
-    const idPredio = sessionStorage.idPredio
+    // const idPredio = sessionStorage.idPredio
 
     const [rooms, setRooms] = useState([]);
-    console.log(rooms)
+    const [equips, setEquips] = useState([]);
 
     useEffect(() => {
-        api.Api.get(`/rooms/${idPredio}`)
+        api.Api.get(`/equipments`)
             .then(response => {
-                setRooms(response.data)
+                setEquips(response.data)
+                // console.log(idSala)
             })
             .catch(erro => {
                 console.log(erro)
             })
     })
+
+    const idPredio = sessionStorage.idPredio
+    useEffect(() => {
+        api.Api.get(`/rooms/${idPredio}`)
+            .then(response => {
+                setRooms(response.data)
+                // console.log(rooms)
+
+            })
+            .catch(erro => {
+                console.log(erro)
+            })
+    })
+
 
     return (
         <>
@@ -111,7 +127,12 @@ function Sala() {
                             <img className="voltar" onClick={() => navigate(-1)} src={ImgVoltar} alt="" />
                             <h2>Equipamentos cadastrados</h2>
 
-                            <SelectsGerais />
+                            <SelectsGerais  
+                            onChange={(e) => {
+                                setIdSala(43)
+                            }}
+
+                            />
 
                             <button className=" lado button-azul" onClick={showOrHideCadastro} >Cadastrar Equipamento</button>
                         </div>
@@ -122,8 +143,8 @@ function Sala() {
                                     <thead>
                                         <tr>
                                             <th >Tipo</th>
+                                            <th >Sala</th>
                                             <th >Andar</th>
-                                            <th >Status</th>
                                             <th >Ação</th>
                                             <th ></th>
                                         </tr>
@@ -131,16 +152,19 @@ function Sala() {
                                 </li>
 
                                 {
-                                    rooms.map(rooms => (
+
+                                    equips.map(equips => (
                                         <ListaEquipamento
                                             update={setVariavel}
                                             delete={setVariavelDeletar}
-                                            name={rooms.name}
-                                            floor={rooms.floor}
-                                            idRoom={rooms.idRoom}
+                                            nameRoom={equips.nameRoom}
+                                            floor={equips.floor}
+                                            type={equips.type}
                                         />
                                     ))
+
                                 }
+
                             </table>
                         </div>
                     </div>

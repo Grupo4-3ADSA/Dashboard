@@ -12,19 +12,23 @@ import ImgVoltar from '../../html-css-template/imagens/voltar.png';
 
 function Sala() {
     const navigate = useNavigate();
-    const idPredio = sessionStorage.idPredio
-    const [rooms, setRooms] = useState([]);
-    console.log(rooms)
+
+    const [equips, setEquips] = useState([]);
+    
+    function setIdEquipment(equipment){
+        sessionStorage.idEquipment = equipment
+    }
 
     useEffect(() => {
-        api.Api.get(`/rooms/${idPredio}`)
+        api.Api.get(`/equipments`)
             .then(response => {
-                setRooms(response.data)
+                setEquips(response.data)
             })
             .catch(erro => {
                 console.log(erro)
             })
     })
+
 
     return (
         <>
@@ -67,14 +71,18 @@ function Sala() {
                                 </li>
 
                                 {
-                                    rooms.map(rooms => (
+
+                                    equips.map(equips => (
                                         <ListaEquipamentoConsumo
 
-                                            name={rooms.name}
-                                            floor={rooms.floor}
-                                            idRoom={rooms.idRoom}
+                                            nameRoom={equips.nameRoom}
+                                            floor={equips.floor}
+                                            type={equips.type}
+                                            idEquipment={equips.idEquipment}
+                                            setIdEquipment={setIdEquipment}
                                         />
                                     ))
+
                                 }
                             </table>
                         </div>

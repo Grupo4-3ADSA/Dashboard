@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import '../../html-css-template/css/style-global.css';
+import api from '../../Api';
 
 function ListaEquipamentos(props) {
 
@@ -8,11 +9,12 @@ function ListaEquipamentos(props) {
             <li>
                 <thead >
                     <tr>
-                        <td class="td-lista">Ar condicionado</td>
-                        <td class="td-lista">A</td>
-                        <td class="td-lista">1°</td>
+                        <td class="td-lista">{props.type}</td>
+                        <td class="td-lista">{props.nameRoom}</td>
+                        <td class="td-lista">{props.floor}°</td>
                         <td class="td-lista">Ligado</td>
-                        <td class="td-lista" ><a href="/consumo-por-equipamento">Acessar</a> </td>
+                        <td class="td-lista" ><a onClick={() => props.setIdEquipment(`${props.idEquipment}`)} 
+                        value={props.idEquipment} href="/consumo-por-equipamento">Acessar</a> </td>
                     </tr>
                 </thead>
             </li>
