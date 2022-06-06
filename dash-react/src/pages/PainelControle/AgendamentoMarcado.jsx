@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import '../../html-css-template/css/style-global.css';
 import '../../html-css-template/css/style-list.css';
-import '../../html-css-template/css/style-modais.css';
 import api from '../../Api';
 import ListaAgendamento from '../../componentes/listas/ListaAgendamento';
 import LogoOnclnBranco from '../../html-css-template/imagens/img-logo/logo-branco.png';

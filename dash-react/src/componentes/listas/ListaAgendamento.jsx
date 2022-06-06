@@ -1,6 +1,5 @@
 import React from "react";
 import '../../html-css-template/css/style-global.css';
-import '../../html-css-template/css/style-modais.css';
 
 function ListaSalas(props) {
     return (

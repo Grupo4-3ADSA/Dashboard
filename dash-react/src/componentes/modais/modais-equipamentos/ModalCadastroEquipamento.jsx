@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import '../../../html-css-template/css/style-modais.css';
 import '../../../html-css-template/css/style-global.css';
 import RespostaCerto from '../../respostas-crud/RespostaCerto';
 import RespostaErro from '../../respostas-crud/RespostaErro';
@@ -12,24 +11,35 @@ function ModalCadastroEquipamento(props) {
     const [respostaCerto, setRespostaCerto] = useState(false)
     const [respostaErrado, setRespostaErrado] = useState(false)
 
-    const [nomeSala, setNomeSala] = useState([])
-    const [andarSala, setAndarSala] = useState([])
+    const [name, setNameEquipament] = useState([])
+    const [typeEquipament, setType] = useState([])
+    const [installationDate, setinstallation] = useState([])
+    const [qtdEquipment, setQtdEquipment] = useState([])
+    const [potencyEquipment, setPotencyEquipment] = useState([])
+    const [lifespanEquipament, setLifespan] = useState([])
+
     const [idSala, setIdRoom] = useState([])
+    const [idCln, setIdCln] = useState([])
+
     const [rooms, setRooms] = useState([])
 
     function cadastrarEquipamento(event) {
         event.preventDefault()
-        console.log(nomeSala + " " + andarSala)
         api.Api.post("/equipments", {
-            name: nomeSala,
-            floor: andarSala,
+            name: name,
+            type: typeEquipament,
+            installationDate: installationDate,
+            qtdEquipment: qtdEquipment,
+            potency: potencyEquipment,
+            lifespan: lifespanEquipament,
+
             room: {
-                idRoom: idSala
+                idSala: idSala
             }
 
         }).then(response => {
             console.log(response.status)
-            
+
             setRespostaCerto(true)
             setRespostaErrado(false)
             setTimeout(setRespostaCerto, 140000)
@@ -80,40 +90,57 @@ function ModalCadastroEquipamento(props) {
                             <SelectSala
                                 onChange={(e) => {
                                     setIdRoom(e.target.value)
+                                        rooms.map(valor => {
+                                            if (valor.idRoom == e.target.value) {
+                                                setIdCln(valor.idClnBox)
+                                            }
+                                        })
+                                    console.log("rooms")
+                                    console.log(rooms)
+                                    console.log("idSala")
                                     console.log(idSala)
+                                    console.log("idCln")
+                                    console.log(idCln)
                                 }}
-
                                 data={rooms} />
                         }
 
                         <span>Tipo do equipamento</span>
-                        <SelectEquipamento />
+
+                        {
+                            <SelectEquipamento
+                                onChange={(e) => {
+                                    setType(e.target.value)
+                                }}
+                            />
+                        }
+
 
                         <span>Data da instalação:</span>
                         <input type="date"
-                            value={andarSala}
-                            onChange={e => setAndarSala(e.target.value)}
+                            value={installationDate}
+                            onChange={e => setinstallation(e.target.value)}
                         />
 
                         <div className="input-lado">
                             <span>Quantidade</span>
                             <input type="number"
-                                value={nomeSala} onChange={e => setNomeSala(e.target.value)}
+                                value={qtdEquipment} onChange={e => setQtdEquipment(e.target.value)}
                                 maxLength="3" />
                         </div>
 
                         <div className="input-lado a">
                             <span>Potência:</span>
                             <input type="number"
-                                /* value={andarSala} */
-                                onChange={e => setAndarSala(e.target.value)}
+                                value={potencyEquipment}
+                                onChange={e => setPotencyEquipment(e.target.value)}
                                 maxLength="5" />
                         </div>
 
                         <span>Vida útil em horas:</span>
                         <input type="number"
-                            /*  value={vidaUtil} */
-                            onChange={e => setAndarSala(e.target.value)}
+                            value={lifespanEquipament}
+                            onChange={e => setLifespan(e.target.value)}
                             maxLength="3" />
 
                         <div className="button-top">

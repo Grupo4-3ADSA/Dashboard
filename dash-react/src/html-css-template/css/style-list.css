@@ -2,6 +2,7 @@
     height: 41vh;
     align-items: center;
     width: 95%;
+    margin-right: 0 !important;
 }
 
 .list {
@@ -38,7 +39,7 @@
 
 .organiza-lista {
     width: 96%;
-    height: 58vh;
+    height: 56vh;
 }
 
 .table-lista th {

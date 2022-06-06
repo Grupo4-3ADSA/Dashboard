@@ -1,5 +1,5 @@
 import React from "react";
-import '../../html-css-template/css/style-modais.css';
+import '../../html-css-template/css/style-global.css';
 
 function RespostaDeuRuim(props) {
     return (

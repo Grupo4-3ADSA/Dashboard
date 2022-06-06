@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import '../../html-css-template/css/style-global.css';
 import '../../html-css-template/css/style-list.css';
-import '../../html-css-template/css/style-modais.css';
 import api from '../../Api';
 import LogoOnclnBranco from '../../html-css-template/imagens/img-logo/logo-branco.png';
 import ListaOnClnBox from '../../componentes/listas/ListaOncln';
@@ -23,7 +22,7 @@ function OnClnBox() {
     const [name, setName] = useState([]);
     const [floor, setFloor] = useState([]);
     /* Abre modal cadastrar*/
-    const [showModalCadastrar, setShowModalCadastrar] = useState(true)
+    const [showModalCadastrar, setShowModalCadastrar] = useState(false)
     const showOrHideCadastro = () => setShowModalCadastrar(true)
 
     /* Abre modal editar*/
@@ -54,6 +53,7 @@ function OnClnBox() {
         api.Api.get("/clnboxex")
             .then(response => {
                 setClnbox(response.data)
+                console.log("Aqui k77777")
                 console.log(response)
             })
             .catch(erro => {
@@ -114,30 +114,22 @@ function OnClnBox() {
                             <button className=" lado button-azul" onClick={showOrHideCadastro} >Cadastrar OnCln-Box</button>
                         </div>
 
-                        <div className="list organiza-lista">
-                            <table className="table-lista">
-                                <li className="title-lista">
-                                    <thead>
-                                        <tr>
-                                            <th className="maior">Id On Cln</th>
-                                            <th className="maior">Sala</th>
-                                            <th className="maior">Andar</th>
-                                            <th className="maior">Ação</th>
-                                        </tr>
-                                    </thead>
-                                </li>
-                                {
-                                    clnbox.map(clnbox => (
-                                        <ListaOnClnBox
-                                            update={setVariavel}
-                                            delete={setVariavelDeletar}
-                                            idCLNBox={clnbox.idCLNBox}
-                                            floor={clnbox.floor}
-                                            idRoom={clnbox.idRoom}
-                                        />
-                                    ))
-                                }
-                            </table>
+                        <div className="centro ">
+                            <div className="list organiza-lista">
+
+                                    {
+                                        clnbox.map(clnbox => (
+                                            <ListaOnClnBox
+                                                update={setVariavel}
+                                                delete={setVariavelDeletar}
+                                                idCLNBox={clnbox.idCLNBox}
+                                                nameSala={clnbox.room.name}
+                                                floor={clnbox.room.floor}
+                                                idRoom={clnbox.idRoom}
+                                            />
+                                        ))
+                                    }
+                                </div>
                         </div>
                     </div>
                 </div>

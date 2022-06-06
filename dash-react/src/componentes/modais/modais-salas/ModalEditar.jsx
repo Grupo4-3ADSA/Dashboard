@@ -1,5 +1,4 @@
 import React, { useState  } from "react";
-import '../../../html-css-template/css/style-modais.css';
 import '../../../html-css-template/css/style-global.css';
 import RespostaCerto from '../../respostas-crud/RespostaCerto';
 import RespostaErrado from '../../respostas-crud/RespostaErro'

@@ -9,16 +9,14 @@ import LogoOnclnBranco from '../../html-css-template/imagens/img-logo/logo-branc
 import ChartConsumo from '../../componentes/consumo/ChartEquipamentoConsumo';
 import Detalhes from './Detalhes'
 
-
 function ConsumoPorEquioamento() {
     const navigate = useNavigate();
     const [equips, setEquips] = useState([]);
 
     const idEquipment = sessionStorage.idEquipment
     
-
     useEffect(() => {
-        api.Api.get(`/equipments/${idEquipment}`)
+        api.Api.get(`/equips/${idEquipment}`)
             .then(response => {
                 setEquips(response.data)
                 // console.log(response)
@@ -59,7 +57,6 @@ function ConsumoPorEquioamento() {
                             <div className="info-consumo">
 
                                 {
-
                                     equips.map(equips => (
                                         <Detalhes
                                             lifespan={equips.lifespan}
@@ -67,7 +64,6 @@ function ConsumoPorEquioamento() {
                                             potency={equips.potency}
                                         />
                                     ))
-
                                 }
                             </div>
                         </div>

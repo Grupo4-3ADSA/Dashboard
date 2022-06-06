@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import '../../../html-css-template/css/style-modais.css';
 import '../../../html-css-template/css/style-global.css';
 import RespostaCerto from '../../respostas-crud/RespostaCerto';
 import RespostaErro from '../../respostas-crud/RespostaErro';
@@ -11,11 +10,8 @@ function ModalCadastroOnCln(props) {
     const [respostaCerto, setRespostaCerto] = useState(false)
     const [respostaErrado, setRespostaErrado] = useState(false)
 
-
     const [idSala, setIdRoom] = useState([])
-
     const [qrCode, setQrCode] = useState([])
-    
     const [rooms, setRooms] = useState([]);
 
     function cadastrar(event) {
@@ -52,7 +48,6 @@ function ModalCadastroOnCln(props) {
             .catch(erro => {
                 console.log(erro)
             })
-            
     })
 
     return (
@@ -79,9 +74,8 @@ function ModalCadastroOnCln(props) {
                             <SelectSala
                             onChange={(e)=>{
                                 setIdRoom(e.target.value)
-                                console.log(idSala)
+                                console.log(e.target.value)
                             }}
-                                
                             data={rooms}/>
                         }
 

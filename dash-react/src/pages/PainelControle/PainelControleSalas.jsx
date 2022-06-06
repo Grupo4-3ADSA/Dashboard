@@ -1,26 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import api from '../../Api';
 import { useNavigate } from "react-router-dom";
 import '../../html-css-template/css/style-global.css';
 import '../../html-css-template/css/style-list.css';
-import apiCln from '../../Api'
+
 import NavSupCentro from '../../componentes/navbar/NavSupCentro';
 import NavEsquerdo from '../../componentes/navbar/NavEsquerdo';
 import ImgVoltar from '../../html-css-template/imagens/voltar.png';
 import LogoOnclnBranco from '../../html-css-template/imagens/img-logo/logo-branco.png';
+import ListaEquipamentoPainel from '../../componentes/listas/ListaEquipamentoPainel'
+
 
 function PainelSalas(props) {
     const navigate = useNavigate();
 
-    function atualizar(IdEquipamento) {
-        if (typeof IdEquipamento !== "undefined") {
+    const [equips, setEquips] = useState([]);
+    const idSala = sessionStorage.idSala
 
-            apiCln.ApiCln.get(`atividade-luz-sala/${IdEquipamento}`, {
+    useEffect(() => {
+        api.Api.get(`/equipments/${idSala}`)
+
+            .then(response => {
+                setEquips(response.data)
             })
-                .then(() => {
-                    console.log("Atualizado com sucesso")
-                })
-        }
-    }
+            .catch(erro => {
+                console.log(erro)
+            })
+    })
 
     return (
         <>
@@ -40,7 +46,9 @@ function PainelSalas(props) {
                     </div>
                     <div class="conteudo">
                         <img className="voltar" onClick={() => navigate(-1)} src={ImgVoltar} alt="" />
-                        <h2>Sala: A | Andar: 1º</h2>
+
+                        <h2>{equips.name}</h2>
+
                         <div className="list organiza-lista">
                             <table className="table-lista">
                                 <li className="title-lista">
@@ -54,22 +62,17 @@ function PainelSalas(props) {
                                         </tr>
                                     </thead>
                                 </li>
-                                <li>
-                                    <thead >
-                                        <tr>
-                                            <td class="td-lista">Ar Condicionado</td>
-                                            <td class="td-lista">24.000btu</td>
-                                            <td class="td-lista">Ligado</td>
-                                            <td class="td-lista"> <div class="label">
-                                                <label class="switch">
-                                                    <input type="checkbox" />
-                                                    <span class="slider round" onClick={() => (atualizar(1))}></span>
-                                                </label>
-                                            </div></td>
-                                            <td class="td-lista"><a href="/">Acessar</a></td>
-                                        </tr>
-                                    </thead>
-                                </li>
+
+                                {
+                                    equips.map(equips => (
+                                        <ListaEquipamentoPainel
+                                            type={equips.type}
+                                            potency={equips.potency}
+                                            state={'desligado'}
+
+                                        />
+                                    ))
+                                }
 
                             </table>
                         </div>
