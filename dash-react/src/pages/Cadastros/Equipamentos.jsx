@@ -62,18 +62,16 @@ function Sala() {
     })
 
     const idPredio = sessionStorage.idPredio
+
     useEffect(() => {
         api.Api.get(`/rooms/${idPredio}`)
             .then(response => {
                 setRooms(response.data)
-                // console.log(rooms)
-
             })
             .catch(erro => {
                 console.log(erro)
             })
     })
-
 
     return (
         <>
@@ -106,12 +104,10 @@ function Sala() {
             }
 
             <div clas="container">
-
                 <div class="superior">
                     <div class="nav-superior-esquerda">
                         <img src={LogoOnclnBranco} alt="Logo" />
                     </div>
-
                     <NavSupCentro />
                 </div>
 
@@ -125,11 +121,10 @@ function Sala() {
                         <div className="box-select-button">
                             <img className="voltar" onClick={() => navigate(-1)} src={ImgVoltar} alt="" />
                             <h2>Equipamentos cadastrados</h2>
-
-                            <SelectsGerais  
-                            onChange={(e) => {
-                                setIdSala(43)
-                            }}
+                            <SelectsGerais
+                                onChange={(e) => {
+                                    setIdSala(43)
+                                }}
 
                             />
 

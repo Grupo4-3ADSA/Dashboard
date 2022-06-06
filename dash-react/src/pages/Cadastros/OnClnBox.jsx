@@ -53,7 +53,6 @@ function OnClnBox() {
         api.Api.get("/clnboxex")
             .then(response => {
                 setClnbox(response.data)
-                console.log("Aqui k77777")
                 console.log(response)
             })
             .catch(erro => {

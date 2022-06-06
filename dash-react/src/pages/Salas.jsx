@@ -49,10 +49,9 @@ function Sala() {
     console.log(rooms)
 
     useEffect(() => {
-        api.Api.get(`/rooms/${idPredio}`)
+        api.Api.get(`/rooms/all/${idPredio}`)
             .then(response => {
                 setRooms(response.data)
-                console.log("Aquiiii" + rooms)
             })
             .catch(erro => {
                 console.log(erro)

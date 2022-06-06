@@ -4,11 +4,6 @@ import '../../html-css-template/css/style-global.css';
 
 function SelectSalas(props) {
 
-    const [setRooms] = useState([]);
-
-    const idPredio = sessionStorage.idPredio
-
-
     return (
         <>
             <select id="select-sala" onChange={props.onChange}>

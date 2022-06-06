@@ -6,7 +6,6 @@ function ListaHome(props) {
     return (
         <>
             <li className="li-box-salas">
-                <img src={ImgAlerta} alt="" />
                 <h5> Sala {props.name} <br />
                     Andar {props.floor}
                 </h5>

@@ -51,7 +51,7 @@
 }
 
 .table-lista td {
-    min-width: 180px;
+    min-width: 182px;
     height: 42px;
 }
 
@@ -69,7 +69,6 @@
 
 .organiza-lista .td-lista-editar-deletar button {
     padding-left: 18px;
-    width: 30%;
 }
 
 .organiza-lista .td-lista-editar-deletar .editar {

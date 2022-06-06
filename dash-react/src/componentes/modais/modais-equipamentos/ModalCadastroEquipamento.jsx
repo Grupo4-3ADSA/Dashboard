@@ -19,32 +19,23 @@ function ModalCadastroEquipamento(props) {
     const [lifespanEquipament, setLifespan] = useState([])
 
     const [idSala, setIdRoom] = useState([])
-    const [idCln, setIdCln] = useState([])
 
+    const [idCln, setidCLNBox] = useState([])
     const [rooms, setRooms] = useState([])
-    const [clnboxex, setClnBoxes] = useState([])
 
     function cadastrarEquipamento(event) {
+        const dataInt = new Date(installationDate)
+        console.log(dataInt.getTime())
         event.preventDefault()
         api.Api.post("/equipments", {
-<<<<<<< HEAD
-            name: name,
+            name: typeEquipament,
             type: typeEquipament,
-            installationDate: installationDate,
-            qtdEquipment: qtdEquipment,
-            potency: potencyEquipment,
+            installationDate: dataInt,
             lifespan: lifespanEquipament,
-
-=======
-            name: nomeSala,
-            floor: andarSala,
-            clnbox:{
-                idCnl: idClnbox
-            },
-            
->>>>>>> 9b0eafac318973add3b63cd96a0771b99ae38424
-            room: {
-                idSala: idSala
+            potency: potencyEquipment,
+            qtdEquipment: qtdEquipment,
+            clnBox: {
+                idCLNBox: idCln
             }
 
         }).then(response => {
@@ -100,17 +91,12 @@ function ModalCadastroEquipamento(props) {
                             <SelectSala
                                 onChange={(e) => {
                                     setIdRoom(e.target.value)
-                                        rooms.map(valor => {
-                                            if (valor.idRoom == e.target.value) {
-                                                setIdCln(valor.idClnBox)
-                                            }
-                                        })
-                                    console.log("rooms")
-                                    console.log(rooms)
-                                    console.log("idSala")
-                                    console.log(idSala)
-                                    console.log("idCln")
-                                    console.log(idCln)
+                                    rooms.map(valor => {
+                                        if (valor.idRoom == e.target.value) {
+                                            setidCLNBox(valor.idClnBox)
+                                        }
+
+                                    })
                                 }}
                                 data={rooms} />
                         }
@@ -124,7 +110,6 @@ function ModalCadastroEquipamento(props) {
                                 }}
                             />
                         }
-
 
                         <span>Data da instalação:</span>
                         <input type="date"
