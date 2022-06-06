@@ -7,7 +7,7 @@ function ListaSalas(props) {
             <li className="li-box-salas">
                 <h5>
                     Id Cln: {props.idCLNBox}<br />
-                    Sala {props.nameSala} <br />
+                    Sala {props.name} <br />
                     Andar {props.floor}
                 </h5>
             </li>

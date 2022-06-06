@@ -36,19 +36,6 @@ function OnClnBox() {
     const [clnbox, setClnbox] = useState([]);
     console.log(clnbox)
 
-    function setVariavel(pName, pIdRoom, pFloor) {
-        setName(pName)
-        setIdRoom(pIdRoom)
-        setFloor(pFloor)
-        console.log(pName)
-        setShowModalEditar(true)
-    }
-
-    function setVariavelDeletar(idRoom) {
-        setIdRoom(idRoom)
-        setShowModalDeletar(true)
-    }
-
     useEffect(() => {
         api.Api.get("/clnboxex")
             .then(response => {
@@ -116,19 +103,17 @@ function OnClnBox() {
                         <div className="centro ">
                             <div className="list organiza-lista">
 
-                                    {
-                                        clnbox.map(clnbox => (
-                                            <ListaOnClnBox
-                                                update={setVariavel}
-                                                delete={setVariavelDeletar}
-                                                idCLNBox={clnbox.idCLNBox}
-                                                nameSala={clnbox.room.name}
-                                                floor={clnbox.room.floor}
-                                                idRoom={clnbox.idRoom}
-                                            />
-                                        ))
-                                    }
-                                </div>
+                                {
+                                    clnbox.map(clnbox => (
+                                        <ListaOnClnBox
+                                            idCLNBox={clnbox.idCLNBox}
+                                            name={clnbox.name}
+                                            floor={clnbox.floor}
+                                            idRoom={clnbox.idRoom}
+                                        />
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -19,7 +19,6 @@ function PainelSalas(props) {
 
     useEffect(() => {
         api.Api.get(`/equipments/${idSala}`)
-
             .then(response => {
                 setEquips(response.data)
             })
