@@ -22,10 +22,12 @@ function ModalCadastroEquipamento(props) {
     const [idCln, setIdCln] = useState([])
 
     const [rooms, setRooms] = useState([])
+    const [clnboxex, setClnBoxes] = useState([])
 
     function cadastrarEquipamento(event) {
         event.preventDefault()
         api.Api.post("/equipments", {
+<<<<<<< HEAD
             name: name,
             type: typeEquipament,
             installationDate: installationDate,
@@ -33,6 +35,14 @@ function ModalCadastroEquipamento(props) {
             potency: potencyEquipment,
             lifespan: lifespanEquipament,
 
+=======
+            name: nomeSala,
+            floor: andarSala,
+            clnbox:{
+                idCnl: idClnbox
+            },
+            
+>>>>>>> 9b0eafac318973add3b63cd96a0771b99ae38424
             room: {
                 idSala: idSala
             }
