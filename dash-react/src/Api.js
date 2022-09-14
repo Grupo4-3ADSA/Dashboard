@@ -8,7 +8,7 @@ const ApiCln = axios.create({
 });
 
 const ApiLogin = axios.create({
-    baseURL: "http://localhost:1234/usuarios/"
+    baseURL: "http://localhost:8002/usuarios/"
 });
 
 
